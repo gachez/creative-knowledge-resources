@@ -1,0 +1,16 @@
+.rectangle-tag{
+    width: 111px;
+    height: 35px;
+    border: solid 1px #373a3c;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #373a3c;
+    text-align: center;
+vertical-align: middle;
+line-height: 35px;       
+}

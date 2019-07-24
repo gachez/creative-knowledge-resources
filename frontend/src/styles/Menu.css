@@ -1,0 +1,16 @@
+
+#menu-items{
+    
+  animation-name: slide;
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+}
+/* Standard syntax */
+@keyframes slide {
+  from {
+      opacity: 0.25;
+      }
+  to {
+      opacity: 1;
+      }
+}
