@@ -36,7 +36,7 @@ class PublicationPageContent extends Component{
 
     render(){
         if(this.state.isLoaded){
-            
+            console.log(this.state.publication)
         return(
             <div>
                 <Menu page="fixed"/>
@@ -90,33 +90,33 @@ class PublicationPageContent extends Component{
                 <strong>Author</strong>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; John Kamau
+                &nbsp; &nbsp; <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.author}}></strong>
                <br />
                <br />
                <strong>Publisher</strong>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  University of Nairobi Press
+                <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.publisher}}></strong>
 
                   <br />
                   <br />
                 <strong>Year of publication</strong>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                 2010
+                <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.year_of_publication}}></strong>
 
                  <br />
                  <br />
                 <strong>Volume</strong>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; 1
+                &nbsp; &nbsp; &nbsp; <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.volume}}></strong>
 
                 <br />
                 <br />
                 <strong>Pages</strong>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; 350
+                &nbsp; &nbsp; &nbsp; &nbsp; <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.pages}}></strong>
                 </p>
 
                 {/* the book */}

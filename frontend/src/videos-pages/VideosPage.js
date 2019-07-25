@@ -44,9 +44,9 @@ class VideosPage extends Component{
              letterSpacing: 'normal',
              color: '#ff321a'
         }}>View Videos</p>
-          <FilterSectionVideos value = {posValue}/>
+          <FilterSectionVideos valuebtn = {23} value = {posValue}/>
 
-        <ResetBtn value = {23}/>
+   
         <SideBarIcons value = {posValue} iconColor={ellipse_trans} transell1={ellipse} transell2={ellipse_trans}/>
        <VideosThumbnail value = {posValue}/>
         </div>

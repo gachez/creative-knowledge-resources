@@ -65,9 +65,9 @@ class Home extends Component{
              letterSpacing: 'normal',
              color: '#ff321a'
         }}>View images</p>
-          <FilterSection />
+          <FilterSection value={0} />
 
-        <ResetBtn value={0} />
+   
         <SideBarIcons value={0} iconColor={ellipse} transell1={ellipse_trans} transell2={ellipse_trans}/>
         <Images imageurl={this.state.imageUrl} Images= {this.state.images}/>
         </div>

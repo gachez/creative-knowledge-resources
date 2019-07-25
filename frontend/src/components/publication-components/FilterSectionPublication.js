@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import downIcon from '../../images/icons_down.svg'
+import downIcon from '../../images/downiconorange.png'
 
 const dropDownFontStyle = {
     marginLeft: '15px',
@@ -11,7 +11,8 @@ const dropDownFontStyle = {
     fontStretch: 'normal',
     lineHeight: 'normal',
     letterSpacing: 'normal',
-    color: '#ffffff'
+    color: '#ffffff',
+    cursor: 'pointer'
 }
 
 class FilterSectionPublication extends Component{
@@ -47,7 +48,7 @@ class FilterSectionPublication extends Component{
                  backgroundColor: '#ffffff'
                
             }}>
-                <p style={{
+                <p id="format" style={{
                       width: '117px',
                       height: '17px',
                       fontFamily: 'Ubuntu',
@@ -64,8 +65,9 @@ class FilterSectionPublication extends Component{
                 <img src={downIcon} alt="down" style={{
                     position: 'absolute',
                     left: '168px',
-                    top: '10.5px',
-                    color: 'orange'
+                    top: '20px',
+                    color: 'orange',
+                    cursor: 'pointer'
                 }}
                 onClick={
                     ()=>{
@@ -102,10 +104,34 @@ class FilterSectionPublication extends Component{
                    
                 }}>
 
-                <p style={dropDownFontStyle}>PDF</p>
-                <p style={dropDownFontStyle}>Epub</p>
-                <p style={dropDownFontStyle}>DOC</p>
-                <p style={dropDownFontStyle}>Mobi</p>
+                <p className="formats" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('categories-dropdown').style.display = 'none'
+                        document.getElementById('format').style.color = '#ff321a'
+                        document.getElementById('format').innerText = document.getElementsByClassName('formats')[0].innerText
+                    }
+                }>PDF</p>
+                <p className="formats" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('categories-dropdown').style.display = 'none'
+                        document.getElementById('format').style.color = '#ff321a'
+                        document.getElementById('format').innerText = document.getElementsByClassName('formats')[1].innerText
+                    }
+                }>Epub</p>
+                <p className="formats" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('categories-dropdown').style.display = 'none'
+                        document.getElementById('format').style.color = '#ff321a'
+                        document.getElementById('format').innerText = document.getElementsByClassName('formats')[2].innerText
+                    }
+                }>DOC</p>
+                <p className="formats" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('categories-dropdown').style.display = 'none'
+                        document.getElementById('format').style.color = '#ff321a'
+                        document.getElementById('format').innerText = document.getElementsByClassName('formats')[3].innerText
+                    }
+                }>Mobi</p>
 
                 </div>
             
@@ -139,7 +165,7 @@ class FilterSectionPublication extends Component{
                  backgroundColor: '#ffffff'
                
             }}>
-                <p style={{
+                <p id="discipline" style={{
                       
                       height: '17px',
                       fontFamily: 'Ubuntu',
@@ -156,8 +182,9 @@ class FilterSectionPublication extends Component{
                 <img src={downIcon} alt="down" style={{
                     position: 'absolute',
                     left: '168px',
-                    top: '10.5px',
-                    color: 'orange'
+                    top: '20px',
+                    color: 'orange',
+                    cursor: 'pointer'
                 }}
                 onClick={
                     ()=>{
@@ -194,15 +221,42 @@ class FilterSectionPublication extends Component{
                    
                 }}>
 
-                <p style={dropDownFontStyle}>Ideas</p>
-                <p style={dropDownFontStyle}>Interviews</p>
-                <p style={dropDownFontStyle}>Architecture</p>
-                <p style={dropDownFontStyle}>Dance</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = "none"
+                        document.getElementById('discipline').style.color = '#ff321a'
+                        document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[0].innerHTML
+                    }
+                }>Ideas</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = "none"
+                        document.getElementById('discipline').style.color = '#ff321a'
+                        document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[1].innerHTML
+                    }
+                }>Interviews</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = "none"
+                        document.getElementById('discipline').style.color = '#ff321a'
+                        document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[2].innerHTML
+                    }
+                }>Architecture</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = "none"
+                        document.getElementById('discipline').style.color = '#ff321a'
+                        document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[3].innerHTML
+                    }
+                }>Dance</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = "none"
+                        document.getElementById('discipline').style.color = '#ff321a'
+                        document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[4].innerHTML
+                    }
+                }>Decorative arts</p>
+                
                 </div>
 
 
@@ -241,7 +295,7 @@ class FilterSectionPublication extends Component{
             }}>
 
             
-<p style={{
+            <p id="year" style={{
                       width: '117px',
                       height: '17px',
                       fontFamily: 'Ubuntu',
@@ -258,8 +312,9 @@ class FilterSectionPublication extends Component{
                 <img src={downIcon} alt="down" style={{
                     position: 'absolute',
                     left: '168px',
-                    top: '10.5px',
-                    color: 'orange'
+                    top: '20px',
+                    color: 'orange',
+                    cursor: 'pointer'
                 }}
                 
                 onClick={
@@ -297,24 +352,114 @@ class FilterSectionPublication extends Component{
                    
                 }}>
 
-                <p style={dropDownFontStyle}>2019</p>
-                <p style={dropDownFontStyle}>2018</p>
-                <p style={dropDownFontStyle}>2017</p>
-                <p style={dropDownFontStyle}>2016</p>
-                <p style={dropDownFontStyle}>2015</p>
-                <p style={dropDownFontStyle}>2014</p>
-                <p style={dropDownFontStyle}>2013</p>
-                <p style={dropDownFontStyle}>2012</p>
-                <p style={dropDownFontStyle}>2011</p>
-                <p style={dropDownFontStyle}>2010</p>
-                <p style={dropDownFontStyle}>2009</p>
-                <p style={dropDownFontStyle}>2008</p>
-                <p style={dropDownFontStyle}>2007</p>
-                <p style={dropDownFontStyle}>2006</p>
-                <p style={dropDownFontStyle}>2005</p>
-
+<p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[0].innerText
+                        
+                    }
+                }>2019</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[1].innerText
+                        
+                    }
+                }>2018</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[2].innerText
+                        
+                    }
+                }>2017</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[3].innerText
+                        
+                    }
+                }>2016</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('discussions')[4].innerText
+                        
+                    }
+                }>2015</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[5].innerText
+                        
+                    }
+                }>2014</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[6].innerText
+                        
+                    }
+                }>2013</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[7].innerText
+                        
+                    }
+                }>2012</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[8].innerText
+                        
+                    }
+                }>2011</p>
+               
                 </div>
             
+            
+            {/* reset button */}
+
+            <button   value = "RESET" id="reset-btn" style={{
+                    position: 'absolute',
+                    top: `${105 - this.props.valuebtn}%`,
+                    left: '90%',
+                    width: '100px',
+                    height: '40px',
+                   
+                    padding: '5px',
+                    fontFamily: 'Ubuntu',
+                                            
+                    fontWeight: 600,
+                    fontStyle: 'normal',
+                    fontStretch: 'normal',
+                    lineHeight: 'normal',
+                    letterSpacing: '-0.1px',
+                    color: '#ffffff',
+                    border: 'none' 
+                                        
+                }} onClick={
+                    () =>{
+                        document.getElementById('format').innerText = "Select a format"
+                        document.getElementById('format').style.color = 'black'
+                        document.getElementById('discipline').innerText = "Select a discipline"
+                        document.getElementById('discipline').style.color = 'black'
+                        document.getElementById('year').innerText = "Select a year"
+                        document.getElementById('year').style.color = 'black'
+                    }
+                }>
+                    RESET
+                </button>
     
             </React.Fragment>
         )

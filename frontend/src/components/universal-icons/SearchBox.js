@@ -7,11 +7,23 @@ class SearchBox extends Component{
             <React.Fragment>
             
         {/* search textbox */}
-        <img src={search} alt="search" style={{
+        <input placeholder = "Search" style={{
             position: 'absolute',
             top: `${this.props.value}`,
-            left: '83%'
-        }}/>
+            left: '83%',
+            border: 'none',
+            borderBottom: 'solid 1px #373a3c',
+            height: '17px',
+            fontFamily: 'Ubuntu',
+            fontSize: '14px',
+            fontWeight: 300,
+            fontStyle: 'normal',
+            fontStretch: 'normal',
+            lineHeight: 'normal',
+            letterSpacing: 'normal',
+            color: '#373a3c'
+
+        }} />
 
             </React.Fragment>
         )

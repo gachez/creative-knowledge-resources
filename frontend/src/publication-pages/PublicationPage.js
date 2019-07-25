@@ -49,9 +49,9 @@ class PublicationPage extends Component{
              letterSpacing: 'normal',
              color: '#ff321a'
         }}>View Publications</p>
-          <FilterSectionPublication value = {posValue}/>
+          <FilterSectionPublication valuebtn = {23} value = {posValue}/>
 
-        <ResetBtn value = {23}/>
+        
         <SideBarIcons value = {posValue}  iconColor={ellipse_trans} transell1={ellipse_trans} transell2={ellipse} />
        <PublicationThumbnail value = {posValue}/>
 

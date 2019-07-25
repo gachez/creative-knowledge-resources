@@ -17,7 +17,8 @@ const dropDownFontStyle = {
     fontStretch: 'normal',
     lineHeight: 'normal',
     letterSpacing: 'normal',
-    color: '#ffffff'
+    color: '#ffffff',
+    cursor: 'pointer'
 }
 
 class ImageUploadTag extends Component{
@@ -228,93 +229,455 @@ class ImageUploadTag extends Component{
             {/* section for the tags */}
 
                     <div className="rectangle-tag" style={{position:'absolute',
-                     top: '46.2%', left: '3.3%'}} onClick={
+                     top: '46.2%', left: '3.3%', cursor: 'pointer'}} onClick={
                          () =>{
                              document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ff321a'
+                             document.getElementsByClassName('rectangle-tag')[0].style.color='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[0].style.border = 'none'
                              document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                             document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
                              document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
-                         }
+                             document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                             document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        
+                             localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[0].innerText)
+                            }
                      }>African games</div>
                      
                      <div className="rectangle-tag" style={{position:'absolute',
-                     top: '46.2%', left: '12.2%'}} onClick={
+                     top: '46.2%', left: '12.2%',cursor: 'pointer'}} onClick={
                         () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[1].innerText)
+                            
                             document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ff321a'
-                        
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'none'
                             document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
-                        }}>Animations</div>
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Animations</div>
 
 <div className="rectangle-tag" style={{position:'absolute',
-                     top: '46.2%', left: '21.2%'}} onClick={
+                     top: '46.2%', left: '21.2%',cursor: 'pointer'}} onClick={
                         () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[2].innerText)
+                            
                             document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ff321a'
-                        
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'none'
                             document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
-                        }}>Architecture</div>
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Architecture</div>
 
 <div className="rectangle-tag" style={{position:'absolute',
                      top: '54.3%', left: '3.3%', width: '60px'}} onClick={
                         () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[3].innerText)
+                            
                             document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ff321a'
-                        
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'none'
                             document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
-                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
                             document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
-                        }}>Dance</div>
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Dance</div>
                     
                     <div className="rectangle-tag" style={{position:'absolute',
-                     top: '54.3%', left: '8.8%', width: '120px'}}>Decorative arts</div>
+                     top: '54.3%', left: '8.8%', width: '120px', cursor: 'pointer'}} onClick={
+                        () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[4].innerText)
+                            
+                            document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ff321a'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'none'
+                            document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Decorative arts</div>
                      
                      <div className="rectangle-tag" style={{position:'absolute',
-                     top: '54.3%', left: '18.2%'}}>Design</div>
+                     top: '54.3%', left: '18.2%', cursor: 'pointer'}} onClick={
+                        () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[5].innerText)
+                            
+                            document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ff321a'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'none'
+                            document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Design</div>
 
 <div className="rectangle-tag" style={{position:'absolute',
-                     top: '62.4%', left: '3.3%', width: '98px'}}>installations</div>
+                     top: '62.4%', left: '3.3%', width: '98px', cursor: 'pointer'}} onClick={
+                        () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[6].innerText)
+                            
+                            document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ff321a'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'none'
+                            document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>installations</div>
 
 <div className="rectangle-tag" style={{position:'absolute',
-                     top: '62.4%', left: '11.25%', width: '80px'}}>Painting</div>
+                     top: '62.4%', left: '11.25%', width: '80px', cursor: 'pointer'}} onClick={
+                        () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[7].innerText)
+                            
+                            document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ff321a'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'none'
+                            document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Painting</div>
 
 <div className="rectangle-tag" style={{position:'absolute',
-                     top: '62.4%', left: '18.2%'}}>Pottery</div>
+                     top: '62.4%', left: '18.2%', cursor: 'pointer'}} onClick={
+                        () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[8].innerText)
+                            
+                            document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ff321a'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'none'
+                            document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Pottery</div>
 
 <div className="rectangle-tag" style={{position:'absolute',
-                     top: '70.5%', left: '3.3%', width: '81px'}}>Sculpture</div>
+                     top: '70.5%', left: '3.3%', width: '81px', cursor: 'pointer'}} onClick={
+                        () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[9].innerText)
+                            
+                            document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ff321a'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'none'
+                            document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Sculpture</div>
 
 <div className="rectangle-tag" style={{position:'absolute',
-                     top: '70.5%', left: '10.25%', width: '70px'}}>Theater</div>
+                     top: '70.5%', left: '10.25%', width: '70px', cursor: 'pointer'}} onClick={
+                        () =>{
+                            localStorage.setItem('category', document.getElementsByClassName('rectangle-tag')[9].innerText)
+                            
+                            document.getElementsByClassName('rectangle-tag')[9].style.backgroundColor='#ff321a'
+                            document.getElementsByClassName('rectangle-tag')[9].style.color='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[9].style.border = 'none'
+                            document.getElementsByClassName('rectangle-tag')[0].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[0].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[0].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[1].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[1].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[2].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[2].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[3].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[3].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[4].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[4].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[5].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[5].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[6].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[6].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[7].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[7].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[8].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[8].style.border = 'solid 1px black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.backgroundColor='#ffffff'
+                            document.getElementsByClassName('rectangle-tag')[10].style.color='black'
+                            document.getElementsByClassName('rectangle-tag')[10].style.border = 'solid 1px black'
+                        }
+                    }>Theater</div>
             {/* section for the tags ends here */}
 
                     {/* year subtitle */}
@@ -342,7 +705,7 @@ class ImageUploadTag extends Component{
                         border: 'solid 1px #373a3c',
                         backgroundColor: '#ffffff'
                     }}>
-                        <p style={{
+                        <p id="year" style={{
                               marginLeft: '15px',
                               fontFamily: 'Ubuntu',
                               fontSize: '14px',
@@ -356,7 +719,8 @@ class ImageUploadTag extends Component{
                         <img style={{
                             position: 'absolute', 
                             top: '19px',
-                            left: '90%'
+                            left: '90%',
+                            cursor: 'pointer'
                         }} src={downIcon} 
                         onClick={
                             ()=>{
@@ -390,21 +754,94 @@ class ImageUploadTag extends Component{
                    
                 }}>
 
-                <p style={dropDownFontStyle}>2019</p>
-                <p style={dropDownFontStyle}>2018</p>
-                <p style={dropDownFontStyle}>2017</p>
-                <p style={dropDownFontStyle}>2016</p>
-                <p style={dropDownFontStyle}>2015</p>
-                <p style={dropDownFontStyle}>2014</p>
-                <p style={dropDownFontStyle}>2013</p>
-                <p style={dropDownFontStyle}>2012</p>
-                <p style={dropDownFontStyle}>2011</p>
-                <p style={dropDownFontStyle}>2010</p>
-                <p style={dropDownFontStyle}>2009</p>
-                <p style={dropDownFontStyle}>2008</p>
-                <p style={dropDownFontStyle}>2007</p>
-                <p style={dropDownFontStyle}>2006</p>
-                <p style={dropDownFontStyle}>2005</p>
+            <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[0].innerText
+                
+                    localStorage.setItem('year', document.getElementsByClassName('years')[0].innerHTML)
+                }
+                   
+                    
+                }>2019</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[1].innerText
+                    
+                    localStorage.setItem('year', document.getElementsByClassName('years')[1].innerHTML)
+                }
+                   
+                    
+                }>2018</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[2].innerText
+                
+                    localStorage.setItem('year', document.getElementsByClassName('years')[2].innerHTML)
+                }
+                   
+                    
+                }>2017</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[3].innerText
+                
+                    localStorage.setItem('year', document.getElementsByClassName('years')[3].innerHTML)
+                }
+                   
+                    
+                }>2016</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[4].innerText
+                
+                    localStorage.setItem('year', document.getElementsByClassName('years')[4].innerHTML)
+                }
+                   
+                    
+                }> 2015</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[5].innerText
+                    
+                    localStorage.setItem('year', document.getElementsByClassName('years')[5].innerHTML)
+                }
+                   
+                    
+                }>2014</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[6].innerText
+                
+                    localStorage.setItem('year', document.getElementsByClassName('years')[6].innerHTML)
+                }
+                   
+                    
+                }>2013</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('year-dropdown').style.display = 'none'   
+                    document.getElementById('year').style.color = "#ff321a"
+                    document.getElementById('year').innerText = document.getElementsByClassName('years')[7].innerText
+                
+                    localStorage.setItem('year', document.getElementsByClassName('years')[7].innerHTML)
+                }
+                   
+                    
+                }>2012</p>
 
                 </div>
             

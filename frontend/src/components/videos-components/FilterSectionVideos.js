@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import downIcon from '../../images/icons_down.svg'
+import downIcon from '../../images/downiconorange.png'
 
 const dropDownFontStyle = {
     marginLeft: '15px',
@@ -11,7 +11,8 @@ const dropDownFontStyle = {
     fontStretch: 'normal',
     lineHeight: 'normal',
     letterSpacing: 'normal',
-    color: '#ffffff'
+    color: '#ffffff',
+    cursor: 'pointer'
 }
 
 class FilterSectionVideos extends Component{
@@ -47,7 +48,7 @@ class FilterSectionVideos extends Component{
                  backgroundColor: '#ffffff'
                
             }}>
-                <p style={{
+                <p id="discipline" style={{
                       width: '117px',
                       height: '17px',
                       fontFamily: 'Ubuntu',
@@ -64,8 +65,9 @@ class FilterSectionVideos extends Component{
                 <img src={downIcon} alt="down" style={{
                     position: 'absolute',
                     left: '168px',
-                    top: '10.5px',
-                    color: 'orange'
+                    top: '20px',
+                    color: 'orange',
+                    cursor: 'pointer'
                 }}
                 onClick={
                     ()=>{
@@ -102,15 +104,69 @@ class FilterSectionVideos extends Component{
                    
                 }}>
 
-                <p style={dropDownFontStyle}>African games</p>
-                <p style={dropDownFontStyle}>Animation</p>
-                <p style={dropDownFontStyle}>Architecture</p>
-                <p style={dropDownFontStyle}>Dance</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('categories-dropdown').style.display = 'none'   
+                    document.getElementById('discipline').style.color = "#ff321a"
+                    document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[0].innerText
+                }
+                   
+                    
+                }>African games</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('categories-dropdown').style.display = 'none'   
+                    document.getElementById('discipline').style.color = "#ff321a"
+                    document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[1].innerText
+                }
+                   
+                    
+                }>Animation</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('categories-dropdown').style.display = 'none'   
+                    document.getElementById('discipline').style.color = "#ff321a"
+                    document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[2].innerText
+                }
+                   
+                    
+                }>Architecture</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('categories-dropdown').style.display = 'none'   
+                    document.getElementById('discipline').style.color = "#ff321a"
+                    document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[3].innerText
+                }
+                   
+                    
+                }>Dance</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('categories-dropdown').style.display = 'none'   
+                    document.getElementById('discipline').style.color = "#ff321a"
+                    document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[4].innerText
+                }
+                   
+                    
+                }>Decorative arts</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('categories-dropdown').style.display = 'none'   
+                    document.getElementById('discipline').style.color = "#ff321a"
+                    document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[5].innerText
+                }
+                   
+                    
+                }>Decorative arts</p>
+                <p className="disciplines" style={dropDownFontStyle} onClick={
+                   () =>{
+                    document.getElementById('categories-dropdown').style.display = 'none'   
+                    document.getElementById('discipline').style.color = "#ff321a"
+                    document.getElementById('discipline').innerText = document.getElementsByClassName('disciplines')[6].innerText
+                }
+                   
+                    
+                }>Decorative arts</p>
                 </div>
             
 
@@ -143,7 +199,7 @@ class FilterSectionVideos extends Component{
                  backgroundColor: '#ffffff'
                
             }}>
-                <p style={{
+                <p id="discussion" style={{
                       
                       height: '17px',
                       fontFamily: 'Ubuntu',
@@ -160,8 +216,9 @@ class FilterSectionVideos extends Component{
                 <img src={downIcon} alt="down" style={{
                     position: 'absolute',
                     left: '168px',
-                    top: '10.5px',
-                    color: 'orange'
+                    top: '20px',
+                    color: 'orange',
+                    cursor: 'pointer'
                 }}
                 onClick={
                     ()=>{
@@ -198,15 +255,39 @@ class FilterSectionVideos extends Component{
                    
                 }}>
 
-                <p style={dropDownFontStyle}>Ideas</p>
-                <p style={dropDownFontStyle}>Interviews</p>
-                <p style={dropDownFontStyle}>Architecture</p>
-                <p style={dropDownFontStyle}>Dance</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
-                <p style={dropDownFontStyle}>Decorative arts</p>
+                <p className="discussions" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = 'none'
+                        document.getElementById('discussion').style.color = '#ff321a'
+                        document.getElementById('discussion').innerText = document.getElementsByClassName('discussions')[0].innerText
 
+                    }
+                }>Ideas</p>
+                <p className="discussions" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = 'none'
+                        document.getElementById('discussion').style.color = '#ff321a'
+                        document.getElementById('discussion').innerText = document.getElementsByClassName('discussions')[1].innerText
+                        
+                    }
+                }>Interviews</p>
+                <p className="discussions" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = 'none'
+                        document.getElementById('discussion').style.color = '#ff321a'
+                        document.getElementById('discussion').innerText = document.getElementsByClassName('discussions')[2].innerText
+                        
+                    }
+                }>Architecture</p>
+                <p className="discussions" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('discussion-dropdown').style.display = 'none'
+                        document.getElementById('discussion').style.color = '#ff321a'
+                        document.getElementById('discussion').innerText = document.getElementsByClassName('discussions')[3].innerText
+                        
+                    }
+                }>Dance</p>
+            
                 </div>
 
 
@@ -245,7 +326,7 @@ class FilterSectionVideos extends Component{
             }}>
 
             
-<p style={{
+            <p id="year" style={{
                       width: '117px',
                       height: '17px',
                       fontFamily: 'Ubuntu',
@@ -262,8 +343,9 @@ class FilterSectionVideos extends Component{
                 <img src={downIcon} alt="down" style={{
                     position: 'absolute',
                     left: '168px',
-                    top: '10.5px',
-                    color: 'orange'
+                    top: '20px',
+                    color: 'orange',
+                    cursor: 'pointer'
                 }}
                 
                 onClick={
@@ -301,23 +383,114 @@ class FilterSectionVideos extends Component{
                    
                 }}>
 
-                <p style={dropDownFontStyle}>2019</p>
-                <p style={dropDownFontStyle}>2018</p>
-                <p style={dropDownFontStyle}>2017</p>
-                <p style={dropDownFontStyle}>2016</p>
-                <p style={dropDownFontStyle}>2015</p>
-                <p style={dropDownFontStyle}>2014</p>
-                <p style={dropDownFontStyle}>2013</p>
-                <p style={dropDownFontStyle}>2012</p>
-                <p style={dropDownFontStyle}>2011</p>
-                <p style={dropDownFontStyle}>2010</p>
-                <p style={dropDownFontStyle}>2009</p>
-                <p style={dropDownFontStyle}>2008</p>
-                <p style={dropDownFontStyle}>2007</p>
-                <p style={dropDownFontStyle}>2006</p>
-                <p style={dropDownFontStyle}>2005</p>
-
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[0].innerText
+                        
+                    }
+                }>2019</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[1].innerText
+                        
+                    }
+                }>2018</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[2].innerText
+                        
+                    }
+                }>2017</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[3].innerText
+                        
+                    }
+                }>2016</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('discussions')[4].innerText
+                        
+                    }
+                }>2015</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[5].innerText
+                        
+                    }
+                }>2014</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[6].innerText
+                        
+                    }
+                }>2013</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[7].innerText
+                        
+                    }
+                }>2012</p>
+                <p className="years" style={dropDownFontStyle} onClick={
+                    () =>{
+                        document.getElementById('year-dropdown').style.display = 'none'
+                        document.getElementById('year').style.color = '#ff321a'
+                        document.getElementById('year').innerText = document.getElementsByClassName('years')[8].innerText
+                        
+                    }
+                }>2011</p>
+                
                 </div>
+
+                   {/* reset button */}
+
+               <button   value = "RESET" id="reset-btn" style={{
+                    position: 'absolute',
+                    top: `${105 - this.props.valuebtn}%`,
+                    left: '90%',
+                    width: '100px',
+                    height: '40px',
+                   
+                    padding: '5px',
+                    fontFamily: 'Ubuntu',
+                                            
+                    fontWeight: 600,
+                    fontStyle: 'normal',
+                    fontStretch: 'normal',
+                    lineHeight: 'normal',
+                    letterSpacing: '-0.1px',
+                    color: '#ffffff',
+                    border: 'none' 
+                                        
+                }} onClick={
+                    () =>{
+                        document.getElementById('discussion').innerText = "Select a discussion"
+                        document.getElementById('discussion').style.color = 'black'
+                        document.getElementById('discipline').innerText = "Select a discipline"
+                        document.getElementById('discipline').style.color = 'black'
+                        document.getElementById('year').innerText = "Select a year"
+                        document.getElementById('year').style.color = 'black'
+                    }
+                }>
+                    RESET
+                </button>
+ 
             
     
             </React.Fragment>

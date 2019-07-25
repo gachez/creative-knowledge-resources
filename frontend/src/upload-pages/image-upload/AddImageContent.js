@@ -9,11 +9,24 @@ import {Link} from 'react-router-dom'
 
 export default class AddImageContent extends Component{
     state={
-        btnImg: nextburnt
+        btnImg: nextburnt,
+        topPositionSection: '',
+        topPositionImage: '',
+        imageUrl: null
     }
+
+    onImageChange = (event) => {
+        if (event.target.files && event.target.files[0]) {
+          this.setState({
+            imageUrl: URL.createObjectURL(event.target.files[0])
+          });
+        }
+       }
     render(){
         return(
-            <div>
+            <div id="parent-container" style={{
+        
+            }}>
                 
                     {/* top bar on page */}
                     <div style={{
@@ -175,20 +188,31 @@ export default class AddImageContent extends Component{
                         position: 'absolute',
                         left: '89%',
                         paddingTop: '28px'
-                    }}/>
+                    }} onClick={
+                        () =>{
+                            localStorage.setItem('title', document.getElementById('title').value )
+                            localStorage.setItem('body', document.getElementById('body-text').value)
+                            localStorage.setItem('image', this.state.imageUrl)
+
+                        }
+                    }/>
 
                     </Link>
                     
                     </div>
-                    {/* top bar ends here */}
 
+                   {/*page grid */}
+                   
+                    {/* top bar ends here */}
+                    
                     {/* title input */}
-                    <input type="textbox" placeholder="Title" style={{
+                    <input id="title" type="textbox" placeholder="Title" style={{
                         width: '76.1%',
                         height: '10%',
                         position: 'absolute',
                         top: '22.6%',
                         left: '13.4%',
+                        
                         fontFamily: 'Ubuntu',
                         fontSize: '30px',
                         fontWeight: 600,
@@ -203,10 +227,11 @@ export default class AddImageContent extends Component{
                     }}/>
 
                     {/* add section box */}
-                    <div  style={{
+                    <div id="add-section-box" style={{
                         position: 'absolute',
                         top: '40.8%',
                         left: '31.7%',
+                        
                           width: '500px',
                           height: '100px',
                           border: 'dotted 2px #ff321a'
@@ -242,31 +267,17 @@ export default class AddImageContent extends Component{
                             color: '#ff321a'
                         }}>Add section</p>
 
-                    </div>
-                        {/* dropdown menu on add section click */}
+                         {/* dropdown menu on add section click */}
                     <div id="drop-down" style={{
                         position: 'absolute',
-                        top: '50.8%',
+                        top: '70.8%',
                         left: '39%',
                         width: '157px',
-                        height: '156px',
+                        height: '126px',
                         background: '#373A3C',
                         display: 'none'
                     }}>
                         <p style={{
-                            fontFamily: 'Ubuntu',
-                            fontStyle: 'normal',
-                            fontWeight: 600,
-                            fontSize: '13px',
-                            lineHeight: '15px', 
-                            color: 'white',
-                            paddingLeft: '42px',
-                            paddingTop: '20px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        textAlign: 'center'
-                        }}>Header text</p>
-                        <p style={{
                             
                             paddingLeft: '42px',
                             paddingTop: '10px',
@@ -276,13 +287,34 @@ export default class AddImageContent extends Component{
                             fontSize: '13px',
                             lineHeight: '15px', 
                             color: 'white',
-                            
+                            cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
                         textAlign: 'center'
-                        }}>Body text</p>
-                        <p style={{
-                            
+                        }} onClick={
+                            () =>{
+                                 let bodyText = document.createElement('textarea')
+                                document.getElementById('parent-container').appendChild(bodyText)
+                                bodyText.setAttribute('id', 'body-text')
+                                document.getElementById('body-text').style.position = 'absolute'
+                                document.getElementById('body-text').style.top = '40.8%'
+                                document.getElementById('body-text').style.minHeight = '100px'
+                                document.getElementById('body-text').style.width = '76.1%'
+                                document.getElementById('body-text').style.fontFamily = 'Ubuntu'
+                                document.getElementById('body-text').style.fontSize = '18px'
+                                document.getElementById('body-text').style.fontWeight = 300
+                                document.getElementById('body-text').style.fontStyle = 'normal'
+                                document.getElementById('body-text').style.fontStretch = 'normal'
+                                document.getElementById('body-text').style.lineHeight = 1.35
+                                document.getElementById('body-text').style.letterSpacing = 'normal'
+                                document.getElementById('body-text').style.color = '#8d8d8d'
+                                document.getElementById('body-text').style.left = '13.4%'
+                                document.getElementById('add-section-box').style.top = '60%'
+                            }
+                        }>Body text</p>
+                        
+                          <label for="file-upload" style={{
+                              
                             paddingLeft: '42px',
                             paddingTop: '10px',
                             fontFamily: 'Ubuntu',
@@ -291,12 +323,44 @@ export default class AddImageContent extends Component{
                             fontSize: '13px',
                             lineHeight: '15px', 
                             color: 'white',
-                            
+                            cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
                         textAlign: 'center'
-                        }}>Image</p>
+                        
+                    }} id="custom-file-upload" >
+                        image
+                    </label>
+                    <input id="file-upload" style={{
+                        display: 'none'
+                    }} type="file" onChange={this.onImageChange} onClick = {
+                        () =>{
+                            document.getElementById('add-section-box').style.top = '135%'
+                            document.getElementById('image').style.display='block'
+                        }
+                    }/>
                     </div>
+
+                    </div>
+                    <div className = "images-container" style={{
+                        display: 'grid'
+                    }}>
+                    <div id = "image"  style={{
+                        position: 'absolute',
+                        top: '60%',
+                        left: '13.4%',
+                        width: '76.1%',
+                        height: '500px',
+                        border: 'none',
+                        display: 'none',
+                        backgroundImage: `url(${this.state.imageUrl})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center'
+                    }}></div>
+
+                    </div>
+                    
             </div>
         )
     }

@@ -8,6 +8,11 @@ import {Link} from 'react-router-dom'
 
 export default class ImageContentUpload extends React.Component{
     render(){
+
+        const title = localStorage.getItem('title')
+        const category = localStorage.getItem('category')
+        const year = localStorage.getItem('year')
+
         return(
             <div>
                   {/* top bar on page */}
@@ -180,7 +185,7 @@ export default class ImageContentUpload extends React.Component{
                         lineHeight: 'normal',
                         letterSpacing: 'normal',
                         color: '#373a3c'
-                    }}>Art title here</p>
+                    }}>{title}</p>
 
                     {/* type title goes here */}
                     <p style={{
@@ -238,7 +243,7 @@ export default class ImageContentUpload extends React.Component{
                         lineHeight: 1.35,
                         letterSpacing: 'normal',
                         color: '#373a3c'
-                    }}>Decorative art</p>
+                    }}>{category}</p>
 
                 <p style={{
                     position: 'absolute',
@@ -266,7 +271,7 @@ export default class ImageContentUpload extends React.Component{
                      position: 'absolute',
                      left: '48.5%',
                      top: '66.5%'
-                }}>2013</p>
+                }}>{year}</p>
                 <Link to={"/image-preview"}>
                 <img src={preview} style={{
                     position: 'absolute',

@@ -12,15 +12,18 @@ export default class ImagePreview extends React.Component{
         btnImg: next
     }
     render(){
+        const title = localStorage.getItem('title')
+        const body = localStorage.getItem('body')
+        const image = localStorage.getItem('image')
         return(
             <div>
-                                  {/* top bar on page */}
-                                  <div style={{
-                          width: '100%',
-                          height: '95px',
-                          boxShadow: '0 3px 5px 0 rgba(0, 0, 0, 0.15)',
-                          backgroundColor:' #ffffff'
-                    }}>
+               {/* top bar on page */}
+                <div style={{
+                    width: '100%',
+                    height: '95px',
+                    boxShadow: '0 3px 5px 0 rgba(0, 0, 0, 0.15)',
+                    backgroundColor:' #ffffff'
+                }}>
 
                     <p style={{
                         position:'absolute',
@@ -200,7 +203,7 @@ export default class ImagePreview extends React.Component{
                          lineHeight: 'normal',
                          letterSpacing:' normal',
                          color: '#000000'
-                    }}>Art title goes here</p>
+                    }}>{title}</p>
 
                     {/* paragraph section */}
                     <p style={{
@@ -217,13 +220,7 @@ export default class ImagePreview extends React.Component{
                          lineHeight: 1.35,
                          letterSpacing: 'normal',
                          color: '#000000'
-                    }}> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                          Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                          laboris nisi ut aliquip ex ea commodo consequat.
-                           Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    }}> {body}</p>
 
                         {/* images section */}
                         <section id="images-container">
@@ -233,7 +230,9 @@ export default class ImagePreview extends React.Component{
                             left:'13%',
                               width: '73.2%',
                               height: '550px',
-                              backgroundColor: '#eeeeee'
+                              backgroundImage: `url(${image})`,
+                              backgroundRepeat: 'no-repeat',
+                              backgroundSize: 'cover'
                         }}></div>
 
 <div style={{
@@ -242,7 +241,7 @@ export default class ImagePreview extends React.Component{
                             left:'13%',
                               width: '73.2%',
                               height: '550px',
-                              backgroundColor: '#eeeeee'
+                              background: 'grey'
                         }}></div>
 
                         </section>
