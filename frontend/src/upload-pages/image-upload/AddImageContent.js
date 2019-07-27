@@ -12,17 +12,32 @@ export default class AddImageContent extends Component{
         btnImg: nextburnt,
         topPositionSection: '',
         topPositionImage: '',
-        imageUrl: null
+        imageUrl: [],
+        imageUrl2: [],
+        imagesArr: []
     }
 
     onImageChange = (event) => {
         if (event.target.files && event.target.files[0]) {
+           if(this.state.imageUrl.length < 1){
+            
           this.setState({
-            imageUrl: URL.createObjectURL(event.target.files[0])
+            imageUrl: URL.createObjectURL(event.target.files[0]),
+            imagesArr: document.getElementById('file-upload').files
           });
+
+          this.state.imagesArr.push(URL.createObjectURL(event.target.files[0]))
+           }
+           else{
+               this.setState({
+                   imageUrl2: URL.createObjectURL(event.target.files[0])
+               })
+           }
         }
        }
     render(){
+        console.log(this.state.imagesArr)
+        
         return(
             <div id="parent-container" style={{
         
@@ -293,23 +308,32 @@ export default class AddImageContent extends Component{
                         textAlign: 'center'
                         }} onClick={
                             () =>{
+                                if(document.getElementById('image').style.display == 'block'){
+                                    alert('Kindly add body text before an image(s)')
+                                }
+                                else{
+                                    
+                                    
                                  let bodyText = document.createElement('textarea')
-                                document.getElementById('parent-container').appendChild(bodyText)
-                                bodyText.setAttribute('id', 'body-text')
-                                document.getElementById('body-text').style.position = 'absolute'
-                                document.getElementById('body-text').style.top = '40.8%'
-                                document.getElementById('body-text').style.minHeight = '100px'
-                                document.getElementById('body-text').style.width = '76.1%'
-                                document.getElementById('body-text').style.fontFamily = 'Ubuntu'
-                                document.getElementById('body-text').style.fontSize = '18px'
-                                document.getElementById('body-text').style.fontWeight = 300
-                                document.getElementById('body-text').style.fontStyle = 'normal'
-                                document.getElementById('body-text').style.fontStretch = 'normal'
-                                document.getElementById('body-text').style.lineHeight = 1.35
-                                document.getElementById('body-text').style.letterSpacing = 'normal'
-                                document.getElementById('body-text').style.color = '#8d8d8d'
-                                document.getElementById('body-text').style.left = '13.4%'
-                                document.getElementById('add-section-box').style.top = '60%'
+                                 document.getElementById('parent-container').appendChild(bodyText)
+                                 bodyText.setAttribute('id', 'body-text')
+                                 document.getElementById('body-text').style.position = 'absolute'
+                                 document.getElementById('body-text').style.top = '40.8%'
+                                 document.getElementById('body-text').style.minHeight = '100px'
+                                 document.getElementById('body-text').style.width = '76.1%'
+                                 document.getElementById('body-text').style.fontFamily = 'Ubuntu'
+                                 document.getElementById('body-text').style.fontSize = '18px'
+                                 document.getElementById('body-text').style.fontWeight = 300
+                                 document.getElementById('body-text').style.fontStyle = 'normal'
+                                 document.getElementById('body-text').style.fontStretch = 'normal'
+                                 document.getElementById('body-text').style.lineHeight = 1.35
+                                 document.getElementById('body-text').style.letterSpacing = 'normal'
+                                 document.getElementById('body-text').style.color = '#8d8d8d'
+                                 document.getElementById('body-text').style.left = '13.4%'
+                                 document.getElementById('add-section-box').style.top = '60%'
+                                
+                                }
+
                             }
                         }>Body text</p>
                         
@@ -335,10 +359,24 @@ export default class AddImageContent extends Component{
                         display: 'none'
                     }} type="file" onChange={this.onImageChange} onClick = {
                         () =>{
+                            if(document.getElementById('body-text') !== null){
+                                
                             document.getElementById('add-section-box').style.top = '135%'
                             document.getElementById('image').style.display='block'
-                        }
-                    }/>
+                            
+                            }
+                            else if(document.getElementById('image').display == 'block'){
+                                document.getElementById('add-section-box').style.top = '190%'
+                                document.getElementById('image2').style.display = 'block'
+                            }                                             
+                            else{
+                                
+                            alert('Kindly add a description for the images')       
+                            document.getElementById('file-upload').type = ''
+                            document.getElementById('image').style.display = 'none'
+                     
+                            }   }
+                    } multiple/>
                     </div>
 
                     </div>
@@ -354,6 +392,20 @@ export default class AddImageContent extends Component{
                         border: 'none',
                         display: 'none',
                         backgroundImage: `url(${this.state.imageUrl})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center'
+                    }}></div>
+
+                    <div id = "image2"  style={{
+                        position: 'absolute',
+                        top: '130%',
+                        left: '13.4%',
+                        width: '76.1%',
+                        height: '500px',
+                        border: 'none',
+                        display: 'none',
+                        backgroundImage: `url(${this.state.imageUrl2})`,
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center'
