@@ -19,7 +19,7 @@ class ImagesPage extends Component{
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:8000/wp-json/wp/v2/images/${parseInt(localStorage.id)}`)
+        axios.get(`http://localhost:5000/wp-json/wp/v2/images/${parseInt(localStorage.id)}`)
         .then(res =>{
             this.setState({
                 images: res.data,

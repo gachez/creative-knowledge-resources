@@ -39,7 +39,7 @@ export default class CancelConfirmation extends React.Component{
   }}> You will not be able to recover your content.</p>
 
      {/* buttons section  */}
-     <Link to={"/image-preview"}>
+     <Link to={"/"}>
      <img  src={yes} style={{
          position: 'absolute',
          top: '52%',
@@ -48,7 +48,7 @@ export default class CancelConfirmation extends React.Component{
      
      </Link>
 
-     <Link to={"/upload-pin"}>
+     <Link to={"/"}>
      <img src={no} style={{
          position: 'absolute',
          top: '52%',

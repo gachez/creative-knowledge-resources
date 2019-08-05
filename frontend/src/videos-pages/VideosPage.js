@@ -10,7 +10,7 @@ import FilterSectionVideos from '../components/videos-components/FilterSectionVi
 
 import ellipse from '../images/ellipse.svg'
 import ellipse_trans from '../images/ellips_trans.svg'
-import axios from 'axios'
+import down from '../images/component.png'
 
 let posValue = 35;
 let posValueSB = "195px"
@@ -49,6 +49,29 @@ class VideosPage extends Component{
    
         <SideBarIcons value = {posValue} iconColor={ellipse_trans} transell1={ellipse} transell2={ellipse_trans}/>
        <VideosThumbnail value = {posValue}/>
+
+       <p onClick={()=>{
+            window.location.href="/publications"
+        }} style={{
+            position: 'absolute',
+            top: '123.5%',
+            left: '45.3%',
+            color: '#ff321a',
+            fontFamily: 'Ubuntu',
+            fontSize: '18px',
+            fontWeight: 500,
+            fontStyle: 'normal',
+            fontStretch: 'normal',
+            cursor: 'pointer'
+        }}> Next page Publications</p>
+        <img onClick={()=>{
+            window.location.href="/publications"
+        }} src={down} style = {{
+            position: 'absolute',
+            top: '120%',
+            left: '50%',
+            cursor: 'pointer'
+        }}/>
         </div>
       )
         

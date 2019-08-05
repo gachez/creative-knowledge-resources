@@ -18,7 +18,8 @@ const menuItems = {
     fontStretch: 'normal',
     lineHeight: 1.17,
     letterSpacing: 'normal',
-    color: '#373a3c'
+    color: '#373a3c',
+    cursor: 'pointer'
 }
 
 class Menu extends Component{
@@ -38,12 +39,15 @@ class Menu extends Component{
        }}>
 
          {/* logo for ckr */}
+         <Link to={"/"}>
          <img alt="ckr logo" src={ckrlogo} style={{
              position: 'absolute',
              top: '34.7%',
              left: '3.7%'
          }}/> 
 
+         </Link>
+         
            {/* sidebar slide on for the menu items */}
            <div id="menu-items"  style={{
             position:'absolute',
@@ -103,10 +107,11 @@ class Menu extends Component{
             }}
             />
 
-            <img src={bars} id="bars" className="animated fowards rotateInDownLeft " style={{
+            <img src={bars} id="bars" style={{
                 position: 'absolute',
                 left: '62.5px',
-                top: '8px'
+                top: '8px',
+                cursor: 'pointer'
             }} alt="bars"
             onClick={() =>{
                 document.getElementById('menu-items').style.display="flex"

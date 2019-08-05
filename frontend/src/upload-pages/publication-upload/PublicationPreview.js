@@ -204,7 +204,7 @@ export default class PublicationPreview extends React.Component{
                          lineHeight: 'normal',
                          letterSpacing:' normal',
                          color: '#000000'
-                    }}>Publication title goes here</p>
+                    }}>{localStorage.getItem('title')}</p>
 
                     
                         {/* synopsis title */}
@@ -237,14 +237,7 @@ export default class PublicationPreview extends React.Component{
                             letterSpacing: 'normal',
                             color: 'var(--charcoal-grey)'
                           
-                        }}>
-                        Lorem ipsum dolor sit amet, 
-                        consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                         Excepteur sint occaecat cupidatat non proident,
-                         sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        }}>{localStorage.getItem('synopsis')}
                         </p>
                            {/* Author  */}
                         <p style={{
@@ -274,7 +267,7 @@ export default class PublicationPreview extends React.Component{
                               lineHeight: 1.17,
                               letterSpacing: 'normal',
                               color: '#373a3c'
-                        }}>John Kamau</p>
+                        }}>{localStorage.getItem('author')}</p>
  {/* publisher */}
 <p style={{
                             position: 'absolute',
@@ -303,7 +296,7 @@ export default class PublicationPreview extends React.Component{
                               lineHeight: 1.17,
                               letterSpacing: 'normal',
                               color: '#373a3c'
-                        }}>Nairobi University Press</p>
+                        }}>{localStorage.getItem('publisher')}</p>
 
 
                          {/* year of publication */}
@@ -334,7 +327,7 @@ export default class PublicationPreview extends React.Component{
                               lineHeight: 1.17,
                               letterSpacing: 'normal',
                               color: '#373a3c'
-                        }}>2010</p>
+                        }}>{localStorage.getItem('year')}</p>
 
                                                  {/* language */}
 <p style={{
@@ -364,7 +357,7 @@ export default class PublicationPreview extends React.Component{
                               lineHeight: 1.17,
                               letterSpacing: 'normal',
                               color: '#373a3c'
-                        }}>Swahili</p>
+                        }}>{localStorage.getItem('language')}</p>
 
              {/* pages count */}
              <p style={{
@@ -394,7 +387,7 @@ export default class PublicationPreview extends React.Component{
                               lineHeight: 1.17,
                               letterSpacing: 'normal',
                               color: '#373a3c'
-                        }}>360</p>
+                        }}>{localStorage.getItem('pages')}</p>
 
 
 

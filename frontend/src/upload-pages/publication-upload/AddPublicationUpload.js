@@ -175,7 +175,17 @@ export default class AddPublicationContent extends Component{
                         position: 'absolute',
                         left: '89%',
                         paddingTop: '28px'
-                    }}/>
+                    }} onClick={
+                        () =>{
+                            localStorage.setItem('title', document.getElementById('title').value)
+                            localStorage.setItem('synopsis', document.getElementById('synopsis').value)
+                            localStorage.setItem('author', document.getElementById('author').value)
+                            localStorage.setItem('publisher', document.getElementById('publisher').value)
+                            localStorage.setItem('year', document.getElementById('year').value)
+                            localStorage.setItem('language', document.getElementById('language').value)
+                            localStorage.setItem('pages', document.getElementById('pages').value)
+                        }
+                    }/>
 
                     </Link>
                     
@@ -183,7 +193,7 @@ export default class AddPublicationContent extends Component{
                     {/* top bar ends here */}
 
                     {/* title input */}
-                    <input type="textbox" placeholder="Title" style={{
+                    <input id="title" type="textbox" placeholder="Title" style={{
                         width: '76.1%',
                         height: '10%',
                         position: 'absolute',
@@ -219,22 +229,22 @@ export default class AddPublicationContent extends Component{
             }}>Synopsis</p>
             
             {/* synopsis input field */}
-            <textarea type='textbox' placeholder="Type synopsis here" style={{
-                  position: 'absolute',
-                  top: '44%',
-                  left: '13.4%',  
-                  width: '76.1%',
-                  height: '167px',
-                  border: 'solid 2px #eeedf2',
-                  fontFamily: 'Ubuntu',
+            <textarea type='textbox' id="synopsis" placeholder="Type synopsis here" style={{
+                    position: 'absolute',
+                    top: '44%',
+                    left: '13.4%',  
+                    width: '76.1%',
+                    height: '167px',
+                    border: 'solid 2px #eeedf2',
+                    fontFamily: 'Ubuntu',
                     fontSize: '18px',
-  fontWeight: 300,
-  fontStyle: 'normal',
-  fontStretch: 'normal',
-  lineHeight: 1.35,
-  letterSpacing: 'normal',
-  color: '#8d8d8d',
-  paddingTop: '20px'
+                    fontWeight: 300,
+                    fontStyle: 'normal',
+                    fontStretch: 'normal',
+                    lineHeight: 1.35,
+                    letterSpacing: 'normal',
+                    color: '#8d8d8d',
+                    paddingTop: '20px'
             }}></textarea>
 
             {/* author title */}
@@ -252,7 +262,7 @@ export default class AddPublicationContent extends Component{
                   color: 'var(--charcoal-grey)'
             }}>Author</p>
 
-            <input type="textbox" placeholder="Author" style={{
+            <input id="author" type="textbox" placeholder="Author" style={{
                   position: 'absolute',
                   top: '72.5%',
                   left: '29%',
@@ -287,7 +297,7 @@ export default class AddPublicationContent extends Component{
             }}>Publisher</p>
 
             
-<input type="textbox" placeholder="Publisher" style={{
+<input type="textbox" id="publisher" placeholder="Publisher" style={{
                   position: 'absolute',
                   top: '82.5%',
                   left: '29%',
@@ -322,7 +332,7 @@ export default class AddPublicationContent extends Component{
             }}>Year of publication</p>
 
             {/* year of publication textbox */}
-            <input type="textbox" placeholder="Year of publication" style={{
+            <input type="textbox" id="year" placeholder="Year of publication" style={{
                   position: 'absolute',
                   top: '92.5%',
                   left: '29%',
@@ -359,7 +369,7 @@ export default class AddPublicationContent extends Component{
             {/* language textbox */}
             
             {/* language textbox */}
-            <input type="textbox" placeholder="language" style={{
+            <input type="textbox" id="language" placeholder="language" style={{
                   position: 'absolute',
                   top: '102.5%',
                   left: '29%',
@@ -396,7 +406,7 @@ export default class AddPublicationContent extends Component{
             {/* pages textbox */}
             
             {/* pages textbox */}
-            <input type="textbox" placeholder="pages" style={{
+            <input type="textbox" id="pages" placeholder="pages" style={{
                   position: 'absolute',
                   top: '112.5%',
                   left: '29%',
@@ -441,6 +451,38 @@ export default class AddPublicationContent extends Component{
                                 console.log('.')
                             }
                         }}/>
+                         <div id="drop-down" style={{
+                        position: 'absolute',
+                        top: '70.8%',
+                        left: '39%',
+                        width: '157px',
+                        height: '50px',
+                        padding: '15px',
+                        background: '#373A3C',
+                        display: 'none'
+                    }}>
+                          <label for="file-upload" style={{
+                              
+                            paddingLeft: '42px',
+                            paddingTop: '10px',
+                            fontFamily: 'Ubuntu',
+                            fontStyle: 'normal',
+                            fontWeight: 600,
+                            fontSize: '13px',
+                            lineHeight: '15px', 
+                            color: 'white',
+                            cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                        
+                    }} id="custom-file-upload" >
+                        Add book
+                    </label>
+                    <input id="file-upload" style={{
+                        display: 'none'
+                    }} type="file" onChange={this.onImageChange}  />
+                    </div>
                         <p style={{
                             position: 'absolute',
                             left: '44.2%',

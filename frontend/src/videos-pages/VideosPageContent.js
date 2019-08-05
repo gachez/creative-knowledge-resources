@@ -17,7 +17,7 @@ class VideosPageContent extends Component{
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:8000/wp-json/wp/v2/videos/${parseInt(localStorage.id)}`)
+        axios.get(`http://localhost:5000/wp-json/wp/v2/videos/${parseInt(localStorage.id)}`)
         .then(res =>{
             this.setState({
                 videos: res.data,
@@ -91,7 +91,7 @@ class VideosPageContent extends Component{
                 }} 
                 width="72%" 
                 height="550px" 
-                src={this.state.videos.acf['video']} 
+                src={this.state.videos.acf['url']} 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen>

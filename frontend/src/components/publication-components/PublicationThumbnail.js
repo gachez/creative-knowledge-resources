@@ -12,7 +12,7 @@ class PublicationThumbnail extends Component{
      }
   
       componentDidMount(){
-          axios.get(`http://localhost:8000/wp-json/wp/v2/publications?_embed`)
+          axios.get(`http://localhost:5000/wp-json/wp/v2/publications?_embed`)
           .then(res =>{
               this.setState({
                   publications: res.data,

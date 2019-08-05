@@ -170,7 +170,7 @@ export default class PublicationContentUpload extends React.Component{
                     {/* page title */}
                     <p style={{
                         position: 'absolute',
-                        left: '39.2%',
+                        left: '45.2%',
                         top:'23.1%',
                         fontFamily:' Ubuntu',
                         fontSize: '30px',
@@ -180,7 +180,7 @@ export default class PublicationContentUpload extends React.Component{
                         lineHeight: 'normal',
                         letterSpacing: 'normal',
                         color: '#373a3c'
-                    }}>Publication title here</p>
+                    }}>{localStorage.getItem('title')}</p>
 
                     {/* type title goes here */}
                     <p style={{
@@ -238,7 +238,7 @@ export default class PublicationContentUpload extends React.Component{
                         lineHeight: 1.35,
                         letterSpacing: 'normal',
                         color: '#373a3c'
-                    }}>Theatre</p>
+                    }}>{localStorage.getItem('category')}</p>
 
                 <p style={{
                     position: 'absolute',
@@ -266,7 +266,7 @@ export default class PublicationContentUpload extends React.Component{
                      position: 'absolute',
                      left: '47.5%',
                      top: '66.5%'
-                }}>2010</p>
+                }}>{localStorage.getItem('year')}</p>
 
               <Link to={"/publication-preview"}>
               <img src={preview} style={{

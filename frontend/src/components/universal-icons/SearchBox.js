@@ -12,6 +12,7 @@ class SearchBox extends Component{
             top: `${this.props.value}`,
             left: '83%',
             border: 'none',
+            paddingBottom: '5px',
             borderBottom: 'solid 1px #373a3c',
             height: '17px',
             fontFamily: 'Ubuntu',

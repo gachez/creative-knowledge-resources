@@ -21,6 +21,9 @@ import PublicationUploadTag from './upload-pages/publication-upload/PublicationU
 import AddPublicationContent from './upload-pages/publication-upload/AddPublicationUpload';
 import PublicationPreview from './upload-pages/publication-upload/PublicationPreview'
 import PublicationContentUpload from './upload-pages/publication-upload/PublicationContentUpload';
+import AddVideoContent from './upload-pages/video-upload/AddVideoContent'
+import VideoPreview from './upload-pages/video-upload/VideoPreview';
+import VideoContentUpload from './upload-pages/video-upload/VideoContentUpload';
 
 const App = () =>{
     
@@ -48,7 +51,10 @@ const App = () =>{
             <Route path={"/publication-upload-tag"} component={PublicationUploadTag}></Route>   
             <Route path={"/add-publication-content"} component={AddPublicationContent}></Route>  
             <Route path={"/publication-preview"} component={PublicationPreview}></Route>     
-            <Route path={"/publication-content-upload"} component={PublicationContentUpload}></Route>   
+            <Route path={"/publication-content-upload"} component={PublicationContentUpload}></Route>
+            <Route path={"/add-video-content"} component={AddVideoContent}></Route>   
+            <Route path={"/video-preview"} component={VideoPreview}></Route>
+            <Route path={"/video-content-upload"} component={VideoContentUpload}></Route>
                                  </Switch>
            
             </BrowserRouter>

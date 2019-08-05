@@ -12,7 +12,7 @@ class VideosThumbnail extends Component{
      }
   
       componentDidMount(){
-          axios.get(`http://localhost:8000/wp-json/wp/v2/videos?_embed`)
+          axios.get(`http://localhost:5000/wp-json/wp/v2/videos?_embed`)
           .then(res =>{
               this.setState({
                   videos: res.data,

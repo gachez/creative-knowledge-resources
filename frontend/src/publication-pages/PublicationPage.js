@@ -11,7 +11,7 @@ import SearchBox from '../components/universal-icons/SearchBox'
 import ResetBtn from '../components/universal-icons/ResetBtn'
 import SideBarIcons from '../components/universal-icons/SideBarIcons'
 import FilterSectionPublication from '../components/publication-components/FilterSectionPublication';
-
+import down from '../images/component.png'
 import ellipse from '../images/ellipse.svg'
 import ellipse_trans from '../images/ellips_trans.svg'
 
@@ -54,6 +54,30 @@ class PublicationPage extends Component{
         
         <SideBarIcons value = {posValue}  iconColor={ellipse_trans} transell1={ellipse_trans} transell2={ellipse} />
        <PublicationThumbnail value = {posValue}/>
+
+       <p onClick={()=>{
+            window.location.href="/"
+        }} style={{
+            position: 'absolute',
+            top: '140.5%',
+            left: '48%',
+            color: '#ff321a',
+            fontFamily: 'Ubuntu',
+            fontSize: '18px',
+            fontWeight: 500,
+            fontStyle: 'normal',
+            fontStretch: 'normal',
+            cursor: 'pointer'
+        }}> Go to Images</p>
+        <img onClick={()=>{
+            window.location.href="/"
+        }} src={down} style = {{
+            position: 'absolute',
+            top: '135%',
+            left: '50%',
+            cursor: 'pointer',
+            transform: 'rotate(180deg)'
+        }}/>
 
        
 {/* the footer */}

@@ -11,7 +11,7 @@ class Images extends Component{
 
     // gets all featured images and adds them to the state
     componentDidMount(){
-        axios.get(`http://localhost:8000/wp-json/wp/v2/images?_embed`)
+        axios.get(`http://localhost:5000/wp-json/wp/v2/images?_embed`)
         .then(res =>{
             this.setState({
                 imagesArr: res.data
@@ -42,6 +42,9 @@ class Images extends Component{
 
         
     {/* thumbnail images */}
+
+        
+       
 
         {
             // maps each featuredmedia to an image

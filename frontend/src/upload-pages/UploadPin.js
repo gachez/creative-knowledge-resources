@@ -26,8 +26,8 @@ class UploadPin extends Component{
                     color: '#373a3c'
                 }}>Upload</p>
 
-                {/* description on the upload page */}
-                <p style={{
+                 {/* description on the upload page */}
+                 <p style={{
                     position: 'absolute',
                     top: '34.3%',
                     left: '27.7%',
@@ -39,76 +39,18 @@ class UploadPin extends Component{
                     fontStyle: 'normal',                   
                     letterSpacing: 'normal',
                     color: '#373a3c',
-                    fontStretch: 'normal'
+                    fontStretch: 'normal',
+                    lineHeight: '30px'
                 }}>
 
-                To upload content to this website, you need to be granted access through a one-time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; code sent by the admin. If you have the code, please enter it below.
-<br /><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-To request access to upload, please contact the admin <strong style={{color: '#ff321a'}}>here.</strong>
+                To upload content to this website, you need to be granted access through a one-time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; link sent by the admin. 
+<br /><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;
+To request for the link, please contact the admin <strong style={{color: '#ff321a'}} onClick={()=>{window.location.href="/contact-us"}}>here.</strong>
                 </p>
 
-                <input style={{
-                    position: 'absolute',
-                    top: '55.9%',
-                    left: '37.9%',
-                      width: '60px',
-                      height: '60px',
-                      border: 'solid 1px #373a3c',
-                      backgroundColor: '#ffffff'
-                }} />
-
                 
-
-                <input style={{
-                    position: 'absolute',
-                    top: '55.9%',
-                    left: '44.6%',
-                      width: '60px',
-                      height: '60px',
-                      border: 'solid 1px #373a3c',
-                      backgroundColor: '#ffffff'
-                }} />
-
-
-                
-                <input style={{
-                    position: 'absolute',
-                    top: '55.9%',
-                    left: '51.3%',
-                      width: '60px',
-                      height: '60px',
-                      border: 'solid 1px #373a3c',
-                      backgroundColor: '#ffffff'
-                }} />
-
-                
-
-                <input style={{
-                    position: 'absolute',
-                    top: '55.9%',
-                    left: '58%',
-                      width: '60px',
-                      height: '60px',
-                      border: 'solid 1px #373a3c',
-                      backgroundColor: '#ffffff'
-                }} />
-
-                
-
-               <Link to={"/"}>
-               <img  src={buttons_cancel} style={{
-                position: 'absolute',
-                top: '72.2%',
-                left: '41.2%'
-                }}/>
-               </Link>
-                <Link to={"/choose-content"}>
-                <img src={buttons_normal} style={{
-                position: 'absolute',
-                top: '72.2%',
-                left: '51.5%'
-                }}/>
-                </Link>
             </React.Fragment>
         )
     }
