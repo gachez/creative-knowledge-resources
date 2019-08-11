@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-import thumbnailpub from '../../images/thumbnails_publications.png'
 
 
 class PublicationThumbnail extends Component{
@@ -12,7 +11,7 @@ class PublicationThumbnail extends Component{
      }
   
       componentDidMount(){
-          axios.get(`http://localhost:5000/wp-json/wp/v2/publications?_embed`)
+          axios.get(`http://tengezastudios.co.ke/wp/wp-json/wp/v2/publications?_embed`)
           .then(res =>{
               this.setState({
                   publications: res.data,

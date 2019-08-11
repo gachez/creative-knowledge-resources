@@ -4,6 +4,9 @@ import thumbnail from '../../images/thumbnails_image.png'
 import axios from 'axios'
 
 
+
+
+
 class Images extends Component{
     state={
         imagesArr: []
@@ -11,14 +14,15 @@ class Images extends Component{
 
     // gets all featured images and adds them to the state
     componentDidMount(){
-        axios.get(`http://localhost:5000/wp-json/wp/v2/images?_embed`)
+        axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/images?_embed`)
         .then(res =>{
             this.setState({
                 imagesArr: res.data
             })
         })
         .catch(err => console.log(err))
-
+        this.state.imagesArr.length > 0 ? console.log(this.state.imagesArr) : console.log('shit!')
+        console.log("everything got")
     }
 
 

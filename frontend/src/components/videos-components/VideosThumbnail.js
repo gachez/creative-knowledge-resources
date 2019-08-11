@@ -3,6 +3,8 @@ import axios from 'axios'
 import thumbnailvid from '../../images/thumbnails_video.png'
 import {Link} from 'react-router-dom'
 
+const proxyurl = "https://cors-escape.herokuapp.com"
+const url = 'https://tengezastudios.co.ke/wp/wp-json/wp/v2/videos'; // site that doesn’t send Access-Control-*
 
 class VideosThumbnail extends Component{
     
@@ -10,9 +12,13 @@ class VideosThumbnail extends Component{
         videos: [],
         isLoaded: false
      }
+
+
   
       componentDidMount(){
-          axios.get(`http://localhost:5000/wp-json/wp/v2/videos?_embed`)
+
+       
+          axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/videos?_embed`) 
           .then(res =>{
               this.setState({
                   videos: res.data,

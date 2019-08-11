@@ -4,7 +4,7 @@ import Menu from '../components/universal-icons/Menu'
 import VideosThumbnail from '../components/videos-components/VideosThumbnail'
 import PageTitle from '../components/universal-icons/PageTitle'
 import SearchBox from '../components/universal-icons/SearchBox' 
-import ResetBtn from '../components/universal-icons/ResetBtn'
+
 import SideBarIcons from '../components/universal-icons/SideBarIcons'
 import FilterSectionVideos from '../components/videos-components/FilterSectionVideos';
 

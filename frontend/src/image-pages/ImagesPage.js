@@ -19,7 +19,7 @@ class ImagesPage extends Component{
     }
 
     componentDidMount(){
-        axios.get(`http://localhost:5000/wp-json/wp/v2/images/${parseInt(localStorage.id)}`)
+        axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/images/${parseInt(localStorage.id)}`)
         .then(res =>{
             this.setState({
                 images: res.data,
@@ -28,7 +28,7 @@ class ImagesPage extends Component{
         })
         .catch(err => console.log(err))
 
-        axios.get(`http://localhost:8000/wp-json/wp/v2/media`)
+        axios.get(`http://tengezastudios.co.ke/wp/wp-json/wp/v2/media`)
         .then(res =>{
             this.setState({
                 pageMedia: res.data
@@ -50,15 +50,31 @@ class ImagesPage extends Component{
 
         if(this.state.isLoaded){
             let filteredImages = this.state.pageMedia.filter(media => media.post == parseInt(localStorage.id))
-            this.callFunc(  () =>{
-                if(filteredImages.length > 2){
-                    document.getElementById("comment-container").style.top = "300%"
-                    document.getElementById("footer").style.top = "390%"
-                }
-                else{
-                    console.log("filtered Image count " + filteredImages.length )
-                }
-          })
+            switch(filteredImages.length){
+                case 1:
+                    console.log(1)
+                    break;
+                case 2: 
+                    console.log(2)
+                    break;
+                case 3:
+                    console.log(3)
+                    document.getElementById('comment-container').style.top = '300%'
+                    document.getElementById('footer').style.top = '390%' 
+                    break;
+                case 4:
+                    console.log(4)
+                    document.getElementById('comment-container').style.top = '370%'
+                    document.getElementById('footer').style.top = '460%' 
+                    break;
+                case 5:
+                        console.log(5)
+                        document.getElementById('comment-container').style.top = '445%'
+                        document.getElementById('footer').style.top = '535%' 
+                        break;                    
+                default:
+                    console.log(0)       
+            }
             return(
                 <div style={{
                     display: 'grid',

@@ -8,7 +8,6 @@ import icon_linkedin from '../images/icons_linkedin_white.png'
 import PublicationThumbnail from '../components/publication-components/PublicationThumbnail'
 import PageTitle from '../components/universal-icons/PageTitle'
 import SearchBox from '../components/universal-icons/SearchBox' 
-import ResetBtn from '../components/universal-icons/ResetBtn'
 import SideBarIcons from '../components/universal-icons/SideBarIcons'
 import FilterSectionPublication from '../components/publication-components/FilterSectionPublication';
 import down from '../images/component.png'
