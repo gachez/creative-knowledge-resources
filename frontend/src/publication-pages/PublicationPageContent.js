@@ -12,13 +12,19 @@ import downloadicon from '../images/icons_download.png'
 import download from '../images/download_text.png'
 import max from '../images/icons_maximize.png'
 import axios from 'axios'
+import { Document, Page,pdfjs } from 'react-pdf';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 
 
 class PublicationPageContent extends Component{
 
     state={
         publication: [],
-        isLoaded: false
+        isLoaded: false,
+        numPages: null,
+        pageNumber: 1
     }
 
     componentDidMount(){
@@ -33,10 +39,27 @@ class PublicationPageContent extends Component{
 
     }
    
+    onDocumentLoadSuccess = (document) => {
+        const { numPages } = document;
+        this.setState({
+          numPages,
+          pageNumber: 1,
+        });
+      };
+    
+    changePage = offset => this.setState(prevState => ({
+       pageNumber: prevState.pageNumber + offset,
+      }));
+
+      previousPage = () => this.changePage(-1);
+
+      nextPage = () => this.changePage(1);
 
     render(){
         if(this.state.isLoaded){
             console.log(this.state.publication)
+
+            const { numPages, pageNumber } = this.state;
         return(
             <div>
                 <Menu page="fixed"/>
@@ -120,50 +143,74 @@ class PublicationPageContent extends Component{
                 </p>
 
                 {/* the book */}
+
+              
+
                 <div style={{
                     position: 'absolute',
                     top:'100%',
                     left: '13.4%',
                     width: '72%',
-                    height: '550px',
-                    backgroundColor: '#eeedf2'
+                    height: '550px'
                   
                 }}>
-                    <div style={{
-                        position: 'absolute',
-                        top: '100%',
-                          width: '100%',
-                          height: '50px',
-                          backgroundColor: '#373a3c'
-                    }}>
+                  
 
-                        <img src={leftwhite} style={{
-                            position: 'absolute',
-                            left: '43.5%',
-                            top: '30%'
-                        }}/>
+                    <Document
+                            
+                            file='./brett-smith.pdf'
+                            onLoadSuccess={this.onDocumentLoadSuccess}
+                            >
+                            <Page pageNumber={pageNumber} />
+                    </Document>
+
+                    <div style={{
+                        backgroundColor: '#373A3C',
+                        position: 'absolute',
+                        top: '130%',
+                        width: '100%',
+                        height: '50px',
+                        display: 'flex'
+                    }}>
+                    <img src={leftwhite} style={{
+                        
+                            paddingLeft: '35%',
+                            width: '24px',
+                            height: '24px',
+                            paddingTop: '15px',
+                            cursor: 'pointer'
+                        }}
+                        onClick={this.previousPage}
+                        />
                         <img src={rightwhite} style={{
-                            position: 'absolute',
-                            left: '55.9%',
-                            top: '30%'
-                        }}/>
-                        <img src={download} style={{
-                            position: 'absolute',
-                            left: '82.3%',
-                            top: '45%'
-                        }}/>
+                           paddingLeft: '100px',
+                           width: '24px',
+                           height: '24px',
+                           paddingTop: '15px',
+                           cursor: 'pointer'
+                        }}
+                        onClick={this.nextPage}
+                        />
+                      
                         <img src={downloadicon} style={{
-                            position: 'absolute',
-                            left: '89.3%',
-                            top: '35%'
+                         paddingLeft: '40%',
+                         width: '24px',
+                         height: '24px',
+                         paddingTop: '15px',
+                         cursor: 'pointer'
                         }}/>
                         <img src={max} style={{
-                            position: 'absolute',
-                            left: '95.9%',
-                            top: '30%'
+                            paddingLeft: '12px',
+                            width: '24px',
+                            height: '24px',
+                            paddingTop: '15px',
+                            cursor: 'pointer'
                         }}
                         />
+
                     </div>
+                        
+                    
                 </div>
 
 
@@ -171,7 +218,7 @@ class PublicationPageContent extends Component{
                 <div style={{
                     position: 'absolute',
                     left: '13.4%',
-                    top: '188.5%',
+                    top: '210.5%',
                     width: '72%',
                     height: '700px',
                     boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.25)',
@@ -221,7 +268,7 @@ class PublicationPageContent extends Component{
                 {/* the footer */}
                     <div style={{
                         position: 'absolute',
-                        top: '300%',
+                        top: '315%',
                         width: '100%',
                         height: '75px',
                         backgroundColor: '#373a3c'
