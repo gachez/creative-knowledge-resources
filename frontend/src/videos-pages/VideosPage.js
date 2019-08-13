@@ -16,7 +16,19 @@ let posValue = 35;
 let posValueSB = "195px"
 
 class VideosPage extends Component{
-   
+   state={
+       searchText: ''
+   }
+
+
+       //get search text 
+       getSearch = (e) =>{
+        this.setState({
+            searchText: e.target.value
+        })
+        console.log(this.state.searchText)
+      
+     } 
 
     render(){  
         
@@ -29,7 +41,7 @@ class VideosPage extends Component{
     
        <Menu page="fixed"/> 
        <PageTitle value = {posValue} />
-       <SearchBox value = {posValueSB}/>
+       <SearchBox  getsearch = {this.getSearch} value = {posValueSB}/>
         <p id="view-images" style={{
             position: 'absolute',
             top: '35%', 
@@ -48,7 +60,7 @@ class VideosPage extends Component{
 
    
         <SideBarIcons value = {posValue} iconColor={ellipse_trans} transell1={ellipse} transell2={ellipse_trans}/>
-       <VideosThumbnail value = {posValue}/>
+       <VideosThumbnail searchtext={this.state.searchText} value = {posValue}/>
 
        <p onClick={()=>{
             window.location.href="/publications"

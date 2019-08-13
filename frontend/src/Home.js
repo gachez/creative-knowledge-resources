@@ -17,7 +17,12 @@ class Home extends Component{
         page: 'sticky',
         images: [],
         imageUrl: [],
-        searchText: ''
+        searchText: '',
+        filterBlockCategory: '',
+        filterBlockYear: null,
+        filterBlockDiscussion: '',
+        filterBlockFormat: '',
+        filterBlockDiscipline:''
     }
 
     componentDidMount(){
@@ -48,6 +53,15 @@ class Home extends Component{
         console.log(this.state.searchText)
       
      } 
+
+     filterBlockFunc = (filter) =>{
+        this.setState({
+            filterBlockCategory: filter
+        })
+    
+        
+     }
+
     render(){  
         return( 
         // body element    
@@ -93,14 +107,14 @@ class Home extends Component{
              letterSpacing: 'normal',
              color: '#ff321a'
         }}>View images</p>
-          <FilterSection value={0} />
+          <FilterSection filtercategory={this.state.filterBlockCategory} filterfunc = {this.filterBlockFunc} value={0} />
 
    
         <SideBarIcons value={0} iconColor={ellipse} transell1={ellipse_trans} transell2={ellipse_trans}/>
 
         
             
-        <Images searchtext={this.state.searchText} imageurl={this.state.imageUrl} Images= {this.state.images}/>
+        <Images filtercategory={this.state.filterBlockCategory} filteryear={this.state.filterBlockYear} searchtext={this.state.searchText} imageurl={this.state.imageUrl} Images= {this.state.images}/>
         <p onClick={()=>{
             window.location.href="/videos"
         }} style={{

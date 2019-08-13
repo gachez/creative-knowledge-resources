@@ -108,9 +108,14 @@ class FilterSection extends Component{
 
                 <p className = "categories" style={dropDownFontStyle} onClick={
                    () =>{
+
                     document.getElementById('category').style.color = "#ff321a"
                     document.getElementById('category').innerText = document.getElementsByClassName('categories')[0].innerText
                     document.getElementById('categories-dropdown').style.display = 'none'
+                
+                    this.props.filterfunc('African games')
+                    
+                    console.log(this.props.filtercategory)
                 }
                    
                     
@@ -120,6 +125,10 @@ class FilterSection extends Component{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
                     document.getElementById('category').innerText = document.getElementsByClassName('categories')[1].innerText
+
+
+                    this.props.filterfunc(document.getElementsByClassName('categories')[1].innerText)
+                    console.log(this.props.filtercategory)
                 }
                    
                     
@@ -329,7 +338,7 @@ class FilterSection extends Component{
                     left: '90%',
                     width: '100px',
                     height: '40px',
-                   
+                    backgroundColor: 'rgb(255, 50, 26)',
                     padding: '5px',
                     fontFamily: 'Ubuntu',
                                             

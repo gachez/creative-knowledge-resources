@@ -18,9 +18,23 @@ let posValue = 35;
 let posValueSB = "195px"
 
 class PublicationPage extends Component{
+    state={
+        searchText: ''
+    }
+
     callFunc = (functionCall) =>{
         functionCall()
     }
+
+          //get search text 
+          getSearch = (e) =>{
+            this.setState({
+                searchText: e.target.value
+            })
+            console.log(this.state.searchText)
+          
+         } 
+    
     render(){  
         
         console.log(window.screen.height)
@@ -33,7 +47,7 @@ class PublicationPage extends Component{
     
        <Menu page="fixed"/> 
        <PageTitle value = {posValue} />
-       <SearchBox value = {posValueSB}/>
+       <SearchBox getsearch={this.getSearch} value = {posValueSB}/>
         <p id="view-images" style={{
             position: 'absolute',
             top: '35%', 
@@ -52,7 +66,7 @@ class PublicationPage extends Component{
 
         
         <SideBarIcons value = {posValue}  iconColor={ellipse_trans} transell1={ellipse_trans} transell2={ellipse} />
-       <PublicationThumbnail value = {posValue}/>
+       <PublicationThumbnail searchtext={this.state.searchText} value = {posValue}/>
 
        <p onClick={()=>{
             window.location.href="/"

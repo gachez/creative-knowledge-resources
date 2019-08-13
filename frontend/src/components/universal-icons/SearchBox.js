@@ -7,7 +7,7 @@ class SearchBox extends Component{
             <React.Fragment>
             
         {/* search textbox */}
-        <input placeholder = "Search" style={{
+        <input placeholder = "Search" onChange = {this.props.getsearch} style={{
             position: 'absolute',
             top: `${this.props.value}`,
             left: '83%',

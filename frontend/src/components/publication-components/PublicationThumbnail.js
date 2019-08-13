@@ -24,6 +24,13 @@ class PublicationThumbnail extends Component{
   
 
     render(){
+
+        let filteredPublications = this.state.publications.filter(
+            (pub) => {
+                return pub.acf['discipline'].includes(this.props.searchtext) || pub.acf['year_of_publication'].includes(this.props.searchtext) || pub.acf['format'] 
+            }
+        )
+
         return(
             <React.Fragment>
                 
@@ -44,7 +51,21 @@ class PublicationThumbnail extends Component{
     {/* thumbnail images */}
 
     {
+        filteredPublications < 1 ?
+
                 this.state.publications.map(publication => {
+                    return(
+                    <Link key={publication.id} to={"/publication-page-content"} onClick ={
+                    () =>{
+                        localStorage.setItem('id', publication.id)
+                         }
+                    }>
+                    <img alt="thumbnail" src={publication._embedded['wp:featuredmedia']['0'].source_url} style={{
+                        width:'300px',
+                        height: '150px'
+                    }}/>
+                    </Link>)}) : 
+                filteredPublications.map(publication => {
                     return(
                     <Link key={publication.id} to={"/publication-page-content"} onClick ={
                     () =>{

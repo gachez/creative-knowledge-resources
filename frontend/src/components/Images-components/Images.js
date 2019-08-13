@@ -28,7 +28,18 @@ class Images extends Component{
     }
 
 
+
+          
+
+
     render(){
+    
+        let filteredImages = this.state.imagesArr.filter(
+            (image) => {
+                return image.acf['category'].includes(this.props.searchtext) || image.acf['year'].includes(this.props.searchtext)
+            }
+        )
+
         if(this.state.isLoaded){
             console.log(this.state.imagesArr)
         return(
@@ -51,9 +62,12 @@ class Images extends Component{
     {/* thumbnail images */}
 
         
-       
+       {
 
-        {
+          
+            filteredImages.length < 1 ?  
+
+
             // maps each featuredmedia to an image
             this.state.imagesArr.map(image =>{
                 return(
@@ -73,8 +87,33 @@ class Images extends Component{
                     
                 
                 )
+            }) : filteredImages.map(image =>{
+                return(
+                    
+                   <Link to={"/images-page"} onClick={
+                       () =>{
+                           localStorage.setItem('id', image.id)
+                       }
+                   } key = {image.id} >
+                   <img alt="thumbnail"  src={image._embedded['wp:featuredmedia']['0'].source_url} style={{
+                    width: '180px',
+                    height: '150px',
+                    objectFit: 'cover',
+                    cursor: 'pointer'
+                    }} />
+                   </Link>    
+                    
+                
+                )
             })
-        }
+
+            
+
+        
+        
+
+       }
+
         </div>
             </React.Fragment>
         )
