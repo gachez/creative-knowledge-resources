@@ -168,10 +168,16 @@ export default class PublicationContentUpload extends React.Component{
                     {/* top bar ends here */}
 
                     {/* page title */}
-                    <p style={{
+                    <div style={{
                         position: 'absolute',
-                        left: '45.2%',
+                        
                         top:'23.1%',
+                        textAlign: 'center',
+                        width: '100%'
+                    }}>
+
+                    <p style={{
+                        display: 'inline-block',
                         fontFamily:' Ubuntu',
                         fontSize: '30px',
                         fontWeight: 600,
@@ -182,11 +188,22 @@ export default class PublicationContentUpload extends React.Component{
                         color: '#373a3c'
                     }}>{localStorage.getItem('title')}</p>
 
+
+                    </div>
+                   
                     {/* type title goes here */}
-                    <p style={{
+
+                    <div style={{
                         position: 'absolute',
                         top: '35%',
-                        left:'47.5%',
+                        textAlign: 'center',
+                        width: '100%'
+                        
+                    }}>
+
+
+                    <p style={{
+                        display: 'inline-block',
                         fontFamily: 'Ubuntu',
                         fontSize: '18px',
                         fontWeight: 600,
@@ -197,11 +214,20 @@ export default class PublicationContentUpload extends React.Component{
                         color: '#373a3c'
                     }}>Type</p>
 
+                  
+
+                    </div>
                     {/* the type of imagery goes here */}
+                    <div style={{
+                              position: 'absolute',
+                              top: '39.5%',
+                              textAlign: 'center',
+                              width: '100%'
+                        
+                    }}>
+
                     <p style={{
-                        position: 'absolute',
-                        top: '39.5%',
-                        left: '46%',
+                        display: 'inline-block',
                           fontFamily: 'Ubuntu',
                           fontSize: '18px',
                           fontWeight: 300,
@@ -212,24 +238,40 @@ export default class PublicationContentUpload extends React.Component{
                           color: '#373a3c'
                     }}>Publication</p>
 
-                    <p style={{
+                    </div>
+                    
+                   <div style={{
                         position:'absolute',
-                        left: '47%',
+                        width: '100%',
+                        textAlign: 'center',
                         top: '49%',
+                       
+                   }}> 
+                   <p style={{
+                         display: 'inline-block',
                          fontFamily: 'Ubuntu',
                          fontSize: '18px',
                          fontWeight: 600,
                          fontStyle: 'normal',
                          fontStretch: 'normal',
                          lineHeight: 1.17,
+                       
+                        
                          letterSpacing: 'normal',
                          color: '#373a3c'
                     }}>Category</p>
+                    </div>
+                    
+                    <div style={{
+                               position: 'absolute',
+                               top: '53.5%',
+                               textAlign: 'center',
+                               width: '100%'
+
+                    }}>
 
                     <p style={{
-                        position: 'absolute',
-                        top: '53.5%',
-                        left: '47%',
+                        display: '100%',
                         fontFamily: 'Ubuntu',
                         fontSize: '18px',
                         fontWeight: 300,
@@ -240,10 +282,17 @@ export default class PublicationContentUpload extends React.Component{
                         color: '#373a3c'
                     }}>{localStorage.getItem('category')}</p>
 
-                <p style={{
-                    position: 'absolute',
-                    top: '61.5%',
-                    left: '46.5%',
+                    </div>
+
+               <div style={{
+                     position: 'absolute',
+                     top: '61.5%',
+                     textAlign: 'center',
+                     width: '100%'
+                   
+               }}>
+               <p style={{
+                    display: 'inline-block',
                     fontFamily: 'Ubuntu',
                     fontSize: '18px',
                     fontWeight: 600,
@@ -253,8 +302,18 @@ export default class PublicationContentUpload extends React.Component{
                     letterSpacing: 'normal',
                     color: '#373a3c'
                 }}>Year created</p>
+   
+                   </div>     
+                <div style={{
+                     position: 'absolute',
+                     top: '66.5%',
+                     textAlign: 'center',
+                     width: '100%'
+  
+                }}>
 
                 <p style={{
+                    display: 'inline-block',
                      fontFamily: 'Ubuntu',
                      fontSize: '18px',
                      fontWeight: 300,
@@ -263,11 +322,10 @@ export default class PublicationContentUpload extends React.Component{
                      lineHeight: 1.35,
                      letterSpacing: 'normal',
                      color: '#373a3c',
-                     position: 'absolute',
-                     left: '47.5%',
-                     top: '66.5%'
-                }}>{localStorage.getItem('year')}</p>
+                    }}>{localStorage.getItem('year')}</p>
 
+                </div>
+  
               <Link to={"/publication-preview"}>
               <img src={preview} style={{
                     position: 'absolute',
@@ -282,7 +340,37 @@ export default class PublicationContentUpload extends React.Component{
                     top: '78.7%',
                     left: '51.5%',
                     cursor: 'pointer'
-                }}/>
+                }} onClick = {
+                
+                    () =>{
+
+                        fetch('https://tengezastudios.co.ke/wp/wp-json/wp/v2/publications',{
+                            method: "POST",
+                            headers:{
+                                'Content-Type': 'application/json',
+                                'accept': 'application/json',
+                                'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVuZ2V6YXN0dWRpb3MuY28ua2VcL3dwIiwiaWF0IjoxNTY1NjkwMTM5LCJuYmYiOjE1NjU2OTAxMzksImV4cCI6MTU2NjI5NDkzOSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.uiDKDWKCOjj_lgVBqQafYax1IGVNv6yeYauR1m-fayM'
+                            },
+                            body:JSON.stringify({
+                                title: localStorage.getItem('title'),
+                                excerpt:  localStorage.getItem('description') ,
+                                
+                                fields: {
+                                    "author": localStorage.getItem('author'),
+                                    "pages": localStorage.getItem('pages'),
+                                    "year_of_publication": localStorage.getItem('year'),
+                                    "url": localStorage.getItem('url')
+                                },
+                                status: 'draft'
+                            })
+                        }).then(function(response){
+                            return response.json();
+                        }).then(function(post){
+                            console.log(post);
+                        });
+                    }
+
+                }/>
                </Link> 
             </div>
         )

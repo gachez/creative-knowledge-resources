@@ -27,6 +27,7 @@ export default class PublicationUploadTag extends Component{
         btnImg: nextburnt
     }
     render(){
+        localStorage.clear()
     return(
         <div>
                             {/* top bar on page */}
@@ -237,7 +238,7 @@ export default class PublicationUploadTag extends Component{
                           cursor: 'pointer'
                     }} onClick={
                         () =>{
-                            localStorage.setItem('discussion', document.getElementsByClassName('rectangle-tag')[0].innerText) 
+                            localStorage.setItem('format', document.getElementsByClassName('rectangle-tag')[0].innerText) 
                             
                             this.setState({
                                 btnImg: next
@@ -266,7 +267,7 @@ export default class PublicationUploadTag extends Component{
                           cursor: 'pointer'
                     }} onClick={
                         () =>{
-                            localStorage.setItem('discussion', document.getElementsByClassName('rectangle-tag')[11].innerText) 
+                            localStorage.setItem('format', document.getElementsByClassName('rectangle-tag')[11].innerText) 
                             this.setState({
                                 btnImg: next
                             })
@@ -294,7 +295,7 @@ export default class PublicationUploadTag extends Component{
                           cursor: 'pointer'
                     }} onClick={
                         () =>{
-                            localStorage.setItem('discussion', document.getElementsByClassName('rectangle-tag')[11].innerText) 
+                            localStorage.setItem('format', document.getElementsByClassName('rectangle-tag')[11].innerText) 
                             
                             this.setState({
                                 btnImg: next

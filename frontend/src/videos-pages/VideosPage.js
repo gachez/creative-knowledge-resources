@@ -70,7 +70,8 @@ class VideosPage extends Component{
             position: 'absolute',
             top: '120%',
             left: '50%',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            marginBottom: '35px'
         }}/>
         </div>
       )

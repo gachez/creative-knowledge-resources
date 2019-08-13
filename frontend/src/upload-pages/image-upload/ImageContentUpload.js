@@ -7,8 +7,14 @@ import {Link} from 'react-router-dom'
 
 
 export default class ImageContentUpload extends React.Component{
-    render(){
+    state={
+        token: '',
+        imageObject: {}
+    }
 
+
+    render(){
+        const token = localStorage.getItem('token')
         const title = localStorage.getItem('title')
         const category = localStorage.getItem('category')
         const year = localStorage.getItem('year')
@@ -48,8 +54,8 @@ export default class ImageContentUpload extends React.Component{
                         
                     }}></div>
 
-{/* tags tag                     */}
-<p style={{
+                    {/* tags tag                     */}
+                    <p style={{
                         position:'absolute',
                         left: '10.2%',
                          fontFamily: 'Ubuntu',
@@ -60,7 +66,7 @@ export default class ImageContentUpload extends React.Component{
                          fontStretch: 'normal',
                          lineHeight: 'normal',
                          letterSpacing: 'normal',
-                         color: '#373a3c'                    }}>Tags</p>
+                         color: '#373a3c'  }}>Tags</p>
                     
 
 
@@ -173,10 +179,15 @@ export default class ImageContentUpload extends React.Component{
                     {/* top bar ends here */}
 
                     {/* page title */}
-                    <p style={{
-                        position: 'absolute',
-                        left: '43%',
-                        top:'23.1%',
+                   <div style={{
+                       position: 'absolute',
+                       top: '25%',
+                       width: '100%',
+                       textAlign: 'center'
+                   }}>
+                   <p style={{
+                      
+                        display: 'inline-block',
                         fontFamily:' Ubuntu',
                         fontSize: '30px',
                         fontWeight: 600,
@@ -187,11 +198,18 @@ export default class ImageContentUpload extends React.Component{
                         color: '#373a3c'
                     }}>{title}</p>
 
+                       </div> 
                     {/* type title goes here */}
+                   
+                    <div style={{
+                       position: 'absolute',
+                       top: '35%',
+                       width: '100%',
+                       textAlign: 'center'
+
+                    }}>
                     <p style={{
-                        position: 'absolute',
-                        top: '35%',
-                        left:'48%',
+                        display: 'inline-block',
                         fontFamily: 'Ubuntu',
                         fontSize: '18px',
                         fontWeight: 600,
@@ -202,11 +220,17 @@ export default class ImageContentUpload extends React.Component{
                         color: '#373a3c'
                     }}>Type</p>
 
+                    </div>
+                    
                     {/* the type of imagery goes here */}
-                    <p style={{
-                        position: 'absolute',
-                        top: '39.5%',
-                        left: '42.5%',
+                   <div style={{
+                       position: 'absolute',
+                       top: '39.5%',
+                       textAlign: 'center',
+                       width: '100%'
+                   }}>
+                   <p style={{
+                          display: 'inline-block',
                           fontFamily: 'Ubuntu',
                           fontSize: '18px',
                           fontWeight: 300,
@@ -217,10 +241,16 @@ export default class ImageContentUpload extends React.Component{
                           color: '#373a3c'
                     }}>Contemporary African Art</p>
 
-                    <p style={{
+                   </div>
+                    
+                   <div style={{
                         position:'absolute',
-                        left: '47.2%',
+                        width: '100%',
                         top: '49%',
+                        textAlign: 'center'
+                   }}> 
+                   <p style={{
+                         display: 'inline-block',
                          fontFamily: 'Ubuntu',
                          fontSize: '18px',
                          fontWeight: 600,
@@ -230,11 +260,18 @@ export default class ImageContentUpload extends React.Component{
                          letterSpacing: 'normal',
                          color: '#373a3c'
                     }}>Category</p>
-
-                    <p style={{
+   
+                       </div> 
+                    
+                    <div style={{
                         position: 'absolute',
                         top: '53.5%',
-                        left: '45.8%',
+                
+                        textAlign: 'center',
+                        width: '100%'
+                    }}>
+                    <p style={{
+                        display: 'inline-block',
                         fontFamily: 'Ubuntu',
                         fontSize: '18px',
                         fontWeight: 300,
@@ -245,10 +282,18 @@ export default class ImageContentUpload extends React.Component{
                         color: '#373a3c'
                     }}>{category}</p>
 
-                <p style={{
+                    </div>
+                    
+
+               <div style={{
+
                     position: 'absolute',
                     top: '61.5%',
-                    left: '46.5%',
+                    textAlign: 'center',
+                    width: '100%'
+               }}>
+               <p style={{
+                    display: 'inline-block',
                     fontFamily: 'Ubuntu',
                     fontSize: '18px',
                     fontWeight: 600,
@@ -258,8 +303,17 @@ export default class ImageContentUpload extends React.Component{
                     letterSpacing: 'normal',
                     color: '#373a3c'
                 }}>Year created</p>
-
+   
+                   </div>     
+                
+                <div style={{
+                     position: 'absolute',
+                     top: '66.5%',
+                     textAlign: 'center',
+                     width: '100%'
+                }}>
                 <p style={{
+                     display: 'inline-block',
                      fontFamily: 'Ubuntu',
                      fontSize: '18px',
                      fontWeight: 300,
@@ -268,10 +322,10 @@ export default class ImageContentUpload extends React.Component{
                      lineHeight: 1.35,
                      letterSpacing: 'normal',
                      color: '#373a3c',
-                     position: 'absolute',
-                     left: '48.5%',
-                     top: '66.5%'
+                    
                 }}>{year}</p>
+                
+                </div>
                 <Link to={"/image-preview"}>
                 <img src={preview} style={{
                     position: 'absolute',
@@ -287,7 +341,40 @@ export default class ImageContentUpload extends React.Component{
                     top: '78.7%',
                     left: '51.5%',
                     cursor: 'pointer'
-                }}/>
+                }} onClick={
+                    () =>{
+
+                        let displayImage = window.URL.createObjectURL(localStorage.getItem('image'))
+                    
+                        fetch('https://tengezastudios.co.ke/wp/wp-json/wp/v2/images',{
+                            method: "POST",
+                            headers:{
+                                'Content-Type': 'application/json',
+                                'accept': 'application/json',
+                                'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVuZ2V6YXN0dWRpb3MuY28ua2VcL3dwIiwiaWF0IjoxNTY1NjkwMTM5LCJuYmYiOjE1NjU2OTAxMzksImV4cCI6MTU2NjI5NDkzOSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.uiDKDWKCOjj_lgVBqQafYax1IGVNv6yeYauR1m-fayM'
+                            },
+                            body:JSON.stringify({
+                                title: title,
+                                excerpt:  localStorage.getItem('body') ,
+                                
+                                fields: {
+                                    "category": category,
+                                    "year": year,
+                                    "url": displayImage
+                                },
+                                status: 'draft'
+                            })
+                        }).then(function(response){
+                            return response.json();
+                        }).then(function(post){
+                            console.log(post);
+                        });
+
+                        
+
+                   
+                    }
+                } />
                </Link> 
             </div>
         )

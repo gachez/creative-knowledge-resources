@@ -9,7 +9,8 @@ import axios from 'axios'
 
 class Images extends Component{
     state={
-        imagesArr: []
+        imagesArr: [],
+        isLoaded: false
     }
 
     // gets all featured images and adds them to the state
@@ -17,7 +18,8 @@ class Images extends Component{
         axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/images?_embed`)
         .then(res =>{
             this.setState({
-                imagesArr: res.data
+                imagesArr: res.data,
+                isLoaded: true
             })
         })
         .catch(err => console.log(err))
@@ -27,7 +29,8 @@ class Images extends Component{
 
 
     render(){
-      console.log(this.state.imagesArr)
+        if(this.state.isLoaded){
+            console.log(this.state.imagesArr)
         return(
             <React.Fragment>
                 
@@ -75,6 +78,15 @@ class Images extends Component{
         </div>
             </React.Fragment>
         )
+        } 
+
+        return <h2 style={{
+            position: 'absolute',
+            top: '73%',
+            left: '130px',
+            fontFamily: 'Ubuntu'
+        }}>Loading....</h2>
+      
     }
 }
 

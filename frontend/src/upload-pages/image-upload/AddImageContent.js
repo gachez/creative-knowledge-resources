@@ -24,9 +24,7 @@ export default class AddImageContent extends Component{
           this.setState({
             imageUrl: URL.createObjectURL(event.target.files[0]),
             imagesArr: document.getElementById('file-upload').files
-          });
-
-          this.state.imagesArr.push(URL.createObjectURL(event.target.files[0]))
+          })
            }
            else{
                this.setState({
@@ -37,6 +35,7 @@ export default class AddImageContent extends Component{
        }
     render(){
         console.log(this.state.imagesArr)
+        
         
         return(
             <div id="parent-container" style={{

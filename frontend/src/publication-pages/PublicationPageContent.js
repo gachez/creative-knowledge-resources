@@ -200,7 +200,7 @@ class PublicationPageContent extends Component{
                          cursor: 'pointer'
                         }}/>
                         <img src={max} style={{
-                            paddingLeft: '12px',
+                            paddingLeft: '18px',
                             width: '24px',
                             height: '24px',
                             paddingTop: '15px',

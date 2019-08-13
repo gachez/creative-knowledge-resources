@@ -168,10 +168,17 @@ export default class VideoContentUpload extends React.Component{
                     {/* top bar ends here */}
 
                     {/* page title */}
-                    <p style={{
+                   <div
+                        style={{
+
                         position: 'absolute',
-                        left: '39.2%',
                         top:'23.1%',
+                        textAlign: 'center',
+                        width: '100%'
+                        }}
+                   >
+                   <p style={{
+                        display: 'inline-block',
                         fontFamily:' Ubuntu',
                         fontSize: '30px',
                         fontWeight: 600,
@@ -181,12 +188,21 @@ export default class VideoContentUpload extends React.Component{
                         letterSpacing: 'normal',
                         color: '#373a3c'
                     }}>{localStorage.getItem('title')}</p>
-
+   
+                       </div> 
+                    
                     {/* type title goes here */}
-                    <p style={{
+                    <div 
+                       style={{
                         position: 'absolute',
                         top: '35%',
-                        left:'47.5%',
+                        textAlign: 'center',
+                        width: '100%'
+                       }} >
+                     
+
+                    <p style={{
+                        display: 'inline-grid',
                         fontFamily: 'Ubuntu',
                         fontSize: '18px',
                         fontWeight: 600,
@@ -197,11 +213,20 @@ export default class VideoContentUpload extends React.Component{
                         color: '#373a3c'
                     }}>Type</p>
 
+
+                    </div>
                     {/* the type of imagery goes here */}
-                    <p style={{
+
+                   <div style={{
                         position: 'absolute',
                         top: '39.5%',
-                        left: '46%',
+                        textAlign: 'center',
+                        width: '100%'
+                        
+                       
+                   }}>
+                   <p style={{
+                        display: 'inline-grid',
                           fontFamily: 'Ubuntu',
                           fontSize: '18px',
                           fontWeight: 300,
@@ -211,11 +236,18 @@ export default class VideoContentUpload extends React.Component{
                           letterSpacing: 'normal',
                           color: '#373a3c'
                     }}>Video</p>
+   
+                       </div > 
+                    <div style={{
+
+                        position:'absolute',
+                        textAlign: 'center',
+                        top: '49%',
+                        width: '100%'
+                        }}>
 
                     <p style={{
-                        position:'absolute',
-                        left: '47%',
-                        top: '49%',
+                         display: 'inline-grid',
                          fontFamily: 'Ubuntu',
                          fontSize: '18px',
                          fontWeight: 600,
@@ -226,10 +258,16 @@ export default class VideoContentUpload extends React.Component{
                          color: '#373a3c'
                     }}>Category</p>
 
-                    <p style={{
+                    </div>
+                   <div style={{
                         position: 'absolute',
                         top: '53.5%',
-                        left: '47%',
+                        textAlign: 'center',
+                        width: '100%'
+                       
+                   }}>
+                    <p style={{
+                        display: 'inline-grid',
                         fontFamily: 'Ubuntu',
                         fontSize: '18px',
                         fontWeight: 300,
@@ -239,35 +277,50 @@ export default class VideoContentUpload extends React.Component{
                         letterSpacing: 'normal',
                         color: '#373a3c'
                     }}>{localStorage.getItem('category')}</p>
+   
+                       </div> 
+                    
 
-                <p style={{
-                    position: 'absolute',
-                    top: '61.5%',
-                    left: '46.5%',
-                    fontFamily: 'Ubuntu',
-                    fontSize: '18px',
-                    fontWeight: 600,
-                    fontStyle:' normal',
-                    fontStretch: 'normal',
-                    lineHeight: 1.17,
-                    letterSpacing: 'normal',
-                    color: '#373a3c'
-                }}>Year created</p>
+               <div style={{
+                              position: 'absolute',
+                              top: '61.5%',
+                              textAlign: 'center',
+                              width: '100%'
+                                                
+               }}>
+                    <p style={{
+                            display: 'inline-block',
+                            fontFamily: 'Ubuntu',
+                            fontSize: '18px',
+                            fontWeight: 600,
+                            fontStyle:' normal',
+                            fontStretch: 'normal',
+                            lineHeight: 1.17,
+                            letterSpacing: 'normal',
+                            color: '#373a3c'
+                        }}>Year created</p>
+   
+                   </div>     
+               <div style={{
+                   textAlign: 'center',
+                   position: 'absolute',
+                   width: '100%',
+                   top: '66.5%'
+               }}>
+                            <p style={{
+                                    display: 'inline-grid',
+                                    fontFamily: 'Ubuntu',
+                                    fontSize: '18px',
+                                    fontWeight: 300,
+                                    fontStyle: 'normal',
+                                    fontStretch: 'normal',
+                                    lineHeight: 1.35,
+                                    letterSpacing: 'normal',
+                                    color: '#373a3c'
+                                }}>{localStorage.getItem('year')}</p>
 
-                <p style={{
-                     fontFamily: 'Ubuntu',
-                     fontSize: '18px',
-                     fontWeight: 300,
-                     fontStyle: 'normal',
-                     fontStretch: 'normal',
-                     lineHeight: 1.35,
-                     letterSpacing: 'normal',
-                     color: '#373a3c',
-                     position: 'absolute',
-                     left: '47.5%',
-                     top: '66.5%'
-                }}>{localStorage.getItem('year')}</p>
-
+                   </div> 
+                
               <Link to={"/video-preview"}>
               <img src={preview} style={{
                     position: 'absolute',
@@ -282,7 +335,44 @@ export default class VideoContentUpload extends React.Component{
                     top: '78.7%',
                     left: '51.5%',
                     cursor: 'pointer'
-                }}/>
+                }} onClick={
+                
+                        () =>{
+
+                          
+                        
+                            fetch('https://tengezastudios.co.ke/wp/wp-json/wp/v2/videos',{
+                                method: "POST",
+                                headers:{
+                                    'Content-Type': 'application/json',
+                                    'accept': 'application/json',
+                                    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvdGVuZ2V6YXN0dWRpb3MuY28ua2VcL3dwIiwiaWF0IjoxNTY1NjkwMTM5LCJuYmYiOjE1NjU2OTAxMzksImV4cCI6MTU2NjI5NDkzOSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.uiDKDWKCOjj_lgVBqQafYax1IGVNv6yeYauR1m-fayM'
+                                },
+                                body:JSON.stringify({
+                                    title: localStorage.getItem('title'),
+                                    excerpt:  localStorage.getItem('description') ,
+                                    
+                                    fields: {
+                                        "discipline": localStorage.getItem('category'),
+                                        "discussion": localStorage.getItem('discussion'),
+                                        "year": localStorage.getItem('year'),
+                                        "url": localStorage.getItem('url')
+                                    },
+                                    status: 'draft'
+                                })
+                            }).then(function(response){
+                                return response.json();
+                            }).then(function(post){
+                                console.log(post);
+                            });
+    
+                            
+    
+                       
+                        }
+                    } 
+                
+                />
                </Link> 
             </div>
         )

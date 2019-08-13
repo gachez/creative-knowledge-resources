@@ -27,7 +27,7 @@ export default class VideoUploadTag extends Component{
         btnImg: nextburnt
     }
     render(){
-        
+       localStorage.clear() 
     return(
         <div>
                             {/* top bar on page */}

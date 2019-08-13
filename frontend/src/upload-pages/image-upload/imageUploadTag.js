@@ -26,6 +26,7 @@ class ImageUploadTag extends Component{
         btnImg: nextburnt
     }
     render(){
+        localStorage.clear()
         return(
             <div>
             

@@ -70,9 +70,12 @@ class VideosThumbnail extends Component{
             )
         }
 
-        else{
-            return null
-        }
+        return <h2 style={{
+            position: 'absolute',
+            
+            left: '130px',
+            fontFamily: 'Ubuntu'
+        }}>Loading....</h2>
        
     }
 }
