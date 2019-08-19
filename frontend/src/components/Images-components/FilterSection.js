@@ -19,7 +19,7 @@ const dropDownFontStyle = {
 class FilterSection extends Component{
     render(){
         return(
-            <React.Fragment>
+            <div > 
                 
         {/* right side bar filters */}
 
@@ -47,9 +47,29 @@ class FilterSection extends Component{
                  width: '200px',
                  height: '45px',
                  border: 'solid 1px #373a3c',
-                 backgroundColor: '#ffffff'
+                 backgroundColor: '#ffffff',
+                 cursor: 'pointer'
                
-            }}>
+            }}
+            
+            onClick={
+                ()=>{
+                    let drop = document.getElementById('categories-dropdown')
+                    if(drop.style.display==="block"){
+                        drop.style.display="none"
+                    }
+
+                    else if(drop.style.display==="none"){
+                        drop.style.display="block"
+                    }
+
+                    else{
+                        console.log("elsed")
+                    }
+                    
+                }
+            }
+            >
                 <p id = "category" style={{
                       width: '117px',
                       height: '17px',
@@ -71,23 +91,6 @@ class FilterSection extends Component{
                     color: 'orange',
                     cursor: 'pointer'
                 }}
-                onClick={
-                    ()=>{
-                        let drop = document.getElementById('categories-dropdown')
-                        if(drop.style.display==="block"){
-                            drop.style.display="none"
-                        }
-
-                        else if(drop.style.display==="none"){
-                            drop.style.display="block"
-                        }
-
-                        else{
-                            console.log("elsed")
-                        }
-                        
-                    }
-                }
                 />
 
               
@@ -112,10 +115,7 @@ class FilterSection extends Component{
                     document.getElementById('category').style.color = "#ff321a"
                     document.getElementById('category').innerText = document.getElementsByClassName('categories')[0].innerText
                     document.getElementById('categories-dropdown').style.display = 'none'
-                
-                    this.props.filterfunc('African games')
-                    
-                    console.log(this.props.filtercategory)
+                    this.props.filterfunc('African games', 'category')         
                 }
                    
                     
@@ -125,10 +125,10 @@ class FilterSection extends Component{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
                     document.getElementById('category').innerText = document.getElementsByClassName('categories')[1].innerText
+                   
 
-
-                    this.props.filterfunc(document.getElementsByClassName('categories')[1].innerText)
-                    console.log(this.props.filtercategory)
+                    this.props.filterfunc(document.getElementsByClassName('categories')[1].innerText, 'category')
+                    
                 }
                    
                     
@@ -138,6 +138,9 @@ class FilterSection extends Component{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
                     document.getElementById('category').innerText = document.getElementsByClassName('categories')[2].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('categories')[2].innerText, 'category')
+                    
                 }
                    
                     
@@ -147,6 +150,9 @@ class FilterSection extends Component{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
                     document.getElementById('category').innerText = document.getElementsByClassName('categories')[3].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('categories')[3].innerText, 'category')
+                    
                 }
                    
                     
@@ -156,6 +162,9 @@ class FilterSection extends Component{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
                     document.getElementById('category').innerText = document.getElementsByClassName('categories')[4].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('categories')[4].innerText, 'category')
+                    
                 }
                    
                     
@@ -193,9 +202,28 @@ class FilterSection extends Component{
                  width: '200px',
                  height: '45px',
                  border: 'solid 1px #373a3c',
-                 backgroundColor: '#ffffff'
-               
-            }}>
+                 backgroundColor: '#ffffff',
+                 cursor: 'pointer'
+            }}
+            
+            onClick={
+                ()=>{
+                    let drop = document.getElementById('year-dropdown')
+                    if(drop.style.display==="block"){
+                        drop.style.display="none"
+                    }
+
+                    else if(drop.style.display==="none"){
+                        drop.style.display="block"
+                    }
+
+                    else{
+                        console.log("elsed")
+                    }
+                    
+                }
+            }
+            >
 
             
 <p id="year" style={{
@@ -220,23 +248,7 @@ class FilterSection extends Component{
                     cursor: 'pointer'
                 }}
                 
-                onClick={
-                    ()=>{
-                        let drop = document.getElementById('year-dropdown')
-                        if(drop.style.display==="block"){
-                            drop.style.display="none"
-                        }
-
-                        else if(drop.style.display==="none"){
-                            drop.style.display="block"
-                        }
-
-                        else{
-                            console.log("elsed")
-                        }
-                        
-                    }
-                }
+          
                 />
 
             </div>
@@ -260,6 +272,9 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[0].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('years')[0].innerText, 'year')
+                    
                 }
                    
                     
@@ -269,6 +284,8 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[1].innerText
+                    
+                    this.props.filterfunc(document.getElementsByClassName('years')[1].innerText, 'year')    
                 }
                    
                     
@@ -278,6 +295,8 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[2].innerText
+
+                    this.props.filterfunc(document.getElementsByClassName('years')[2].innerText, 'year')
                 }
                    
                     
@@ -287,6 +306,8 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[3].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('years')[3].innerText, 'year')
                 }
                    
                     
@@ -296,6 +317,8 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[4].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('years')[4].innerText, 'year')
                 }
                    
                     
@@ -305,6 +328,8 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[5].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('years')[5].innerText, 'year')
                 }
                    
                     
@@ -314,6 +339,8 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[6].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('years')[6].innerText, 'year')
                 }
                    
                     
@@ -323,6 +350,8 @@ class FilterSection extends Component{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
                     document.getElementById('year').innerText = document.getElementsByClassName('years')[7].innerText
+                
+                    this.props.filterfunc(document.getElementsByClassName('years')[7].innerText, 'year')
                 }
                    
                     
@@ -341,7 +370,7 @@ class FilterSection extends Component{
                     backgroundColor: 'rgb(255, 50, 26)',
                     padding: '5px',
                     fontFamily: 'Ubuntu',
-                                            
+                    cursor: 'pointer',                        
                     fontWeight: 600,
                     fontStyle: 'normal',
                     fontStretch: 'normal',
@@ -356,12 +385,13 @@ class FilterSection extends Component{
                         document.getElementById('category').style.color = 'black'
                        document.getElementById('year').innerText = "Select a year"
                         document.getElementById('year').style.color = 'black'
+                        
                     }
                 }>
                     RESET
                 </button>
     
-            </React.Fragment>
+            </div>
         )
     }
 }

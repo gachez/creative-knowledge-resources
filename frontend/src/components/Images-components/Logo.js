@@ -11,22 +11,28 @@ class Menu extends Component{
                    {/* logo for the homepage */}
         <div style={{
             width: '100%',
-              height: '245px',
-              backgroundColor: '#373a3c'
+              height: '250px',
+              backgroundColor: '#373a3c',
+              display: 'flex',
+              paddingBottom: '20px'
         }}>
+        <div style={{
+            margin: 'auto',
+            display: 'grid',
+            gridRowGap: '25px'
+
             
+        }}>
         <img src={logotext} alt="logo-text" style={{
-        zIndex: 999,
+        zIndex: 999
         
-        position: 'absolute',
-        left: '35%',
-        top: '10.6%'    
         }}/>
         <img src={logosubtext} alt="logo sub text" style={{
-            position: 'absolute',
-            top: '28%',
-            left: '39.5%'
+        position: 'relative',
+        left: '45px'
         }}/>
+            
+            </div>    
         </div>
  
  

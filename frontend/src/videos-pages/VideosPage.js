@@ -40,7 +40,7 @@ class VideosPage extends Component{
     }}>
     
        <Menu page="fixed"/> 
-       <PageTitle value = {posValue} />
+       <PageTitle value = {posValue} page="Videos"/>
        <SearchBox  getsearch = {this.getSearch} value = {posValueSB}/>
         <p id="view-images" style={{
             position: 'absolute',
@@ -66,8 +66,8 @@ class VideosPage extends Component{
             window.location.href="/publications"
         }} style={{
             position: 'absolute',
-            top: '123.5%',
-            left: '45.3%',
+            top: '124.5%',
+            left: '41.3%',
             color: '#ff321a',
             fontFamily: 'Ubuntu',
             fontSize: '18px',
@@ -75,7 +75,7 @@ class VideosPage extends Component{
             fontStyle: 'normal',
             fontStretch: 'normal',
             cursor: 'pointer'
-        }}> Next page Publications</p>
+        }}> Contemporary African Arts: Publications</p>
         <img onClick={()=>{
             window.location.href="/publications"
         }} src={down} style = {{

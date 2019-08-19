@@ -30,7 +30,7 @@ class Menu extends Component{
        <div id="menu-container" style={{
            position:`${this.props.page}`,
            top: '0px', 
-           gridArea: `${this.props.area}`,
+       
            zIndex: 999,
            width: '100%',
            height: '95px',

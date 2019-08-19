@@ -46,7 +46,7 @@ class PublicationPage extends Component{
     }}>
     
        <Menu page="fixed"/> 
-       <PageTitle value = {posValue} />
+       <PageTitle value = {posValue} page="Publications"/>
        <SearchBox getsearch={this.getSearch} value = {posValueSB}/>
         <p id="view-images" style={{
             position: 'absolute',

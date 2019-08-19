@@ -45,9 +45,28 @@ class FilterSectionVideos extends Component{
                  width: '200px',
                  height: '45px',
                  border: 'solid 1px #373a3c',
-                 backgroundColor: '#ffffff'
-               
-            }}>
+                 backgroundColor: '#ffffff',
+                 cursor: 'pointer'
+            }}
+            
+            onClick={
+                ()=>{
+                    let drop = document.getElementById('categories-dropdown')
+                    if(drop.style.display==="block"){
+                        drop.style.display="none"
+                    }
+
+                    else if(drop.style.display==="none"){
+                        drop.style.display="block"
+                    }
+
+                    else{
+                        console.log("elsed")
+                    }
+                    
+                }
+            }
+            >
                 <p id="discipline" style={{
                       width: '117px',
                       height: '17px',
@@ -69,23 +88,7 @@ class FilterSectionVideos extends Component{
                     color: 'orange',
                     cursor: 'pointer'
                 }}
-                onClick={
-                    ()=>{
-                        let drop = document.getElementById('categories-dropdown')
-                        if(drop.style.display==="block"){
-                            drop.style.display="none"
-                        }
-
-                        else if(drop.style.display==="none"){
-                            drop.style.display="block"
-                        }
-
-                        else{
-                            console.log("elsed")
-                        }
-                        
-                    }
-                }
+               
                 />
 
               
@@ -196,9 +199,28 @@ class FilterSectionVideos extends Component{
                  width: '200px',
                  height: '45px',
                  border: 'solid 1px #373a3c',
-                 backgroundColor: '#ffffff'
-               
-            }}>
+                 backgroundColor: '#ffffff',
+                 cursor: 'pointer'  
+            }}
+            
+            onClick={
+                ()=>{
+                    let drop = document.getElementById('discussion-dropdown')
+                    if(drop.style.display==="block"){
+                        drop.style.display="none"
+                    }
+
+                    else if(drop.style.display==="none"){
+                        drop.style.display="block"
+                    }
+
+                    else{
+                        console.log("elsed")
+                    }
+                    
+                }
+            }
+            >
                 <p id="discussion" style={{
                       
                       height: '17px',
@@ -220,23 +242,7 @@ class FilterSectionVideos extends Component{
                     color: 'orange',
                     cursor: 'pointer'
                 }}
-                onClick={
-                    ()=>{
-                        let drop = document.getElementById('discussion-dropdown')
-                        if(drop.style.display==="block"){
-                            drop.style.display="none"
-                        }
-
-                        else if(drop.style.display==="none"){
-                            drop.style.display="block"
-                        }
-
-                        else{
-                            console.log("elsed")
-                        }
-                        
-                    }
-                }
+                
                 />
 
               
@@ -337,15 +343,8 @@ class FilterSectionVideos extends Component{
                       lineHeight: 'normal',
                       letterSpacing: 'normal',
                       color: '#373a3c',
-                      marginLeft: '15px'
-                }}> Select a year</p>
-
-                <img src={downIcon} alt="down" style={{
-                    position: 'absolute',
-                    left: '168px',
-                    top: '20px',
-                    color: 'orange',
-                    cursor: 'pointer'
+                      marginLeft: '15px',
+                      cursor: 'pointer'
                 }}
                 
                 onClick={
@@ -365,6 +364,17 @@ class FilterSectionVideos extends Component{
                         
                     }
                 }
+                > Select a year</p>
+
+                <img src={downIcon} alt="down" style={{
+                    position: 'absolute',
+                    left: '168px',
+                    top: '20px',
+                    color: 'orange',
+                    cursor: 'pointer'
+                }}
+                
+         
                 />
 
             </div>
@@ -460,16 +470,17 @@ class FilterSectionVideos extends Component{
 
                    {/* reset button */}
 
-               <button   value = "RESET" id="reset-btn" style={{
+              
+            <button   value = "RESET" id="reset-btn" style={{
                     position: 'absolute',
                     top: `${105 - this.props.valuebtn}%`,
                     left: '90%',
                     width: '100px',
                     height: '40px',
-                   
+                    backgroundColor: 'rgb(255, 50, 26)',
                     padding: '5px',
                     fontFamily: 'Ubuntu',
-                                            
+                    cursor: 'pointer',                        
                     fontWeight: 600,
                     fontStyle: 'normal',
                     fontStretch: 'normal',
@@ -480,11 +491,11 @@ class FilterSectionVideos extends Component{
                                         
                 }} onClick={
                     () =>{
-                        document.getElementById('discussion').innerText = "Select a discussion"
-                        document.getElementById('discussion').style.color = 'black'
                         document.getElementById('discipline').innerText = "Select a discipline"
                         document.getElementById('discipline').style.color = 'black'
-                        document.getElementById('year').innerText = "Select a year"
+                        document.getElementById('discussion').innerText = "Select a discussion"
+                        document.getElementById('discussion').style.color = 'black'
+                       document.getElementById('year').innerText = "Select a year"
                         document.getElementById('year').style.color = 'black'
                     }
                 }>

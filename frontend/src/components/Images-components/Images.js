@@ -28,7 +28,9 @@ class Images extends Component{
     }
 
 
-
+    runFunc = (method) =>{
+        method()
+    }
           
 
 
@@ -36,14 +38,25 @@ class Images extends Component{
     
         let filteredImages = this.state.imagesArr.filter(
             (image) => {
-                return image.acf['category'].includes(this.props.searchtext) || image.acf['year'].includes(this.props.searchtext)
+                return image.acf['category'].includes(this.props.searchtext.toLowerCase()) || image.acf['year'].includes(this.props.searchtext) 
             }
         )
 
+        let filteredBlockImages = this.state.imagesArr.filter(
+            (image) => {
+                return image.acf['category'].includes(this.props.filtercategory.toLowerCase())
+            }
+        )
+         
+        
         if(this.state.isLoaded){
             console.log(this.state.imagesArr)
         return(
-            <React.Fragment>
+       
+            
+            
+       
+       <React.Fragment>
                 
         {/* the images container  */}
         <div id="images-container" style={{
@@ -61,59 +74,61 @@ class Images extends Component{
         
     {/* thumbnail images */}
 
+        {
         
-       {
 
-          
-            filteredImages.length < 1 ?  
+            filteredImages.length < 1 ?
 
+                    // maps each featuredmedia to an image
+                    this.state.imagesArr.map(image =>{
+                        return(
+                            
+                           <Link to={"/images-page"} onClick={
+                               () =>{
+                                   localStorage.setItem('id', image.id)
+                               }
+                           } key = {image.id} >
+                           <img alt="thumbnail"  src={image._embedded['wp:featuredmedia']['0'].source_url} style={{
+                            width: '180px',
+                            height: '150px',
+                            objectFit: 'cover',
+                            cursor: 'pointer'
+                            }} />
+                           </Link>    
+                            
+                        
+                        )
+                    }): 
+                    
+                     filteredImages.map(image =>{
+                        return(
+                            
+                           <Link to={"/images-page"} onClick={
+                               () =>{
+                                   localStorage.setItem('id', image.id)
+                               }
+                           } key = {image.id} >
+                           <img alt="thumbnail"  src={image._embedded['wp:featuredmedia']['0'].source_url} style={{
+                            width: '180px',
+                            height: '150px',
+                            objectFit: 'cover',
+                            cursor: 'pointer'
+                            }} />
+                           </Link>    
+                            
+                        
+                        )
+                    }) 
 
-            // maps each featuredmedia to an image
-            this.state.imagesArr.map(image =>{
-                return(
-                    
-                   <Link to={"/images-page"} onClick={
-                       () =>{
-                           localStorage.setItem('id', image.id)
-                       }
-                   } key = {image.id} >
-                   <img alt="thumbnail"  src={image._embedded['wp:featuredmedia']['0'].source_url} style={{
-                    width: '180px',
-                    height: '150px',
-                    objectFit: 'cover',
-                    cursor: 'pointer'
-                    }} />
-                   </Link>    
-                    
-                
-                )
-            }) : filteredImages.map(image =>{
-                return(
-                    
-                   <Link to={"/images-page"} onClick={
-                       () =>{
-                           localStorage.setItem('id', image.id)
-                       }
-                   } key = {image.id} >
-                   <img alt="thumbnail"  src={image._embedded['wp:featuredmedia']['0'].source_url} style={{
-                    width: '180px',
-                    height: '150px',
-                    objectFit: 'cover',
-                    cursor: 'pointer'
-                    }} />
-                   </Link>    
-                    
-                
-                )
-            })
+                }
 
+              
+
+              
+                    
             
-
-        
-        
-
-       }
-
+            
+       
         </div>
             </React.Fragment>
         )

@@ -430,16 +430,17 @@ class FilterSectionPublication extends Component{
             
             {/* reset button */}
 
+
             <button   value = "RESET" id="reset-btn" style={{
                     position: 'absolute',
                     top: `${105 - this.props.valuebtn}%`,
                     left: '90%',
                     width: '100px',
                     height: '40px',
-                   
+                    backgroundColor: 'rgb(255, 50, 26)',
                     padding: '5px',
                     fontFamily: 'Ubuntu',
-                                            
+                     cursor: 'pointer',                        
                     fontWeight: 600,
                     fontStyle: 'normal',
                     fontStretch: 'normal',
@@ -452,9 +453,9 @@ class FilterSectionPublication extends Component{
                     () =>{
                         document.getElementById('format').innerText = "Select a format"
                         document.getElementById('format').style.color = 'black'
-                        document.getElementById('discipline').innerText = "Select a discipline"
-                        document.getElementById('discipline').style.color = 'black'
-                        document.getElementById('year').innerText = "Select a year"
+                        document.getElementById('discipline').innerText="Select a discipline"
+                        document.getElementById('discipline').color="black"
+                       document.getElementById('year').innerText = "Select a year"
                         document.getElementById('year').style.color = 'black'
                     }
                 }>

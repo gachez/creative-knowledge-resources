@@ -17,7 +17,7 @@ class VideosPageContent extends Component{
     }
 
     componentDidMount(){
-        axios.get(`http://tengezastudios.co.ke/wp/wp-json/wp/v2/videos/${parseInt(localStorage.id)}`)
+        axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/videos/${parseInt(localStorage.id)}`)
         .then(res =>{
             this.setState({
                 videos: res.data,

@@ -28,7 +28,7 @@ class ImagesPage extends Component{
         })
         .catch(err => console.log(err))
 
-        axios.get(`http://tengezastudios.co.ke/wp/wp-json/wp/v2/media`)
+        axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/media`)
         .then(res =>{
             this.setState({
                 pageMedia: res.data
@@ -78,13 +78,7 @@ class ImagesPage extends Component{
             return(
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(6,1fr)',
-                    gridTemplateAreas: `'m m m m m m'
-                                       'b b b b b b'
-                                       'd d d d d d'
-                                       'im im im im im im'
-                                       'c c c c c c'
-                                       'f f f f f f',`,
+                 
                     gridRowGap: '35px'
                 }}>
                     <Menu page="fixed" area="m"/>
@@ -140,7 +134,7 @@ class ImagesPage extends Component{
                         lineHeight: 1.35,
                         letterSpacing: 'normal',
                         color: '#373a3c'
-                    }} dangerouslySetInnerHTML={{__html:  this.state.images.excerpt.rendered}} />
+                    }} dangerouslySetInnerHTML={{__html:  this.state.images.excerpt.rendered}} ></div>
                     
                     
     

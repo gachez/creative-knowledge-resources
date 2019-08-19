@@ -11,7 +11,7 @@ class PageTitle extends Component{
             position: 'absolute',
             top: `${55.7 - this.props.value}%`,
             left: '130px',
-             width: '376px',
+             width: 'fit-content',
              height: '35px',
              fontFamily: 'Ubuntu',
              fontSize: '30px',
@@ -21,7 +21,7 @@ class PageTitle extends Component{
              lineHeight: 'normal',
              letterSpacing: 'normal',
              color: '#373a3c'
-        }}>Contemporary African Arts</p>
+        }}> Contemporary African Arts: {this.props.page}</p>
 </React.Fragment>
 
         )
