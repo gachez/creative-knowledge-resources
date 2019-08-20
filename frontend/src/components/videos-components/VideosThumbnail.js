@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import thumbnailvid from '../../images/thumbnails_video.png'
 import {Link} from 'react-router-dom'
+import youtube from '../../images/youtube.png'
 
 
 class VideosThumbnail extends Component{
@@ -63,21 +64,34 @@ class VideosThumbnail extends Component{
                         localStorage.setItem('id', video.id)
                          }
                     }>
-                    <img alt="thumbnail" src={video._embedded['wp:featuredmedia']['0'].source_url} style={{
+                    <div style={{
+                        display: 'flex',
                         width:'300px',
-                        height: '150px'
-                    }}/>
+                        height: '150px',
+                        backgroundImage: `url(${video._embedded['wp:featuredmedia']['0'].source_url})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center'
+                    }}>
+                        <img src={youtube} style={{
+                            margin: 'auto'
+                        }}/>
+                    </div>
                     </Link>)}) : filteredVideos.map(video => {
                     return(
                     <Link key={video.id} to={"/videos-page-content"} onClick ={
                     () =>{
                         localStorage.setItem('id', video.id)
                          }
-                    }>
-                    <img alt="thumbnail" src={video._embedded['wp:featuredmedia']['0'].source_url} style={{
+                    }>       
+                     <div style={{
                         width:'300px',
-                        height: '150px'
-                    }}/>
+                        height: '150px',
+                        backgroundImage: `url(${video._embedded['wp:featuredmedia']['0'].source_url})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center'
+                    }}></div>
                     </Link>)})
     }
             

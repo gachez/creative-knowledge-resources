@@ -63,239 +63,223 @@ class PublicationPageContent extends Component{
         return(
             <div>
                 <Menu page="fixed"/>
-                
-                {/* back icon */}
-               <Link to={"/publications"}>
-               <img src={backbtn} style={{
-                    position: 'absolute',
-                    top: '25.5%',
-                    left: '4.5%'
-                }}/>
+              <div style={{
+                  display: 'grid'
+              }}>
+                  
+                <div id="back-title" style={{display: 'flex'}}>
 
-               </Link>
-               
-                {/* page title */}
-                <p style={{
-                    position:'absolute',
-                    top: '20%',
-                    left: '13.4%',
-                    fontFamily: 'Ubuntu',
-                    fontSize: '30px',
+                    {/* back icon */}
+                    <Link to={"/publications"}>
+                    <img src={backbtn} style={{
+                        position: 'absolute',
+                        top: '25.5%',
+                        left: '4.5%'
+                    }}/>
+
+                    </Link>
+
+                    {/* page title */}
+                    <p style={{
+                        position:'absolute',
+                        top: '20%',
+                        left: '13.4%',
+                        fontFamily: 'Ubuntu',
+                        fontSize: '24px',
+                        fontWeight: 500,
+                        fontStyle: 'normal',
+                        fontStretch: 'normal',
+                        lineHeight: 'normal',
+                        letterSpacing: 'normal',
+                        color: '#373a3c'
+                    }} dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}>
+                    </p>
+
+
+                    </div>
+
+                    {/* image description */}
+                    <div style={{
+                        position: 'absolute',
+                        top: '31%',
+                        left: '13.4%',
+                        width: '72%',
+                        fontFamily: 'Ubuntu',
+                        fontSize: '16px',
+                        fontWeight: 100,
+                        fontStyle: 'normal',
+                        fontStretch: 'normal',
+                        lineHeight: 1.35,
+                        letterSpacing: 'normal',
+                        color: '#373a3c'
+                    }}>
+                        <strong>Synopsis</strong><br />
+                    <p dangerouslySetInnerHTML={{ __html: this.state.publication.excerpt.rendered}}></p>
+                    <div style={{display: 'flex', position: 'relative', left: '50%', width: 'fit-content'}}>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.author + '('}} style={{fontSize: '14px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.year_of_publication + '), '}} style={{fontSize: '14px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.title.rendered + ', '}} style={{fontSize: '14px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.publisher + ', Vol '}} style={{fontSize: '14px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.volume}} style={{fontSize: '14px'}}></p>
+                    </div>
+                    <br />
+                    </div>
+
+                    {/* the book */}
+
+
+
+                    <div style={{
+                        position: 'absolute',
+                        top:'70%',
+                        left: '13.4%',
+                        width: '72%',
+                        height: '550px'
+                    
+                    }}>
+                    
+
+                        <Document
+                                
+                                file='./brett-smith.pdf'
+                                onLoadSuccess={this.onDocumentLoadSuccess}
+                                >
+                                <Page pageNumber={pageNumber} />
+                        </Document>
+
+                        <div style={{
+                            backgroundColor: '#373A3C',
+                            position: 'absolute',
+                            top: '130%',
+                            width: '100%',
+                            height: '50px',
+                            display: 'flex'
+                        }}>
+                        <img src={leftwhite} style={{
+                            
+                                paddingLeft: '35%',
+                                width: '24px',
+                                height: '24px',
+                                paddingTop: '15px',
+                                cursor: 'pointer'
+                            }}
+                            onClick={this.previousPage}
+                            />
+                            <img src={rightwhite} style={{
+                            paddingLeft: '100px',
+                            width: '24px',
+                            height: '24px',
+                            paddingTop: '15px',
+                            cursor: 'pointer'
+                            }}
+                            onClick={this.nextPage}
+                            />
+                        
+                            <img src={downloadicon} style={{
+                            paddingLeft: '40%',
+                            width: '24px',
+                            height: '24px',
+                            paddingTop: '15px',
+                            cursor: 'pointer'
+                            }}/>
+                            <img src={max} style={{
+                                paddingLeft: '18px',
+                                width: '24px',
+                                height: '24px',
+                                paddingTop: '15px',
+                                cursor: 'pointer'
+                            }}
+                            />
+
+                        </div>
+                            
+                        
+                    </div>
+
+
+                    {/* container for the comment box */}
+                    <div style={{
+                        position: 'absolute',
+                        left: '13.4%',
+                        top: '210.5%',
+                        width: '72%',
+                        height: '700px',
+                        boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.25)',
+                        backgroundColor: '#ffffff'
+                    }}>
+
+                    <input type="textbox" placeholder="What are your thoughts on this work?" style={{
+                        position: 'absolute',
+                        top: '7.1%',
+                        left: '7.5%',
+                        width: '85%',
+                        height: '25%',
+                        border: 'solid 1px #373a3c',
+                        fontFamily: 'Ubuntu',
+                        paddingLeft : '20px',
+                        paddingTop: '20px',
+                        fontSize: '18px',
+                        fontWeight: 300,
+                        fontStyle: 'normal',
+                        fontStretch: 'normal',
+                        lineHeight: 1.35,
+                        letterSpacing: 'normal',
+                        color: '#8d8d8d'
+                    }}/>
+
+                    <button style={{
+                        position: 'absolute',
+                        top: '38.5%',
+                        border: 'none',
+                        left: '85.5%',
+                        width: '100px',
+                        height: '40px',
+                        backgroundColor: '#ff8d80',
+
+                        fontFamily: 'Ubuntu',
+                    fontSize: '14px',
                     fontWeight: 500,
                     fontStyle: 'normal',
                     fontStretch: 'normal',
                     lineHeight: 'normal',
-                    letterSpacing: 'normal',
-                    color: '#373a3c'
-                }} dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}>
-                </p>
+                    letterSpacing: '-0.1px',
+                    color: '#ffffff'
 
-                {/* image description */}
-                <p style={{
-                    position: 'absolute',
-                    top: '31%',
-                    left: '13.4%',
-                    width: '72%',
-                    fontFamily: 'Ubuntu',
-                    fontSize: '18px',
-                    fontWeight: 100,
-                    fontStyle: 'normal',
-                    fontStretch: 'normal',
-                    lineHeight: 1.35,
-                    letterSpacing: 'normal',
-                    color: '#373a3c'
-                }}>
-                    <strong>Synopsis</strong><br /><br />
-                <p dangerouslySetInnerHTML={{ __html: this.state.publication.excerpt.rendered}}></p>
-                <br />
-                <br />
-                <br />
-                <strong>Author</strong>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.author}}></strong>
-               <br />
-               <br />
-               <strong>Publisher</strong>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.publisher}}></strong>
+                    }}>POST</button>
+                    </div>
 
-                  <br />
-                  <br />
-                <strong>Year of publication</strong>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.year_of_publication}}></strong>
-
-                 <br />
-                 <br />
-                <strong>Volume</strong>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.volume}}></strong>
-
-                <br />
-                <br />
-                <strong>Pages</strong>
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                &nbsp; &nbsp; &nbsp; &nbsp; <strong style={{fontWeight: 100}} dangerouslySetInnerHTML={{ __html: this.state.publication.acf.pages}}></strong>
-                </p>
-
-                {/* the book */}
-
-              
-
-                <div style={{
-                    position: 'absolute',
-                    top:'100%',
-                    left: '13.4%',
-                    width: '72%',
-                    height: '550px'
-                  
-                }}>
-                  
-
-                    <Document
+                    {/* the footer */}
+                        <div style={{
+                            position: 'absolute',
+                            top: '315%',
+                            width: '100%',
+                            height: '75px',
+                            backgroundColor: '#373a3c'
                             
-                            file='./brett-smith.pdf'
-                            onLoadSuccess={this.onDocumentLoadSuccess}
-                            >
-                            <Page pageNumber={pageNumber} />
-                    </Document>
+                        }}>
 
-                    <div style={{
-                        backgroundColor: '#373A3C',
-                        position: 'absolute',
-                        top: '130%',
-                        width: '100%',
-                        height: '50px',
-                        display: 'flex'
-                    }}>
-                    <img src={leftwhite} style={{
-                        
-                            paddingLeft: '35%',
-                            width: '24px',
-                            height: '24px',
-                            paddingTop: '15px',
-                            cursor: 'pointer'
-                        }}
-                        onClick={this.previousPage}
-                        />
-                        <img src={rightwhite} style={{
-                           paddingLeft: '100px',
-                           width: '24px',
-                           height: '24px',
-                           paddingTop: '15px',
-                           cursor: 'pointer'
-                        }}
-                        onClick={this.nextPage}
-                        />
-                      
-                        <img src={downloadicon} style={{
-                         paddingLeft: '40%',
-                         width: '24px',
-                         height: '24px',
-                         paddingTop: '15px',
-                         cursor: 'pointer'
+                        <img src={icon_facebook} style={{
+                            position:'absolute',
+                            top: '34.7%',
+                            left: '41%'
                         }}/>
-                        <img src={max} style={{
-                            paddingLeft: '18px',
-                            width: '24px',
-                            height: '24px',
-                            paddingTop: '15px',
-                            cursor: 'pointer'
-                        }}
-                        />
-
-                    </div>
-                        
-                    
-                </div>
-
-
-                {/* container for the comment box */}
-                <div style={{
-                    position: 'absolute',
-                    left: '13.4%',
-                    top: '210.5%',
-                    width: '72%',
-                    height: '700px',
-                    boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.25)',
-                    backgroundColor: '#ffffff'
-                }}>
-
-                <input type="textbox" placeholder="What are your thoughts on this work?" style={{
-                    position: 'absolute',
-                    top: '7.1%',
-                    left: '7.5%',
-                    width: '85%',
-                    height: '25%',
-                    border: 'solid 1px #373a3c',
-                    fontFamily: 'Ubuntu',
-                    paddingLeft : '20px',
-                    paddingTop: '20px',
-                    fontSize: '18px',
-                    fontWeight: 300,
-                    fontStyle: 'normal',
-                    fontStretch: 'normal',
-                    lineHeight: 1.35,
-                    letterSpacing: 'normal',
-                    color: '#8d8d8d'
-                }}/>
-
-                <button style={{
-                    position: 'absolute',
-                    top: '38.5%',
-                    border: 'none',
-                    left: '85.5%',
-                    width: '100px',
-                    height: '40px',
-                    backgroundColor: '#ff8d80',
-
-                    fontFamily: 'Ubuntu',
-                fontSize: '14px',
-                fontWeight: 500,
-                fontStyle: 'normal',
-                fontStretch: 'normal',
-                lineHeight: 'normal',
-                letterSpacing: '-0.1px',
-                color: '#ffffff'
-                
-                }}>POST</button>
-                </div>
-
-                {/* the footer */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '315%',
-                        width: '100%',
-                        height: '75px',
-                        backgroundColor: '#373a3c'
-                        
-                    }}>
-
-                    <img src={icon_facebook} style={{
-                        position:'absolute',
-                        top: '34.7%',
-                        left: '41%'
-                    }}/>
-                    <img style={{
-                        position:'absolute',
-                        top: '34.7%',
-                        left: '46.4%'
-                    }} src={icon_twitter}/>
-                    <img style={{
-                        position:'absolute',
-                        top: '34.7%',
-                        left: '51.8%'
-                    }} src={icon_instagram}/>
-                    <img style={{
-                        position:'absolute',
-                        top: '34.7%',
-                        left: '57.2%'
-                    }} src={icon_linkedin}/>
-                    </div>
+                        <img style={{
+                            position:'absolute',
+                            top: '34.7%',
+                            left: '46.4%'
+                        }} src={icon_twitter}/>
+                        <img style={{
+                            position:'absolute',
+                            top: '34.7%',
+                            left: '51.8%'
+                        }} src={icon_instagram}/>
+                        <img style={{
+                            position:'absolute',
+                            top: '34.7%',
+                            left: '57.2%'
+                        }} src={icon_linkedin}/>
+                        </div>
+                  </div>  
                             </div>
                         
         )
