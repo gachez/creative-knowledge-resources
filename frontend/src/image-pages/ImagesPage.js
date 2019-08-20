@@ -7,6 +7,8 @@ import icon_linkedin from '../images/icons_linkedin_white.png'
 import Menu from '../components/universal-icons/Menu'
 import backbtn from '../images/buttons_back.svg'
 import axios from 'axios';
+import about from '../images/about-us.jpg'
+import close from '../images/icons_close.png'
 
 
 let imageurls = []
@@ -15,7 +17,9 @@ class ImagesPage extends Component{
         images: [],
         isLoaded: false,
         pageMedia: [],
-        pageMediaImages: []
+        pageMediaImages: [],
+        zoomim: null
+
     }
 
     componentDidMount(){
@@ -89,6 +93,18 @@ class ImagesPage extends Component{
                        
                    }}>
 
+
+                   <div id="zoomed" style={{zIndex: 999, display: 'none',width: '100vw', height: '100vh', backgroundColor: 'rgb(0,0,0,0.6)'}}>
+                       <img id="closer"
+                        src={close} style={{position: 'absolute',padding: '20px', top: 0, right: 0, width: '40px',height: '40px', cursor: 'pointer'}}
+                        onClick={
+                            ()=>{
+                                document.getElementById('zoomed').style.display="none"
+                            }
+                        }
+                       />
+                       <img id="zoomedim" src={this.state.zoomim} style={{ width: '90vw', height: '90vh', position: 'absolute', top: '5vh', left: '5vw'}}/>
+                       </div>
                         <div className='back-title' style={{
                                 
                             }}> 
@@ -142,7 +158,8 @@ class ImagesPage extends Component{
                                 color: '#373a3c'
                             }} dangerouslySetInnerHTML={{__html:  this.state.images.excerpt.rendered}} ></div>
                             
-                            
+                       
+                              
             
                         {/* images container */}
                         <div className="images-container" style={{
@@ -160,12 +177,26 @@ class ImagesPage extends Component{
                                 return(
                                     <React.Fragment key={media.id}>
                                         <div  style={{
+                                            cursor: 'pointer',
                                             width: '100%',
                                             height: '550px',
                                             backgroundImage: `url(${media.media_details.sizes.full.source_url})`,
                                             backgroundRepeat: 'no-repeat',
                                             backgroundSize: 'cover'
-                                        }}>
+                                        }}
+                                       
+                                        onClick={
+                                            ()=>{
+                                                document.getElementById('zoomed').style.display="block"
+                                                this.setState({
+                                                    zoomim: media.media_details.sizes.full.source_url
+                                                })
+
+                                                window.scrollTo(0, 0); 
+                                            }
+                                        }
+
+                                        >
                                             </div>
                                     </React.Fragment>
                                 )

@@ -145,7 +145,7 @@ class Home extends Component{
             lineHeight: 1.17,
             letterSpacing: 'normal',
             color: '#ff321a',
-            display: `${window.outerHeight < 690 ? 'none': 'block'}`
+            display: `${window.outerHeight < 800 ? 'none': 'block'}`
        }}>View images</p>
 
   {/* div that holds the body section  */}
