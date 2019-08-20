@@ -115,7 +115,7 @@ class VideosPageContent extends Component{
                     <div style={{
                         position: 'absolute',
                         left: '13.4%',
-                        top: '132.5%',
+                        top: '152.5%',
                         width: '72%',
                         height: '700px',
                         boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.25)',
@@ -165,7 +165,7 @@ class VideosPageContent extends Component{
                     {/* the footer */}
                         <div style={{
                             position: 'absolute',
-                            top: '248%',
+                            top: '268%',
                             width: '100%',
                             height: '75px',
                             backgroundColor: '#373a3c'

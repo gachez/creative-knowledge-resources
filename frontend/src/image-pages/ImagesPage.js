@@ -63,18 +63,18 @@ class ImagesPage extends Component{
                     break;
                 case 3:
                     console.log(3)
-                    document.getElementById('comment-container').style.top = '300%'
-                    document.getElementById('footer').style.top = '390%' 
+                    document.getElementById('comment-container').style.top = '350%'
+                    document.getElementById('footer').style.top = '440%' 
                     break;
                 case 4:
                     console.log(4)
-                    document.getElementById('comment-container').style.top = '370%'
-                    document.getElementById('footer').style.top = '460%' 
+                    document.getElementById('comment-container').style.top = '420%'
+                    document.getElementById('footer').style.top = '510%' 
                     break;
                 case 5:
                         console.log(5)
-                        document.getElementById('comment-container').style.top = '445%'
-                        document.getElementById('footer').style.top = '535%' 
+                        document.getElementById('comment-container').style.top = '475%'
+                        document.getElementById('footer').style.top = '565%' 
                         break;                    
                 default:
                     console.log(0)       
@@ -89,8 +89,8 @@ class ImagesPage extends Component{
                     <Menu page="fixed" />
 
                    <div id="grid-container" style={{
-                       display: 'grid'
-                       
+                       display: 'grid',
+                       gridRowGap: '50px'  
                    }}>
 
 
@@ -209,7 +209,7 @@ class ImagesPage extends Component{
             {/* container for the comment box */}
             <div id="comment-container" style={{
                 position: 'absolute',
-                top: '230%',
+                top: `${window.outerHeight < 750 ? '300%' : '230%'}`,
                 
                 marginLeft: '13.4%',
                 width: '72%',
