@@ -132,15 +132,6 @@ class Home extends Component{
 
   </div>
 
-  {/* div that holds the body section  */}
-
-  <div style={{
-      display: 'flex'
-  }}>
-
-
-  {/* right side section       */}
-  <div>
   <p id="view-images" style={{
            position: 'absolute',
            top: '70%', 
@@ -153,8 +144,22 @@ class Home extends Component{
             fontStretch: 'normal',
             lineHeight: 1.17,
             letterSpacing: 'normal',
-            color: '#ff321a'
+            color: '#ff321a',
+            display: `${window.outerHeight < 690 ? 'none': 'block'}`
        }}>View images</p>
+
+  {/* div that holds the body section  */}
+
+  <div style={{
+      display: 'flex'
+  }}>
+
+
+  {/* right side section       */}
+  <div style={{
+            marginTop: '15px',
+            marginBottom: '15px'
+  }}>
          <FilterSection filtercategory={this.state.filterBlockCategory} filterfunc={this.filterBlockFunc} value={0} />
 
       

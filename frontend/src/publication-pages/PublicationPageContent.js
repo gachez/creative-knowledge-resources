@@ -7,9 +7,9 @@ import icon_linkedin from '../images/icons_linkedin_white.png'
 import Menu from '../components/universal-icons/Menu.js'
 import backbtn from '../images/buttons_back.svg'
 import leftwhite from '../images/icons_left.png'
-import rightwhite from '../images/icons_right.png'
+import prev from '../images/prev-page.png'
 import downloadicon from '../images/icons_download.png'
-import download from '../images/download_text.png'
+import next from '../images/next-page.png'
 import max from '../images/icons_maximize.png'
 import axios from 'axios'
 import { Document, Page,pdfjs } from 'react-pdf';
@@ -138,16 +138,15 @@ class PublicationPageContent extends Component{
                     
                     }}>
                     
-
-                        <Document
+                    <Document
                                 
                                 file='./brett-smith.pdf'
                                 onLoadSuccess={this.onDocumentLoadSuccess}
                                 >
+                        
                                 <Page pageNumber={pageNumber} />
-                        </Document>
-
-                        <div style={{
+                        
+                                <div style={{
                             backgroundColor: '#373A3C',
                             position: 'absolute',
                             top: '130%',
@@ -155,20 +154,21 @@ class PublicationPageContent extends Component{
                             height: '50px',
                             display: 'flex'
                         }}>
-                        <img src={leftwhite} style={{
+                        <img src={prev} style={{
                             
                                 paddingLeft: '35%',
-                                width: '24px',
-                                height: '24px',
+                                width: 'fit-content',
+                                height: 'fit-content',
                                 paddingTop: '15px',
                                 cursor: 'pointer'
                             }}
                             onClick={this.previousPage}
                             />
-                            <img src={rightwhite} style={{
+                        
+                            <img src={next} style={{
                             paddingLeft: '100px',
-                            width: '24px',
-                            height: '24px',
+                            width: 'fit-content',
+                            height: 'fit-content',
                             paddingTop: '15px',
                             cursor: 'pointer'
                             }}
@@ -192,6 +192,9 @@ class PublicationPageContent extends Component{
                             />
 
                         </div>
+                        
+                        </Document>
+
                             
                         
                     </div>
