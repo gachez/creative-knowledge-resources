@@ -50,6 +50,7 @@ class Menu extends Component{
          
            {/* sidebar slide on for the menu items */}
            <div id="menu-items"  style={{
+        
             position:'absolute',
             left: '59.5%',
             display: 'none',
@@ -74,13 +75,25 @@ class Menu extends Component{
             height: '40px',
             border: 'solid 1px #ff321a',
             backgroundColor: '#ffffff'
-        }}>
+        }}
+     
+        >
 
             <img src={menu} id="menu-text" style={{
                 position: 'absolute',
                 left: '15px',
-                top: '15px'
-            }} alt="menu"/>
+                top: '15px',
+                cursor: 'pointer',
+            }} alt="menu"
+            onClick={() =>{
+                document.getElementById('menu-items').style.display="flex"
+                document.getElementById('bars').style.display="none"
+                document.getElementById('menu-text').style.display="none"
+                document.getElementById('exit-text').style.display="block"
+                document.getElementById('close').style.display="block"
+                console.log("show me")
+            }}
+            />
 
             
 <img src={exit} id="exit-text" style={{
@@ -93,6 +106,7 @@ class Menu extends Component{
 
 <img src={iconClose} id="close" className="animated fowards rotateIn " style={{
                 position: 'absolute',
+                cursor: 'pointer',
                 display: 'none',
                 left: '62.5px',
                 top: '11px'
@@ -103,7 +117,7 @@ class Menu extends Component{
                 document.getElementById('menu-text').style.display="block"
                 document.getElementById('exit-text').style.display="none"
                 document.getElementById('close').style.display="none"
-                console.log("show me")
+                console.log("close")
             }}
             />
 
@@ -113,14 +127,7 @@ class Menu extends Component{
                 top: '8px',
                 cursor: 'pointer'
             }} alt="bars"
-            onClick={() =>{
-                document.getElementById('menu-items').style.display="flex"
-                document.getElementById('bars').style.display="none"
-                document.getElementById('menu-text').style.display="none"
-                document.getElementById('exit-text').style.display="block"
-                document.getElementById('close').style.display="block"
-                console.log("show me")
-            }}/>
+         />
         </div>
 
 

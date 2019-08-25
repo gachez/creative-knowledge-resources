@@ -14,7 +14,7 @@ class PageTitle extends Component{
              width: 'fit-content',
              height: '35px',
              fontFamily: 'Ubuntu',
-             fontSize: '30px',
+             fontSize: '18px',
              fontWeight: 700,
              fontStyle: 'normal',
              fontStretch: 'normal',

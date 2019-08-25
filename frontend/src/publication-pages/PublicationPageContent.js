@@ -6,11 +6,6 @@ import icon_instagram from '../images/icons_instagram_white.png'
 import icon_linkedin from '../images/icons_linkedin_white.png'
 import Menu from '../components/universal-icons/Menu.js'
 import backbtn from '../images/buttons_back.svg'
-import leftwhite from '../images/icons_left.png'
-import prev from '../images/prev-page.png'
-import downloadicon from '../images/icons_download.png'
-import next from '../images/next-page.png'
-import max from '../images/icons_maximize.png'
 import axios from 'axios'
 import { Document, Page,pdfjs } from 'react-pdf';
 
@@ -85,7 +80,7 @@ class PublicationPageContent extends Component{
                         top: '20%',
                         left: '13.4%',
                         fontFamily: 'Ubuntu',
-                        fontSize: '24px',
+                        fontSize: '16px',
                         fontWeight: 500,
                         fontStyle: 'normal',
                         fontStretch: 'normal',
@@ -105,7 +100,7 @@ class PublicationPageContent extends Component{
                         left: '13.4%',
                         width: '72%',
                         fontFamily: 'Ubuntu',
-                        fontSize: '16px',
+                        fontSize: '12px',
                         fontWeight: 100,
                         fontStyle: 'normal',
                         fontStretch: 'normal',
@@ -115,12 +110,12 @@ class PublicationPageContent extends Component{
                     }}>
                         <strong>Synopsis</strong><br />
                     <p dangerouslySetInnerHTML={{ __html: this.state.publication.excerpt.rendered}}></p>
-                    <div style={{display: 'flex', position: 'relative', left: '50%', width: 'fit-content'}}>
-                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.author + '('}} style={{fontSize: '14px'}}></p>
-                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.year_of_publication + '), '}} style={{fontSize: '14px'}}></p>
-                    <p dangerouslySetInnerHTML={{__html: this.state.publication.title.rendered + ', '}} style={{fontSize: '14px'}}></p>
-                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.publisher + ', Vol '}} style={{fontSize: '14px'}}></p>
-                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.volume}} style={{fontSize: '14px'}}></p>
+                    <div style={{display: 'flex', position: 'relative', left: 0, width: 'fit-content'}}>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.author + '('}} style={{fontSize: '11px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.year_of_publication + '), '}} style={{fontSize: '11px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.title.rendered + ', '}} style={{fontSize: '11px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.publisher + ', Vol '}} style={{fontSize: '11px'}}></p>
+                    <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.volume}} style={{fontSize: '11px'}}></p>
                     </div>
                     <br />
                     </div>
@@ -134,11 +129,14 @@ class PublicationPageContent extends Component{
                         top:'70%',
                         left: '13.4%',
                         width: '72%',
-                        height: '550px'
+                        height: '600px'
                     
                     }}>
                     
-                    <Document
+                    <iframe src="https://arthistory.rutgers.edu/images/Documents/Spring2017_syllabi/240-Brett-Smith.pdf" 
+                    width="100%" height="100%" allowFullScreen>
+                </iframe>
+                    {/* <Document
                                 
                                 file='./brett-smith.pdf'
                                 onLoadSuccess={this.onDocumentLoadSuccess}
@@ -193,7 +191,7 @@ class PublicationPageContent extends Component{
 
                         </div>
                         
-                        </Document>
+                        </Document> */}
 
                             
                         

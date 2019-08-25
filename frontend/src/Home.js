@@ -138,7 +138,7 @@ class Home extends Component{
            left: '83%', 
             height: '21px',
             fontFamily: 'Ubuntu',
-            fontSize: '18px',
+            fontSize: '16px',
             fontWeight: 500,
             fontStyle: 'normal',
             fontStretch: 'normal',

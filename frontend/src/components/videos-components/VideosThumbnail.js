@@ -104,6 +104,8 @@ class VideosThumbnail extends Component{
             )
         }
 
+        else{
+
         return <h2 style={{
             position: 'absolute',
             
@@ -112,6 +114,7 @@ class VideosThumbnail extends Component{
         }}>Loading....</h2>
        
     }
+        }
 }
 
 export default VideosThumbnail;

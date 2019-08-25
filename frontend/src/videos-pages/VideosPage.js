@@ -46,7 +46,7 @@ class VideosPage extends Component{
             position: 'absolute',
             top: '35%', 
             left: '83%', 
-             height: '21px',
+             height: '16px',
              fontFamily: 'Ubuntu',
              fontSize: '18px',
              fontWeight: 500,
