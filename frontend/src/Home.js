@@ -9,7 +9,7 @@ import ellipse from './images/ellipse.svg'
 import ellipse_trans from './images/ellips_trans.svg'
 import $ from 'jquery'
 import down from './images/component.png'
-
+import './styles/home.css'
 
 
 class Home extends Component{
@@ -52,10 +52,10 @@ class Home extends Component{
         })
         console.log(this.state.searchText)
       
-     } 
+       } 
 
-     //filter through filter blocks
-     filterBlockFunc = (filter, block) =>{
+       //filter through filter blocks
+       filterBlockFunc = (filter, block) =>{
         
         switch(block){
             case 'category':
@@ -78,7 +78,7 @@ class Home extends Component{
 
     
         
-     }
+       }
 
 
 
@@ -91,18 +91,10 @@ class Home extends Component{
 
         return( 
         // body element    
-    <div id = "body" style={{
-        width:  '100%',
-        margin: 0,
-        padding: 0,
-        display: 'grid'
-
-    }}>
+        <div id = "body" >
         <Logo />
-       <Menu page={this.state.page}/> 
-    <div style={{
-        display: 'grid'
-    }}>
+        <Menu page={this.state.page}/> 
+        <div id="content" >
 
   {/* page title and search text box */}
   <div>
@@ -110,56 +102,23 @@ class Home extends Component{
       <PageTitle value={0} page="Images"/>
        
        {/* search textbox */}
-       <input onChange = {this.getSearch} placeholder = "Search" style={{
-           position: 'absolute',
-           top: `445px`,
-           left: '83%',
-           border: 'none',
-           paddingBottom: '5px',
-           borderBottom: 'solid 1px #373a3c',
-           height: '17px',
-           fontFamily: 'Ubuntu',
-           fontSize: '14px',
-           fontWeight: 300,
-           fontStyle: 'normal',
-           fontStretch: 'normal',
-           lineHeight: 'normal',
-           letterSpacing: 'normal',
-           color: '#373a3c'
-
-       }} />
+       <input onChange = {this.getSearch} placeholder = "Search" id="search" />
     
 
   </div>
 
   <p id="view-images" style={{
-           position: 'absolute',
-           top: '70%', 
-           left: '83%', 
-            height: '21px',
-            fontFamily: 'Ubuntu',
-            fontSize: '16px',
-            fontWeight: 500,
-            fontStyle: 'normal',
-            fontStretch: 'normal',
-            lineHeight: 1.17,
-            letterSpacing: 'normal',
-            color: '#ff321a',
-            display: `${window.outerHeight < 800 ? 'none': 'block'}`
-       }}>View images</p>
+      display: `${window.outerHeight < 800 ? 'none': 'block'}`
+
+  }}>View images</p>
 
   {/* div that holds the body section  */}
 
-  <div style={{
-      display: 'flex'
-  }}>
+  <div id="body-section" >
 
 
   {/* right side section       */}
-  <div style={{
-            marginTop: '15px',
-            marginBottom: '15px'
-  }}>
+  <div id="right-section" >
          <FilterSection filtercategory={this.state.filterBlockCategory} filterfunc={this.filterBlockFunc} value={0} />
 
       
@@ -179,30 +138,14 @@ class Home extends Component{
 
     
      {/* bottom section navigation */}
-       <div>
+       <div id = "bottom">
 
-       <p onClick={()=>{
+       <p id="next-page" onClick={()=>{
            window.location.href="/videos"
-       }} style={{
-           position: 'absolute',
-           top: '151.5%',
-           left: '42%',
-           color: '#ff321a',
-           fontFamily: 'Ubuntu',
-           fontSize: '18px',
-           fontWeight: 500,
-           fontStyle: 'normal',
-           fontStretch: 'normal',
-           cursor: 'pointer'
-       }}> Contemporary African Arts: Videos</p>
-       <img onClick={()=>{
+       }} > Contemporary African Arts: Videos</p>
+       <img id="down-arrow" onClick={()=>{
            window.location.href="/videos"
-       }} src={down} style = {{
-           position: 'absolute',
-           top: '147%',
-           left: '50%',
-           cursor: 'pointer'
-       }}/>
+       }} src={down} />
 
        </div>
        

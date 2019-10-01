@@ -1,0 +1,38 @@
+#view-images{
+
+    position: absolute;
+    top: 35%; 
+    left: 83%;
+     height: 16px;
+     font-family: Ubuntu;
+     font-size: 18px;
+     font-weight: 500;
+     font-style: normal;
+     font-stretch: normal;
+     line-height: 1.17;
+     letter-spacing: normal;
+     color: #ff321a;
+}
+
+#next-page{
+
+    position: absolute;
+    top: 124.5%;
+    left: 41.3%;
+    color: #ff321a;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    cursor: pointer;
+}
+
+#next-page-icon{
+
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    cursor: pointer;
+    margin-bottom: 35px;
+}

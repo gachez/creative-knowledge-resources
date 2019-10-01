@@ -26,6 +26,7 @@ class FilterSectionVideos extends Component{
             position: 'absolute',
             top: '42.5%',
             left: '83.25%',
+            width: 'fit-content',
              height: '17px',
              fontFamily: 'Ubuntu',
              fontSize: '14px',
@@ -68,7 +69,7 @@ class FilterSectionVideos extends Component{
             }
             >
                 <p id="discipline" style={{
-                      width: '117px',
+                      width: 'fit-content',
                       height: '17px',
                       fontFamily: 'Ubuntu',
                       fontSize: '14px',

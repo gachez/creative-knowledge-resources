@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Menu from '../components/universal-icons/Menu'
-
+import '../styles/PublicationPage.css'
 import icon_facebook from '../images/icons_facebook_white.png'
 import icon_twitter from '../images/icons_twitter_white.png'
 import icon_instagram from '../images/icons_instagram_white.png'
@@ -48,20 +48,7 @@ class PublicationPage extends Component{
        <Menu page="fixed"/> 
        <PageTitle value = {posValue} page="Publications"/>
        <SearchBox getsearch={this.getSearch} value = {posValueSB}/>
-        <p id="view-images" style={{
-            position: 'absolute',
-            top: '35%', 
-            left: '83%', 
-             height: '21px',
-             fontFamily: 'Ubuntu',
-             fontSize: '16px',
-             fontWeight: 500,
-             fontStyle: 'normal',
-             fontStretch: 'normal',
-             lineHeight: 1.17,
-             letterSpacing: 'normal',
-             color: '#ff321a'
-        }}>View Publications</p>
+        <p id="view-images" >View Publications</p>
           <FilterSectionPublication valuebtn = {23} value = {posValue}/>
 
         
@@ -94,35 +81,12 @@ class PublicationPage extends Component{
 
        
 {/* the footer */}
-    <div style={{
-        position: 'absolute',
-        top: '150%',
-          width: '100%',
-          height: '75px',
-          backgroundColor: '#373a3c'
-        
-    }}>
+    <div id="footer">
 
-    <img src={icon_facebook} style={{
-        position:'absolute',
-        top: '34.7%',
-        left: '41%'
-    }}/>
-    <img style={{
-        position:'absolute',
-        top: '34.7%',
-        left: '46.4%'
-    }} src={icon_twitter}/>
-    <img style={{
-        position:'absolute',
-        top: '34.7%',
-        left: '51.8%'
-    }} src={icon_instagram}/>
-    <img style={{
-        position:'absolute',
-        top: '34.7%',
-        left: '57.2%'
-    }} src={icon_linkedin}/>
+    <img src={icon_facebook} id="fb"/>
+    <img src={icon_twitter} id="twitter"/>
+    <img id="instagram" src={icon_instagram}/>
+    <img src={icon_linkedin} id="linkedin"/>
     </div>
         </div>
       )

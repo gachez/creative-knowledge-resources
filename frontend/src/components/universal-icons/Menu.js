@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import menu from '../../images/menu.png';
 import bars from '../../images/bars.png';
 import '../../styles/Menu.css';
-import ckrlogo from '../../images/lettermark.svg'
+import ckrlogo from '../../images/logo.svg'
 import exit from '../../images/exit.png'
 import iconClose from '../../images/icons_close.png'
 

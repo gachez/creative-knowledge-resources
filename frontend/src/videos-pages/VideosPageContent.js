@@ -8,6 +8,7 @@ import Menu from '../components/universal-icons/Menu'
 import backbtn from '../images/buttons_back.svg'
 import youtube from '../images/youtube.png'
 import axios from 'axios'
+import '../styles/videosPageContent.css'
 
 
 class VideosPageContent extends Component{
@@ -36,71 +37,32 @@ class VideosPageContent extends Component{
             <div>
                 <Menu page="fixed"/>
                 {/* body container */}
-                <div id="grid-container" style={{
-                    display: 'grid',
-                    gridRowGap: '50px'
-                }}>
+                <div id="grid-container" >
 
                                     {/* first grid */}
                 <div id="back-title">
 
                     {/* back icon */}
                     <Link to={"/videos"}>
-                    <img src={backbtn} style={{
-                        position: 'absolute',
-                        top: '25.5%',
-                        left: '4.5%'
-                    }}/>
+                    <img id="back-btn"src={backbtn} />
 
                     </Link>
 
                     {/* page title */}
-                    <p style={{
-                        position:'absolute',
-                        top: '20%',
-                        left: '13.4%',
-                        fontFamily: 'Ubuntu',
-                        fontSize: '16px',
-                        fontWeight: 500,
-                        fontStyle: 'normal',
-                        fontStretch: 'normal',
-                        lineHeight: 'normal',
-                        letterSpacing: 'normal',
-                        color: '#373a3c'
-                    }} dangerouslySetInnerHTML={{ __html: this.state.videos.title.rendered}}>
+                    <p id="title"  dangerouslySetInnerHTML={{ __html: this.state.videos.title.rendered}}>
                         
                     </p>
                     </div>
 
                     {/* second grid */}
                     {/* video description */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '31%',
-                        left: '13.4%',
-                        height: 'fit-content',
-                        width: '72%',
-                        fontFamily: 'Ubuntu',
-                        fontSize:  '12px',
-                        fontWeight: 300,
-                        fontStyle: 'normal',
-                        fontStretch: 'normal',
-                        lineHeight: 1.35,
-                        letterSpacing: 'normal',
-                        color: '#373a3c'
-                    }} dangerouslySetInnerHTML={{ __html: this.state.videos.excerpt.rendered}}></div>
+                    <div id="vid-desc"  dangerouslySetInnerHTML={{ __html: this.state.videos.excerpt.rendered}}></div>
 
                     {/* videos */}
 
                     {/* third grid */}
                     <iframe
-                    style={{
-                        position: 'absolute',
-                        top:'52%',
-                        left: '13.4%',
-                        backgroundColor: 'black'
-                    
-                    }} 
+                     id="video"
                     width="72%" 
                     height="550px" 
                     src={this.state.videos.acf['url']} 
@@ -112,86 +74,20 @@ class VideosPageContent extends Component{
 
                     {/* fourth grid */}
                     {/* container for the comment box */}
-                    <div style={{
-                        position: 'absolute',
-                        left: '13.4%',
-                        top: '152.5%',
-                        width: '72%',
-                        height: '700px',
-                        boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.25)',
-                        backgroundColor: '#ffffff'
-                    }}>
+                    <div id="comment-box" >
 
-                    <input type="textbox" placeholder="What are your thoughts on this work?" style={{
-                        position: 'absolute',
-                        top: '7.1%',
-                        left: '7.5%',
-                        width: '85%',
-                        height: '25%',
-                        border: 'solid 1px #373a3c',
-                        fontFamily: 'Ubuntu',
-                        paddingLeft : '20px',
-                        paddingTop: '20px',
-                        fontSize: '18px',
-                        fontWeight: 300,
-                        fontStyle: 'normal',
-                        fontStretch: 'normal',
-                        lineHeight: 1.35,
-                        letterSpacing: 'normal',
-                        color: '#8d8d8d'
-                    }}/>
+                    <input id="text-box" type="textbox" placeholder="What are your thoughts on this work?" />
 
-                    <button style={{
-                        position: 'absolute',
-                        top: '38.5%',
-                        border: 'none',
-                        left: '85.5%',
-                        width: '100px',
-                        height: '40px',
-                        backgroundColor: '#ff8d80',
-
-                        fontFamily: 'Ubuntu',
-                    fontSize: '14px',
-                    fontWeight: 500,
-                    fontStyle: 'normal',
-                    fontStretch: 'normal',
-                    lineHeight: 'normal',
-                    letterSpacing: '-0.1px',
-                    color: '#ffffff'
-
-                    }}>POST</button>
+                    <button id="comment-btn" >POST</button>
                     </div>
 
                     {/* the footer */}
-                        <div style={{
-                            position: 'absolute',
-                            top: '268%',
-                            width: '100%',
-                            height: '75px',
-                            backgroundColor: '#373a3c'
-                            
-                        }}>
+                        <div id="footer" >
 
-                        <img src={icon_facebook} style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '41%'
-                        }}/>
-                        <img style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '46.4%'
-                        }} src={icon_twitter}/>
-                        <img style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '51.8%'
-                        }} src={icon_instagram}/>
-                        <img style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '57.2%'
-                        }} src={icon_linkedin}/>
+                        <img id="fb" src={icon_facebook} />
+                        <img id="twitter" src={icon_twitter}/>
+                        <img id="insta" src={icon_instagram}/>
+                        <img id="linkedin" src={icon_linkedin}/>
                         </div>
 
 

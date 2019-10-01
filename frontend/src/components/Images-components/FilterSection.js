@@ -1,20 +1,9 @@
 import React, {Component} from 'react'
-
+import '../../styles/FilterSection.css'
 import downIcon from '../../images/downiconorange.png'
 
 
-const dropDownFontStyle = {
-    marginLeft: '15px',
-    marginTop: '26px',
-    fontFamily: 'Ubuntu',
-    fontSize: '14px',
-    fontStyle: 'normal',
-    fontStretch: 'normal',
-    lineHeight: 'normal',
-    letterSpacing: 'normal',
-    color: '#ffffff',
-    cursor: 'pointer'
-}
+
 
 class FilterSection extends Component{
     render(){
@@ -23,34 +12,11 @@ class FilterSection extends Component{
                 
         {/* right side bar filters */}
 
-        <p id="category-title" style={{
-            position: 'absolute',
-            top: '76%',
-            left: '83.25%',
-             width: '76px',
-             height: '17px',
-             fontFamily: 'Ubuntu',
-             fontSize: '14px',
-             fontWeight: 700,
-             fontStyle: 'normal',
-             fontStretch: 'normal',
-             lineHeight: 'normal',
-             letterSpacing: 'normal',
-             color: '#373a3c'        }}>By category</p>
+        <p id="category-title">By category</p>
 
              {/* category filter box */}
 
-            <div id="filter-box-categories" style={{
-                position: 'absolute',
-                top: '82%',
-                left: '83.25%',
-                 width: '200px',
-                 height: '45px',
-                 border: 'solid 1px #373a3c',
-                 backgroundColor: '#ffffff',
-                 cursor: 'pointer'
-               
-            }}
+            <div id="filter-box-categories" 
             
             onClick={
                 ()=>{
@@ -109,7 +75,7 @@ class FilterSection extends Component{
                    
                 }}>
 
-                <p className = "categories" style={dropDownFontStyle} onClick={
+                <p className = "categories dropdownfontstyle"  onClick={
                    () =>{
 
                     document.getElementById('category').style.color = "#ff321a"
@@ -120,7 +86,7 @@ class FilterSection extends Component{
                    
                     
                 }>African games</p>
-                <p className = "categories" style={dropDownFontStyle} onClick={
+                <p className = "categories dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
@@ -133,7 +99,7 @@ class FilterSection extends Component{
                    
                     
                 }>Animation</p>
-                <p className = "categories" style={dropDownFontStyle} onClick={
+                <p className = "categories dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
@@ -145,7 +111,7 @@ class FilterSection extends Component{
                    
                     
                 }>Architecture</p>
-                <p className = "categories" style={dropDownFontStyle} onClick={
+                <p className = "categories dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
@@ -157,7 +123,7 @@ class FilterSection extends Component{
                    
                     
                 }>Dance</p>
-                <p className = "categories" style={dropDownFontStyle} onClick={
+                <p className = "categories dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('categories-dropdown').style.display = 'none'   
                     document.getElementById('category').style.color = "#ff321a"
@@ -267,7 +233,7 @@ class FilterSection extends Component{
                    
                 }}>
 
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
@@ -279,7 +245,7 @@ class FilterSection extends Component{
                    
                     
                 }>2019</p>
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
@@ -290,7 +256,7 @@ class FilterSection extends Component{
                    
                     
                 }>2018</p>
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
@@ -301,7 +267,7 @@ class FilterSection extends Component{
                    
                     
                 }>2017</p>
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
@@ -312,7 +278,7 @@ class FilterSection extends Component{
                    
                     
                 }>2016</p>
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle"  onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
@@ -323,7 +289,7 @@ class FilterSection extends Component{
                    
                     
                 }> 2015</p>
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
@@ -334,7 +300,7 @@ class FilterSection extends Component{
                    
                     
                 }>2014</p>
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"
@@ -345,7 +311,7 @@ class FilterSection extends Component{
                    
                     
                 }>2013</p>
-                <p className="years" style={dropDownFontStyle} onClick={
+                <p className="years dropdownfontstyle" onClick={
                    () =>{
                     document.getElementById('year-dropdown').style.display = 'none'   
                     document.getElementById('year').style.color = "#ff321a"

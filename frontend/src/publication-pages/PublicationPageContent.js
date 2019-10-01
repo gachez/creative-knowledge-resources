@@ -8,6 +8,7 @@ import Menu from '../components/universal-icons/Menu.js'
 import backbtn from '../images/buttons_back.svg'
 import axios from 'axios'
 import { Document, Page,pdfjs } from 'react-pdf';
+import '../styles/PublicationPageContent.css'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -58,19 +59,13 @@ class PublicationPageContent extends Component{
         return(
             <div>
                 <Menu page="fixed"/>
-              <div style={{
-                  display: 'grid'
-              }}>
+              <div id="body" >
                   
-                <div id="back-title" style={{display: 'flex'}}>
+                <div id="back-title" >
 
                     {/* back icon */}
                     <Link to={"/publications"}>
-                    <img src={backbtn} style={{
-                        position: 'absolute',
-                        top: '25.5%',
-                        left: '4.5%'
-                    }}/>
+                    <img src={backbtn} id="back"/>
 
                     </Link>
 

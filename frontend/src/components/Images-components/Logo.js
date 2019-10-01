@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import logotext from '../../images/logotext.svg'
 import logosubtext from '../../images/logo_subtext.svg'
+import logo from '../../images/vector.svg'
 
 
 class Menu extends Component{
@@ -23,13 +24,13 @@ class Menu extends Component{
 
             
         }}>
-        <img src={logotext} alt="logo-text" style={{
+        <img src={logo} alt="logo-text" style={{
         zIndex: 999
         
         }}/>
         <img src={logosubtext} alt="logo sub text" style={{
         position: 'relative',
-        left: '45px'
+        left: '10px'
         }}/>
             
             </div>    

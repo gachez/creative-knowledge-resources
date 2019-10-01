@@ -1,0 +1,84 @@
+#body{
+    width:  100%;
+    margin: 0;
+    padding: 0;
+    display: -ms-grid;
+    display: grid;
+}
+
+#content{
+    
+    display: -ms-grid;
+    
+    display: grid;
+}
+
+#search {
+ 
+    position: absolute;
+    top: 445px;
+    left: 83%;
+    border: none;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #373a3c;
+    height: 17px;
+    font-family: Ubuntu;
+        font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #373a3c;
+
+}
+
+#view-images{
+        position: absolute;
+        top: 70%;
+        left: 83%; 
+         height: 21px;
+         font-family: Ubuntu;
+         font-size: 16px;
+         font-weight: 500;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: 1.17;
+         letter-spacing: normal;
+         color: #ff321a;
+         
+}
+
+#body-section{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#right-section{
+
+        margin-top: 15px;
+        margin-bottom: 15px;
+}
+
+#next-page{
+    
+        position: absolute;
+        top: 151.5%;
+        left: 42%;
+        color: #ff321a;
+        font-family: Ubuntu;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        cursor: pointer;
+}
+
+#down-arrow{
+    
+        position: absolute;
+        top: 147%;
+        left: 50%;
+        cursor: pointer;
+}

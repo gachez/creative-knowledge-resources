@@ -83,8 +83,9 @@ class Images extends Component{
                     this.state.imagesArr.map(image =>{
                         return(
                             
-                           <Link to={"/images-page"} onClick={
+                           <div  onClick={
                                () =>{
+                                   window.location.href="/images-page"
                                    localStorage.setItem('id', image.id)
                                }
                            } key = {image.id} >
@@ -94,7 +95,7 @@ class Images extends Component{
                             objectFit: 'cover',
                             cursor: 'pointer'
                             }} />
-                           </Link>    
+                           </div>    
                             
                         
                         )
