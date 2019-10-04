@@ -70,42 +70,17 @@ class PublicationPageContent extends Component{
                     </Link>
 
                     {/* page title */}
-                    <p style={{
-                        position:'absolute',
-                        top: '20%',
-                        left: '13.4%',
-                        fontFamily: 'Ubuntu',
-                        fontSize: '16px',
-                        fontWeight: 500,
-                        fontStyle: 'normal',
-                        fontStretch: 'normal',
-                        lineHeight: 'normal',
-                        letterSpacing: 'normal',
-                        color: '#373a3c'
-                    }} dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}>
+                    <p id="page-title" dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}>
                     </p>
 
 
                     </div>
 
                     {/* image description */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '31%',
-                        left: '13.4%',
-                        width: '72%',
-                        fontFamily: 'Ubuntu',
-                        fontSize: '12px',
-                        fontWeight: 100,
-                        fontStyle: 'normal',
-                        fontStretch: 'normal',
-                        lineHeight: 1.35,
-                        letterSpacing: 'normal',
-                        color: '#373a3c'
-                    }}>
+                    <div id="image-desc">
                         <strong>Synopsis</strong><br />
                     <p dangerouslySetInnerHTML={{ __html: this.state.publication.excerpt.rendered}}></p>
-                    <div style={{display: 'flex', position: 'relative', left: 0, width: 'fit-content'}}>
+                    <div id="credentials">
                     <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.author + '('}} style={{fontSize: '11px'}}></p>
                     <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.year_of_publication + '), '}} style={{fontSize: '11px'}}></p>
                     <p dangerouslySetInnerHTML={{__html: this.state.publication.title.rendered + ', '}} style={{fontSize: '11px'}}></p>
@@ -119,14 +94,7 @@ class PublicationPageContent extends Component{
 
 
 
-                    <div style={{
-                        position: 'absolute',
-                        top:'70%',
-                        left: '13.4%',
-                        width: '72%',
-                        height: '600px'
-                    
-                    }}>
+                    <div id="books" >
                     
                     <iframe src="https://arthistory.rutgers.edu/images/Documents/Spring2017_syllabi/240-Brett-Smith.pdf" 
                     width="100%" height="100%" allowFullScreen>
@@ -194,87 +162,21 @@ class PublicationPageContent extends Component{
 
 
                     {/* container for the comment box */}
-                    <div style={{
-                        position: 'absolute',
-                        left: '13.4%',
-                        top: '210.5%',
-                        width: '72%',
-                        height: '700px',
-                        boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.25)',
-                        backgroundColor: '#ffffff'
-                    }}>
+                    <div id="comment-container" >
 
-                    <input type="textbox" placeholder="What are your thoughts on this work?" style={{
-                        position: 'absolute',
-                        top: '7.1%',
-                        left: '7.5%',
-                        width: '85%',
-                        height: '25%',
-                        border: 'solid 1px #373a3c',
-                        fontFamily: 'Ubuntu',
-                        paddingLeft : '20px',
-                        paddingTop: '20px',
-                        fontSize: '18px',
-                        fontWeight: 300,
-                        fontStyle: 'normal',
-                        fontStretch: 'normal',
-                        lineHeight: 1.35,
-                        letterSpacing: 'normal',
-                        color: '#8d8d8d'
-                    }}/>
+                    <input id="comment" type="textbox" placeholder="What are your thoughts on this work?" />
 
-                    <button style={{
-                        position: 'absolute',
-                        top: '38.5%',
-                        border: 'none',
-                        left: '85.5%',
-                        width: '100px',
-                        height: '40px',
-                        backgroundColor: '#ff8d80',
-
-                        fontFamily: 'Ubuntu',
-                    fontSize: '14px',
-                    fontWeight: 500,
-                    fontStyle: 'normal',
-                    fontStretch: 'normal',
-                    lineHeight: 'normal',
-                    letterSpacing: '-0.1px',
-                    color: '#ffffff'
-
-                    }}>POST</button>
+                    <button id="post-btn">POST</button>
                     </div>
 
-                    {/* the footer */}
-                        <div style={{
-                            position: 'absolute',
-                            top: '315%',
-                            width: '100%',
-                            height: '75px',
-                            backgroundColor: '#373a3c'
-                            
-                        }}>
+                                    {/* the footer */}
+                        <div id="footer">
 
-                        <img src={icon_facebook} style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '41%'
-                        }}/>
-                        <img style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '46.4%'
-                        }} src={icon_twitter}/>
-                        <img style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '51.8%'
-                        }} src={icon_instagram}/>
-                        <img style={{
-                            position:'absolute',
-                            top: '34.7%',
-                            left: '57.2%'
-                        }} src={icon_linkedin}/>
-                        </div>
+                    <img src={icon_facebook} id="fb"/>
+                    <img src={icon_twitter} id="twitter"/>
+                    <img id="instagram" src={icon_instagram}/>
+                    <img src={icon_linkedin} id="linkedin"/>
+                    </div>
                   </div>  
                             </div>
                         
