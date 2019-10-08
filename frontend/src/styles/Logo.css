@@ -1,0 +1,20 @@
+#container{
+        width: 100%;
+          height: 250px;
+          background-color: #373a3c;
+          display: flex;
+          padding-bottom: 20px;
+}
+
+#logo-container{
+
+        margin: auto;
+        display: grid;
+        grid-row-gap: 25px;
+}
+
+#logo-sub{
+    
+        position: relative;
+        left: 10px;
+}

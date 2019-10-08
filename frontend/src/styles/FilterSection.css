@@ -1,39 +1,157 @@
 .dropdownfontstyle{
-    margin-left: 15px;
-    margin-top: 26px;
-    font-family: Ubuntu;
-    font-size: 14px;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-#category-title{
-     position: absolute;
-     top: 76%;
-     left: 83.25%;
-     width: 76px;
-     height: 17px;
+     margin-left: 15px;
+     margin-top: 26px;
      font-family: Ubuntu;
      font-size: 14px;
-     font-weight: 700;
      font-style: normal;
      font-stretch: normal;
      line-height: normal;
      letter-spacing: normal;
-     color: #373a3c;
-}
-
-#filter-box-categories{
-     position: absolute;
-     top: 82%;
-     left: 83.25%;
-     width: 200px;
-     height: 45px;
-     border: solid 1px #373a3c;
-     background-color: #ffffff;
+     color: #ffffff;
      cursor: pointer;
-}
+ }
+ 
+ #category-title{
+      position: absolute;
+      top: 76%;
+      left: 83.25%;
+      width: 76px;
+      height: 17px;
+      font-family: Ubuntu;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #373a3c;
+ }
+ 
+ #filter-box-categories{
+      position: absolute;
+      top: 82%;
+      left: 83.25%;
+      width: 200px;
+      height: 45px;
+      border: solid 1px #373a3c;
+      background-color: #ffffff;
+      cursor: pointer;
+ }
+ 
+ #category{
+           width: 117px;
+           height: 17px;
+           font-family: Ubuntu;
+           font-size: 14px;
+           font-weight: 550;
+           font-style: normal;
+           font-stretch: normal;
+           line-height: normal;
+           letter-spacing: normal;
+           color: #373a3c;
+           margin-left: 15px;
+ }
+ 
+ #down{
+      
+           position: absolute;
+           left: 168px;
+           top: 20px;
+           color: orange;
+           cursor: pointer;
+ }
+ 
+ #categories-dropdown{
+           position: absolute;
+           top: 88.25%;
+           left: 83.27%;
+           width: 200px;
+             height: 236px;
+             background-color: #373a3c;
+             z-index: 999;
+             overflow-y: scroll;
+             display: none;
+ }
+ 
+ #filter-title{
+           position: absolute;
+           top: 89.5%;
+           left: 83.25%;
+            width: 76px;
+            height: 17px;
+            font-family: Ubuntu;
+            font-size: 14px;
+            font-weight: 700;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #373a3c;
+ }
+ 
+ #filter-box-categories{
+      
+           position: absolute;
+           top: 95%;
+           left: 83.25%;
+            width: 200px;
+            height: 45px;
+            border: solid 1px #373a3c;
+            background-color: #ffffff;
+            cursor: pointer;
+ }
+ 
+ #year{
+      
+           width: 117px;
+           height: 17px;
+           font-family: Ubuntu;
+           font-size: 14px;
+           font-weight: 550;
+           font-style: normal;
+           font-stretch: normal;
+           line-height: normal;
+           letter-spacing: normal;
+           color: #373a3c;
+           margin-left: 15px;
+ }
+ 
+ #down{
+           position: absolute;
+           left: 168px;
+           top: 20px;
+           color: orange;
+           cursor: pointer;
+ }
+ 
+ #year-dropdown{
+ 
+           position: absolute;
+           top: 101.45%;
+           left: 83.27%;
+           width: 200px;
+           display: none;
+             height: 236px;
+             background-color: #373a3c;
+             z-index: 999;
+             overflow-y: scroll;
+ }
+ 
+ #reset-btn{
+           position: absolute;
+         
+           left: 90%;
+           width: 100px;
+           height:40px;
+           background-color: rgb(255, 50, 26);
+           padding: 5px;
+           font-family: Ubuntu;
+           cursor: pointer;                      
+           font-weight: 600;
+           font-style: normal;
+           font-stretch: normal;
+           line-height: normal;
+           letter-spacing: -0.1px;
+           color: #ffffff;
+           border: none;  
+ }

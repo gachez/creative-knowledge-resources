@@ -15,7 +15,7 @@ class FilterSection extends Component{
         <p id="category-title">By category</p>
 
              {/* category filter box */}
-
+ 
             <div id="filter-box-categories" 
             
             onClick={
@@ -36,44 +36,15 @@ class FilterSection extends Component{
                 }
             }
             >
-                <p id = "category" style={{
-                      width: '117px',
-                      height: '17px',
-                      fontFamily: 'Ubuntu',
-                      fontSize: '14px',
-                      fontWeight: 550,
-                      fontStyle: 'normal',
-                      fontStretch: 'normal',
-                      lineHeight: 'normal',
-                      letterSpacing: 'normal',
-                      color: '#373a3c',
-                      marginLeft: '15px'
-                }}> Select a category</p>
+                <p id = "category" > Select a category</p>
 
-                <img src={downIcon} alt="down" style={{
-                    position: 'absolute',
-                    left: '168px',
-                    top: '20px',
-                    color: 'orange',
-                    cursor: 'pointer'
-                }}
+                <img id="down" src={downIcon} alt="down" 
                 />
 
               
             </div>
    {/* dropdown for the categories filter */}
-            <div id="categories-dropdown" style={{
-                   position: 'absolute',
-                   top: '88.25%',
-                   left: '83.27%',
-                   width: '200px',
-                     height: '236px',
-                     backgroundColor: '#373a3c',
-                     zIndex: 999,
-                     overflowY: 'scroll',
-                     display: 'none'
-                   
-                }}>
+            <div id="categories-dropdown" >
 
                 <p className = "categories dropdownfontstyle"  onClick={
                    () =>{
@@ -140,37 +111,14 @@ class FilterSection extends Component{
             
               {/* year filter title   */}
 
-              <p id="filter-title" style={{
-                  position: 'absolute',
-                  top: '89.5%',
-                  left: '83.25%',
-                   width: '76px',
-                   height: '17px',
-                   fontFamily: 'Ubuntu',
-                   fontSize: '14px',
-                   fontWeight: 700,
-                   fontStyle: 'normal',
-                   fontStretch: 'normal',
-                   lineHeight: 'normal',
-                   letterSpacing: 'normal',
-                   color: '#373a3c'
-              }}>
+              <p id="filter-title">
             By year
               </p>
 
               
              {/* year filter box */}
 
-            <div id="filter-box-categories" style={{
-                position: 'absolute',
-                top: '95%',
-                left: '83.25%',
-                 width: '200px',
-                 height: '45px',
-                 border: 'solid 1px #373a3c',
-                 backgroundColor: '#ffffff',
-                 cursor: 'pointer'
-            }}
+            <div id="filter-box-categories"
             
             onClick={
                 ()=>{
@@ -192,27 +140,9 @@ class FilterSection extends Component{
             >
 
             
-<p id="year" style={{
-                      width: '117px',
-                      height: '17px',
-                      fontFamily: 'Ubuntu',
-                      fontSize: '14px',
-                      fontWeight: 550,
-                      fontStyle: 'normal',
-                      fontStretch: 'normal',
-                      lineHeight: 'normal',
-                      letterSpacing: 'normal',
-                      color: '#373a3c',
-                      marginLeft: '15px'
-                }}> Select a year</p>
+<p id="year" > Select a year</p>
 
-                <img src={downIcon} alt="down" style={{
-                    position: 'absolute',
-                    left: '168px',
-                    top: '20px',
-                    color: 'orange',
-                    cursor: 'pointer'
-                }}
+                <img id="down" src={downIcon} alt="down" 
                 
           
                 />
@@ -220,18 +150,7 @@ class FilterSection extends Component{
             </div>
 
                  {/* dropdown for the year filter */}
-            <div id="year-dropdown" style={{
-                   position: 'absolute',
-                   top: '101.45%',
-                   left: '83.27%',
-                   width: '200px',
-                   display: 'none',
-                     height: '236px',
-                     backgroundColor: '#373a3c',
-                     zIndex: 999,
-                     overflowY: 'scroll'
-                   
-                }}>
+            <div id="year-dropdown">
 
                 <p className="years dropdownfontstyle" onClick={
                    () =>{
@@ -328,24 +247,8 @@ class FilterSection extends Component{
             {/* reset button */}
 
             <button   value = "RESET" id="reset-btn" style={{
-                    position: 'absolute',
-                    top: `${105 - this.props.value}%`,
-                    left: '90%',
-                    width: '100px',
-                    height: '40px',
-                    backgroundColor: 'rgb(255, 50, 26)',
-                    padding: '5px',
-                    fontFamily: 'Ubuntu',
-                    cursor: 'pointer',                        
-                    fontWeight: 600,
-                    fontStyle: 'normal',
-                    fontStretch: 'normal',
-                    lineHeight: 'normal',
-                    letterSpacing: '-0.1px',
-                    color: '#ffffff',
-                    border: 'none' 
-                                        
-                }} onClick={
+                  top: `${105 - this.props.value}%`,
+            }} onClick={
                     () =>{
                         document.getElementById('category').innerText = "Select a category"
                         document.getElementById('category').style.color = 'black'

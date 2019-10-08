@@ -1,0 +1,25 @@
+#images-container{
+        width: 66.5%;
+        height: 700px;
+        position: absolute;
+        top: 73%;
+        left: 130px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-gap: 15px;
+}
+
+#thumbnail{
+        width: 180px;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+}
+
+#thumb{
+        width: 180px;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+}
