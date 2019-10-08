@@ -3,7 +3,7 @@ import Menu from '../components/universal-icons/Menu'
 import mastercard from '../images/mastercard.svg'
 import paypal from '../images/paypal.png'
 import visa from '../images/visa.svg'
-
+import '../styles/Donate.css'
 import icon_facebook from '../images/icons_facebook_white.png'
 import icon_twitter from '../images/icons_twitter_white.png'
 import icon_instagram from '../images/icons_instagram_white.png'
@@ -17,61 +17,21 @@ class Donate extends Component{
                 <Menu page="fixed"/>
                 
                 {/* page title */}
-                <p style={{
-                      position: 'absolute',
-                      top: '22.7%',
-                      left:'9.5%',
-                      height: '35px',
-                      fontFamily: 'Ubuntu',
-                      fontSize: '30px',
-                      fontWeight: 700,
-                      fontStyle: 'normal',
-                      fontStretch: 'normal',
-                      lineHeight: 'normal',
-                      letterSpacing: 'normal',
-                      color: '#373a3c'
-                }}>Donate</p>
+                <p id="page-title">Donate</p>
 
                 {/* copy writing paragraph */}
-                <p style={{
-                    position: 'absolute',
-                    left: '9.7%',
-                    top: '33%',
-                      width: '535px',
-                      height: '143px',
-                      fontFamily: 'Ubuntu',
-                      lineHeight: '30px',
-                      fontSize: '18px',
-                      fontWeight: 300,
-                      fontStyle: 'normal',
-                      fontStretch: 'normal',
-                    
-                      letterSpacing: 'normal',
-                      color: '#373a3c'
-                }}>Creative Knowledge Resources is a proud, non-profit organization. We rely on people like you to keep this website up and running. Any amount donated will be highly appreciated. 
+                <p id="copy-write" >Creative Knowledge Resources is a proud, non-profit organization. We rely on people like you to keep this website up and running. Any amount donated will be highly appreciated. 
 <br /><br />
 Should you wish to donate, please select your preffered payment option. Should you have any questions, feel free to <strong>contact us.</strong></p>
 
                 {/* visa icon */}
-                <img src={visa} style={{
-                    position: 'absolute',
-                    top: '36.5%',
-                    left: '58.3%'
-                }}/>
+                <img id="visa" src={visa} />
 
                 {/* mastercard icon */}
-                <img src={mastercard} style={{
-                    position: 'absolute',
-                    top: '36.5%',
-                    left: '69.3%'
-                }}/>
+                <img id="mastercard" src={mastercard} />
 
                 {/* paypal icon */}
-                <img src={paypal} style={{
-                position: 'absolute',
-                top: '36.5%',
-                left: '80.2%'
-                }}/>
+                <img id="paypal" src={paypal} />
 
                 
 {/* the footer */}

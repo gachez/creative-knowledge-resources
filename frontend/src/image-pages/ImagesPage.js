@@ -9,7 +9,7 @@ import backbtn from '../images/buttons_back.svg'
 import axios from 'axios';
 import about from '../images/about-us.jpg'
 import close from '../images/icons_close.png'
-
+import '../styles/ImagesPage.css'
 
 let imageurls = []
 class ImagesPage extends Component{
@@ -80,30 +80,21 @@ class ImagesPage extends Component{
                     console.log(0)       
             }
             return(
-                <div style={{
-                    display: 'grid',
-                    
-                 
-                    gridRowGap: '35px'
-                }}>
+                <div id="body">
                     <Menu page="fixed" />
 
-                   <div id="grid-container" style={{
-                       display: 'grid',
-                       gridRowGap: '50px'  
-                   }}>
+                   <div id="grid-container">
 
 
-                   <div id="zoomed" style={{zIndex: 999, display: 'none',width: '100vw', height: '100vh', backgroundColor: 'rgb(0,0,0,0.6)'}}>
+                   <div id="zoomed" >
                        <img id="closer"
-                        src={close} style={{position: 'absolute',padding: '20px', top: 0, right: 0, width: '40px',height: '40px', cursor: 'pointer'}}
-                        onClick={
+                        src={close}                         onClick={
                             ()=>{
                                 document.getElementById('zoomed').style.display="none"
                             }
                         }
                        />
-                       <img id="zoomedim" src={this.state.zoomim} style={{ width: '90vw', height: '90vh', position: 'absolute', top: '5vh', left: '5vw'}}/>
+                       <img id="zoomedim" />
                        </div>
                         <div className='back-title' style={{
                                 
@@ -121,19 +112,7 @@ class ImagesPage extends Component{
                             </Link>
                             
                             {/* page title */}
-                            <p style={{
-                                position:'absolute',
-                                top: '20%',
-                                left: '13.4%',
-                                fontFamily: 'Ubuntu',
-                                fontSize: '16px',
-                                fontWeight: 500,
-                                fontStyle: 'normal',
-                                fontStretch: 'normal',
-                                lineHeight: 'normal',
-                                letterSpacing: 'normal',
-                                color: '#373a3c'
-                            }}  >
+                            <p id="page-title"  >
                                 {title.rendered} 
 
                             </p>
@@ -141,48 +120,19 @@ class ImagesPage extends Component{
                             </div>
                             
                             {/* image description */}
-                            <div style={{
-                                
-                                position: 'absolute',
-                                top: '31%',
-                                height: 'fit-content',
-                                left: '13.4%',
-                                width: '72%',
-                                fontFamily: 'Ubuntu',
-                                fontSize: '12px',
-                                fontWeight: 300,
-                                fontStyle: 'normal',
-                                fontStretch: 'normal',
-                                lineHeight: 1.35,
-                                letterSpacing: 'normal',
-                                color: '#373a3c'
-                            }} dangerouslySetInnerHTML={{__html:  this.state.images.excerpt.rendered}} ></div>
+                            <div id= "image-description" dangerouslySetInnerHTML={{__html:  this.state.images.excerpt.rendered}} ></div>
                             
                        
                               
             
                         {/* images container */}
-                        <div className="images-container" style={{
-                                position: 'absolute',
-                                top: '52%',
-                                left: '13.4%',
-                                width: '72%',
-                                
-                                height: 'auto',
-                                display: 'grid',
-                                gridGap: '25px'
-                            }}>
+                        <div className="images-container" >
                             {
                             filteredImages.map(media => {
                                 return(
                                     <React.Fragment key={media.id}>
-                                        <div  style={{
-                                            cursor: 'pointer',
-                                            width: '100%',
-                                            height: '550px',
-                                            backgroundImage: `url(${media.media_details.sizes.full.source_url})`,
-                                            backgroundRepeat: 'no-repeat',
-                                            backgroundSize: 'cover'
+                                        <div id="picture" style={{
+                                            backgroundImage: `url(${media.media_details.sizes.full.source_url})`
                                         }}
                                        
                                         onClick={

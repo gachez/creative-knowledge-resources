@@ -1,15 +1,92 @@
 #body{
-    
-        display: grid; 
+        display: -ms-grid;
+        display: grid;
         grid-row-gap: 35px;
 }
 
 #grid-container{
-    
+
+        display: -ms-grid;
+
         display: grid;
         grid-row-gap: 50px;
 }
-#zoomed{
-    z-index: 999; display: none; width: 100vw; height: 100vh; 
-        background-color: rgb(0,0,0,0.6);
+
+.zoomed{
+z-index: 999; 
+display: none;
+width: 100vw; 
+height: 100vh; 
+background-color: rgb(0,0,0,0.6);
+}
+
+#closer{
+position: absolute;
+        padding: 20px; 
+        top: 0; 
+        right: 0; 
+        width: 40px;
+        height: 40px; 
+        cursor: pointer;
+
+}
+
+#zoomedim{
+width: 90vw; height: 90vh; position: absolute; top: 5vh; 
+        left: 5vw;
+}
+
+#image-description{
+
+                        
+        position: absolute;
+        top: 31%;
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        left: 13.4%;
+        width: 72%;
+        font-family: Ubuntu;
+        font-size: 12px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.35;
+        letter-spacing: normal;
+        color: #373a3c;
+}
+
+.images-container{
+
+        position: absolute;
+        top: 52%;
+        left: 13.4%;
+        width: 72%;
+        
+        height: auto;
+        display: -ms-grid;
+        display: grid;
+        grid-gap: 25px;
+}
+
+#page-title{
+        position:absolute;
+        top: 20%;
+        left: 13.4%;
+        font-family: Ubuntu;
+        font-size: 16px;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #373a3c;
+}
+
+#picture{
+        cursor: pointer;
+        width: 100%;
+        height: 550px;
+        background-repeat: no-repeat;
+        background-size: cover;
 }
