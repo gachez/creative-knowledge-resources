@@ -15,7 +15,7 @@ class Images extends Component{
 
     // gets all featured images and adds them to the state
     componentDidMount(){
-        axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/images?_embed`)
+        axios.get(`https://tengezastudios.co.ke/wp-ckr/wp-json/wp/v2/images?_embed`)
         .then(res =>{
             this.setState({
                 imagesArr: res.data,

@@ -97,20 +97,14 @@ class Home extends Component{
         <div id="content" >
 
   {/* page title and search text box */}
-  <div>
+  <div className="page-title-and-class-container">
 
-      <PageTitle value={0} page="Images"/>
-       
-       {/* search textbox */}
-       <input onChange = {this.getSearch} placeholder = "Search" id="search" />
-    
+        <p className="page-title">Contemporary African Art: images</p>
+        <input id="searchbox" placeholder="Search"/>    
 
   </div>
 
-  <p id="view-images" style={{
-      display: `${window.outerHeight < 800 ? 'none': 'block'}`
-
-  }}>View images</p>
+  <p className="view-images">View images</p>
 
   {/* div that holds the body section  */}
 
@@ -143,9 +137,7 @@ class Home extends Component{
        <p id="next-page" onClick={()=>{
            window.location.href="/videos"
        }} > Contemporary African Arts: Videos</p>
-       <img id="down-arrow" onClick={()=>{
-           window.location.href="/videos"
-       }} src={down} />
+ 
 
        </div>
        

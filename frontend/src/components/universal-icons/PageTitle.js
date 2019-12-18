@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../../styles/page-title.css'
 
 class PageTitle extends Component{
     render(){
@@ -7,21 +8,7 @@ class PageTitle extends Component{
 <React.Fragment>
 
         {/* page title */}
-        <p id="page-title" style={{
-            position: 'absolute',
-            top: `${55.7 - this.props.value}%`,
-            left: '130px',
-             width: 'fit-content',
-             height: '35px',
-             fontFamily: 'Ubuntu',
-             fontSize: '18px',
-             fontWeight: 700,
-             fontStyle: 'normal',
-             fontStretch: 'normal',
-             lineHeight: 'normal',
-             letterSpacing: 'normal',
-             color: '#373a3c'
-        }}> Contemporary African Arts: {this.props.page}</p>
+        <p id="page-title"> Contemporary African Arts: {this.props.page}</p>
 </React.Fragment>
 
         )

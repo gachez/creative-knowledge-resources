@@ -11,15 +11,15 @@
 }
 
 #thumbnail{
-        width: 180px;
-        height: 150px;
+        width: 200px;
+        height: 170px;
         object-fit: cover;
         cursor: pointer;
 }
 
 #thumb{
-        width: 180px;
-        height: 150px;
+        width: 250px;
+        height: 210px;
         object-fit: cover;
         cursor: pointer;
 }

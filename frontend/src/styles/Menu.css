@@ -1,5 +1,78 @@
+.menu-container{
+  width: 100%;
+  height: 95px;
+  background-color: white;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+  margin: 0;
+  position: absolute;
+  top: 28%;
+  
 
-#menu-items{
+}
+
+.logo-img{
+  position: relative;
+  left: 50px;
+  top: 40px;
+}
+
+.menu-items{
+  height: 40px;
+  width: 40%;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  right: -8.75%;
+
+}
+
+.menu-items p {
+  margin: 20px;
+}
+
+#menu{
+  border: 1px solid orangered;
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  right: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#menu-text{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+#bars{
+ position: absolute;
+ top: 8px;
+ left: 60px;
+}
+
+#exit-text{
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+#close{
+  display: none;
+  position: absolute;
+  top: 8px;
+  left: 60px;
+}
+
+.menu-items p{
+  font-family: 'Ubuntu';
+  color: #373a3c;
+  font-size: 18px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.menu-items{
     
   animation-name: slide;
   animation-duration: 1.25s;
