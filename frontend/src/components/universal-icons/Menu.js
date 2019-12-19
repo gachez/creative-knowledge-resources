@@ -57,7 +57,7 @@ class Menu extends Component{
            </div>
            {/* container for the menu button */}
         <div id="menu"  onClick={() =>{
-                document.getElementsByClassName('menu-items')[0].style.display="flex"
+                document.getElementsByClassName('menu-items')[0].style.display==="none" ? document.getElementsByClassName('menu-items')[0].style.display="flex" : document.getElementsByClassName('menu-items')[0].style.display="none" 
                 document.getElementById('bars').style.display="none"
                 document.getElementById('menu-text').style.display="none"
                 document.getElementById('exit-text').style.display="block"

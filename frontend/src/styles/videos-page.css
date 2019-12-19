@@ -59,7 +59,7 @@
 
 .next-page-footer{
     position: absolute;
-    bottom: -10%;
+    bottom: -15%;
     font-family: Ubuntu;
     font-size: 18px;
     font-weight: 500;
@@ -68,7 +68,7 @@
     line-height: 1.17;
     letter-spacing: normal;
     color: #ff321a;
-    left: 30%;
+    left: 35%;
     text-align: center;
 }
 

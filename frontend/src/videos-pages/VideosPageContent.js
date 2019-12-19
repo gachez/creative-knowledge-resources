@@ -18,7 +18,7 @@ class VideosPageContent extends Component{
     }
 
     componentDidMount(){
-        axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/videos/${parseInt(localStorage.id)}`)
+        axios.get(`https://tengezastudios.co.ke/wp-ckr/wp-json/wp/v2/videos/${parseInt(localStorage.id)}`)
         .then(res =>{
             this.setState({
                 videos: res.data,
@@ -29,74 +29,21 @@ class VideosPageContent extends Component{
 
     }
    
-    render(){
+    render(){ 
    
-        if(this.state.isLoaded){
+       
             console.log(this.state.videos)
         return(
             <div>
                 <Menu page="fixed"/>
                 {/* body container */}
-                <div id="grid-container" >
-
-                                    {/* first grid */}
-                <div id="back-title">
-
-                    {/* back icon */}
-                    <Link to={"/videos"}>
-                    <img id="back-btn"src={backbtn} />
-
-                    </Link>
-
-                    {/* page title */}
-                    <p id="title"  dangerouslySetInnerHTML={{ __html: this.state.videos.title.rendered}}>
-                        
-                    </p>
+                    <div className="back-title-container">
+                        <img src={backbtn} className="back"/>
+                        <p>Video title goes here</p>
                     </div>
-
-                    {/* second grid */}
-                    {/* video description */}
-                    <div id="vid-desc"  dangerouslySetInnerHTML={{ __html: this.state.videos.excerpt.rendered}}></div>
-
-                    {/* videos */}
-
-                    {/* third grid */}
-                    <iframe
-                     id="video"
-                    width="72%" 
-                    height="550px" 
-                    src={this.state.videos.acf['url']} 
-                    frameBorder="0" 
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen>
-
-                    </iframe>
-
-                    {/* fourth grid */}
-                    {/* container for the comment box */}
-                    <div id="comment-box" >
-
-                    <input id="text-box" type="textbox" placeholder="What are your thoughts on this work?" />
-
-                    <button id="comment-btn" >POST</button>
-                    </div>
-
-                    {/* the footer */}
-                        <div id="footer" >
-
-                        <img id="fb" src={icon_facebook} />
-                        <img id="twitter" src={icon_twitter}/>
-                        <img id="insta" src={icon_instagram}/>
-                        <img id="linkedin" src={icon_linkedin}/>
-                        </div>
-
-
-
-                </div>
                     </div>
                 
-                )}
-        return null
+                )
         
     }
 }
