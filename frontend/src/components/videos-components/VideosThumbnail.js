@@ -17,7 +17,7 @@ class VideosThumbnail extends Component{
       componentDidMount(){
 
        
-          axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/videos?_embed`) 
+          axios.get(`https://tengezastudios.co.ke/wp-ckr/wp-json/wp/v2/videos?_embed`) 
           .then(res =>{
               this.setState({
                   videos: res.data,
@@ -46,7 +46,7 @@ class VideosThumbnail extends Component{
                 width: '66.5%',
                 height: '700px',
                 position: 'absolute',
-                top: `${73 - this.props.value}%`,
+                top: '40%',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(3,1fr)',
                 gridTemplateRows: 'repeat(3,1fr)',
@@ -108,7 +108,7 @@ class VideosThumbnail extends Component{
 
         return <h2 style={{
             position: 'absolute',
-            
+            top: '40%',    
             left: '130px',
             fontFamily: 'Ubuntu'
         }}>Loading....</h2>

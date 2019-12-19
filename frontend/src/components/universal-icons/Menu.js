@@ -10,11 +10,34 @@ import iconClose from '../../images/icons_close.png'
 
 
 class Menu extends Component{
+    state={
+        position: '',
+        attribute: ''
+    }
+    componentDidMount(){
+        if(this.props.page === 'images'){
+            this.setState({
+                position: '30%',
+                attribute: 'absolute'
+            })
+        }
+
+        else{
+            this.setState({
+                position: 0,
+                attribute: 'fixed'
+            })
+        }
+    }
+
     render(){
         return(
             <React.Fragment>
                 {/* white container that holds the menu */}
-       <div className="menu-container" > 
+       <div className="menu-container" style={{
+           top: `${this.state.position}`,
+           position: `${this.state.attribute}`
+       }}> 
 
          {/* logo for ckr */}
          <Link className="logo-img" to={"/"}>

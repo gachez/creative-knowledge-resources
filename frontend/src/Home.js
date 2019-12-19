@@ -14,7 +14,7 @@ import './styles/home.css'
 
 class Home extends Component{
     state={
-        page: 'sticky',
+        page: 'images',
         images: [],
         imageUrl: [],
         searchText: '',
@@ -26,22 +26,6 @@ class Home extends Component{
     }
 
     componentDidMount(){
-        $(window).scroll( () => {
-            var scrollTop = $(window).scrollTop();
-            if (scrollTop > 245) {
-                this.setState({
-                    page: 'fixed'
-                })
-             console.log(scrollTop)
-                 }
-                 else{
-                    this.setState({
-                        page:'sticky'
-                    })
-                 }
-        })
-
-        
         window.localStorage.clear()
     }
 

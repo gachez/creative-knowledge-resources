@@ -19,6 +19,38 @@
    line-height: normal;
    letter-spacing: normal;
    color: var(--charcoal-grey);
+   cursor: pointer;
+}
+
+.categories-dropdown{
+     width: 160px;
+     height: 236px;
+     background-color: #373a3c;
+     color: #ffffff;
+     position: absolute;
+     bottom: -106.5%;
+     text-align: left;
+     z-index: 9;
+     display: none;
+}
+
+.categories-dropdown li{
+     height: 17px;
+     font-family: Ubuntu;
+     font-size: 14px;
+     font-weight: 300;
+     font-stretch: normal;
+     font-style: normal;
+     line-height: normal;
+     letter-spacing: normal;
+     color: #ffffff;
+     text-decoration: none;
+     list-style: none;
+     text-align: left;
+     position: relative;
+     margin-top: 25px;
+     left: -25px;
+
 }
 
 .categories p::after{
@@ -50,6 +82,7 @@
      height: 45px;
      border: 1px solid black;
      margin-top: 50px;
+     cursor: pointer;
 }
 
 .year p{
@@ -67,7 +100,40 @@
      letter-spacing: normal;
      color: var(--charcoal-grey);
   }
+
+  .years-dropdown{
+     width: 160px;
+     height: 236px;
+     background-color: #373a3c;
+     color: #ffffff;
+     position: absolute;
+     bottom: -175%;
+     text-align: left;
+     z-index: 9;
+     display: none;
+     overflow-y: scroll;
   
+}
+  
+.years-dropdown li{
+     height: 17px;
+     font-family: Ubuntu;
+     font-size: 14px;
+     font-weight: 300;
+     font-stretch: normal;
+     font-style: normal;
+     line-height: normal;
+     letter-spacing: normal;
+     color: #ffffff;
+     text-decoration: none;
+     list-style: none;
+     text-align: left;
+     position: relative;
+     margin-top: 25px;
+     left: -25px;
+     
+
+}
   .year p::after{
        content: url(../images/downiconorange.png);
        position: relative;
@@ -90,4 +156,26 @@
        line-height: normal;
        letter-spacing: normal;
        color: var(--charcoal-grey);
+  }
+
+  .reset-btn{
+     position: absolute;
+     top: 112.5%;
+     left: 50%;  
+     width: 100px;
+     height: 40px;
+     background-color: #ff321a;
+ 
+  }
+
+  .reset-btn p{
+     font-family: Ubuntu;
+     font-size: 14px;
+     font-weight: 500;
+     font-stretch: normal;
+     font-style: normal;
+     line-height: normal;
+     letter-spacing: -0.14px;
+     color: #ffffff;
+     text-align: center;
   }

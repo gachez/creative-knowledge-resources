@@ -11,7 +11,7 @@ class PublicationThumbnail extends Component{
      }
   
       componentDidMount(){
-          axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/publications?_embed`)
+          axios.get(`https://tengezastudios.co.ke/wp-ckr/wp-json/wp/v2/publications?_embed`)
           .then(res =>{
               this.setState({
                   publications: res.data,

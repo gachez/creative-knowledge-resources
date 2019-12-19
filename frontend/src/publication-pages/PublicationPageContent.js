@@ -24,7 +24,7 @@ class PublicationPageContent extends Component{
     }
 
     componentDidMount(){
-        axios.get(`https://tengezastudios.co.ke/wp/wp-json/wp/v2/publications/${parseInt(localStorage.id)}`)
+        axios.get(`https://tengezastudios.co.ke/wp-ckr/wp-json/wp/v2/publications/${parseInt(localStorage.id)}`)
         .then(res =>{
             this.setState({
                 publication: res.data,

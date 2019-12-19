@@ -24,7 +24,7 @@ class FilterSectionVideos extends Component{
 
         <p id="category-title" style={{
             position: 'absolute',
-            top: '42.5%',
+            top: '43.5%',
             left: '83.25%',
             width: 'fit-content',
              height: '17px',
@@ -178,9 +178,8 @@ class FilterSectionVideos extends Component{
 
         <p id="discussion-title" style={{
             position: 'absolute',
-            top: '55%',
+            top: '56%',
             left: '83.25%',
-             
              height: '17px',
              fontFamily: 'Ubuntu',
              fontSize: '14px',
@@ -302,7 +301,7 @@ class FilterSectionVideos extends Component{
 
               <p id="filter-title" style={{
                   position: 'absolute',
-                  top: '67.5%',
+                  top: '68.5%',
                   left: '83.25%',
                    width: '76px',
                    height: '17px',
@@ -475,7 +474,7 @@ class FilterSectionVideos extends Component{
             <button   value = "RESET" id="reset-btn" style={{
                     position: 'absolute',
                     top: `${105 - this.props.valuebtn}%`,
-                    left: '90%',
+                    left: '88.7%',
                     width: '100px',
                     height: '40px',
                     backgroundColor: 'rgb(255, 50, 26)',

@@ -7,7 +7,6 @@ import icon_linkedin from '../images/icons_linkedin_white.png'
 import Menu from '../components/universal-icons/Menu'
 import backbtn from '../images/buttons_back.svg'
 import axios from 'axios';
-import about from '../images/about-us.jpg'
 import close from '../images/icons_close.png'
 import '../styles/ImagesPage.css'
 

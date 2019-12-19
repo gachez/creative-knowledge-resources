@@ -46,8 +46,11 @@ class PublicationPage extends Component{
     }}>
     
        <Menu page="fixed"/> 
-       <PageTitle value = {posValue} page="Publications"/>
-       <SearchBox getsearch={this.getSearch} value = {posValueSB}/>
+        <div className="page-title-and-search">
+            <p>Contemporary African Arts: Publications</p>
+            <input className="searchbox" placeholder="Search"/>
+        </div>
+
         <p id="view-images" >View Publications</p>
           <FilterSectionPublication valuebtn = {23} value = {posValue}/>
 
