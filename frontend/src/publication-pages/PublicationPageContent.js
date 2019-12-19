@@ -61,23 +61,23 @@ class PublicationPageContent extends Component{
                 <Menu page="fixed"/>
               <div id="body" >
                   
-                <div id="back-title" >
+                <div className="back-title" >
 
                     {/* back icon */}
                     <Link to={"/publications"}>
-                    <img src={backbtn} id="back"/>
+                    <img src={backbtn} className="back"/>
 
                     </Link>
 
                     {/* page title */}
-                    <p id="page-title" dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}>
+                    <p className="page-title" dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}>
                     </p>
 
 
-                    </div>
+                    </div> 
 
                     {/* image description */}
-                    <div id="image-desc">
+                    <div className="image-desc">
                         <strong>Synopsis</strong><br />
                     <p dangerouslySetInnerHTML={{ __html: this.state.publication.excerpt.rendered}}></p>
                     <div id="credentials">
@@ -94,7 +94,7 @@ class PublicationPageContent extends Component{
 
 
 
-                    <div id="books" >
+                    <div className="books" >
                     
                     <iframe src="https://arthistory.rutgers.edu/images/Documents/Spring2017_syllabi/240-Brett-Smith.pdf" 
                     width="100%" height="100%" allowFullScreen>
@@ -162,7 +162,7 @@ class PublicationPageContent extends Component{
 
 
                     {/* container for the comment box */}
-                    <div id="comment-container" >
+                    <div className="comment-container" >
 
                     <input id="comment" type="textbox" placeholder="What are your thoughts on this work?" />
 
