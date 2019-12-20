@@ -32,7 +32,7 @@ class Images extends Component{
         method()
     }
           
-
+ 
 
     render(){
     
@@ -73,14 +73,14 @@ class Images extends Component{
                     this.state.imagesArr.map(image =>{
                         return(
                             
-                           <div  onClick={
+                           <React.Fragment   >
+                           <img onClick={
                                () =>{
                                    window.location.href="/images-page"
                                    localStorage.setItem('id', image.id)
                                }
-                           } key = {image.id} >
-                           <img alt="thumbnail" id="thumbnail" src={image._embedded['wp:featuredmedia']['0'].source_url}  />
-                           </div>    
+                           } key = {image.id} alt="thumbnail" id="thumbnail" src={image._embedded['wp:featuredmedia']['0'].source_url}  />
+                           </React.Fragment>    
                             
                         
                         )
@@ -89,13 +89,14 @@ class Images extends Component{
                      filteredImages.map(image =>{
                         return(
                             
-                           <Link to={"/images-page"} onClick={
+                           <React.Fragment>
+                           <img onClick={
                                () =>{
+                                   window.location.href="/images-page"
                                    localStorage.setItem('id', image.id)
                                }
-                           } key = {image.id} >
-                           <img alt="thumbnail" id="thumb"  src={image._embedded['wp:featuredmedia']['0'].source_url}  />
-                           </Link>    
+                           } key = {image.id} alt="thumbnail" id="thumb"  src={image._embedded['wp:featuredmedia']['0'].source_url}  />
+                           </React.Fragment>    
                             
                         
                         )

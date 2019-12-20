@@ -5,9 +5,10 @@
         top: 73%;
         left: 130px;
         display: grid;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: repeat(4,1fr);
-        grid-gap: 15px;
+        display: -ms-grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        grid-template-rows: auto;
+        grid-gap: 25px;
 }
 
 #thumbnail{

@@ -10,7 +10,7 @@ class VideosThumbnail extends Component{
     state={
         videos: [],
         isLoaded: false
-     }
+     } 
 
 
   
@@ -48,8 +48,9 @@ class VideosThumbnail extends Component{
                 position: 'absolute',
                 top: '40%',
                 display: 'grid',
-                gridTemplateColumns: 'repeat(3,1fr)',
-                gridTemplateRows: 'repeat(3,1fr)',
+                display: '-ms-grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px,1fr))',
+                gridTemplateRows: 'auto',
                 gridColumnGap: '15px',
                 left: '130px'
             }}>

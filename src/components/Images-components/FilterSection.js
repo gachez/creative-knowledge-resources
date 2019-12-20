@@ -8,7 +8,7 @@ import downIcon from '../../images/downiconorange.png'
 class FilterSection extends Component{
     render(){
         return(
-            <div > 
+            <div className="filter-section-container" > 
        
                 {/* categories div */}
                 <div className="categories" onClick={
