@@ -62,7 +62,7 @@ class PublicationPage extends Component{
             window.location.href="/"
         }} style={{
             position: 'absolute',
-            top: '140.5%',
+            top: '100.5%',
             left: '48%',
             color: '#ff321a',
             fontFamily: 'Ubuntu',
@@ -76,7 +76,7 @@ class PublicationPage extends Component{
             window.location.href="/"
         }} src={down} style = {{
             position: 'absolute',
-            top: '135%',
+            top: '104%',
             left: '50%',
             cursor: 'pointer',
             transform: 'rotate(180deg)'
@@ -84,7 +84,10 @@ class PublicationPage extends Component{
 
        
 {/* the footer */}
-    <div id="footer">
+    <div id="footer" style={{
+        position: 'absolute',
+        top: '112%'
+    }}>
 
     <img src={icon_facebook} id="fb"/>
     <img src={icon_twitter} id="twitter"/>

@@ -27,33 +27,34 @@ class VideosPageContent extends Component{
         })
         .catch(err => console.log(err))
 
+
     }
    
-    render(){ 
+    render(){  
    
+        if(this.state.isLoaded){
        
-            console.log(this.state.videos)
+            console.log(this.state.videos.title.rendered)
         return(
             <div>
                 <Menu page="fixed"/>
                 {/* body container */}
                     <div className="back-title-container">
                        <Link to="/videos"><img src={backbtn} className="back"/></Link> 
-                        <p>Video title goes here</p>
+                        <p dangerouslySetInnerHTML={{ __html: this.state.videos.title.rendered}}></p>
                     </div>
                     <br />
                     {/* video description */}
-                    <div className="video-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui
+                    <div className="video-description" dangerouslySetInnerHTML={{ __html: this.state.videos.excerpt.rendered}}>
                     </div>
                     <br />
                     {/* video frame */}
                     <iframe 
                     className="video-frame" 
-                    src="https://www.youtube.com/embed/rQvYG45otbs" 
-                    frameborder="0" 
+                    src={this.state.videos['acf'].url} 
+                    frameBorder="0" 
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                     allowfullscreen></iframe>
+                     allowFullScreen></iframe>
                     <br />
                     {/* comment container */}
                     <div className="comment-container">
@@ -62,16 +63,18 @@ class VideosPageContent extends Component{
                     </div>
                     <br />
                     {/* footer section */}
-                    <footer>
+                    <section className="footer-section">
                         <img id="fb" src={icon_facebook}/>
                         <img id="insta" src={icon_instagram}/>
                         <img id="linkedin" src={icon_linkedin}/>
                         <img id="twitter" src={icon_twitter}/>
-                    </footer>
+                    </section>
 
                     </div>
                 
                 )
+            }
+            return null;
         
     }
 }

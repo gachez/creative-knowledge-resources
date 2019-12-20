@@ -4,7 +4,10 @@ import Menu from '../components/universal-icons/Menu'
 import VideosThumbnail from '../components/videos-components/VideosThumbnail'
 import PageTitle from '../components/universal-icons/PageTitle'
 import SearchBox from '../components/universal-icons/SearchBox' 
-
+import icon_facebook from '../images/icons_facebook_white.png'
+import icon_twitter from '../images/icons_twitter_white.png'
+import icon_instagram from '../images/icons_instagram_white.png'
+import icon_linkedin from '../images/icons_linkedin_white.png'
 import SideBarIcons from '../components/universal-icons/SideBarIcons'
 import FilterSectionVideos from '../components/videos-components/FilterSectionVideos';
 import '../styles/videos-page.css'
@@ -54,7 +57,20 @@ class VideosPage extends Component{
          <Link to='/publications'>
          <p className="next-page-footer">Contemporary African Arts: Publications</p>
 
-         </Link>       
+         </Link>    
+
+          {/* the footer */}
+    <div id="footer" style={{
+        position: 'absolute',
+        top: '120%'
+    }}>
+
+    <img src={icon_facebook} id="fb"/>
+    <img src={icon_twitter} id="twitter"/>
+    <img id="instagram" src={icon_instagram}/>
+    <img src={icon_linkedin} id="linkedin"/>
+    </div>
+
         </div>
       )
         

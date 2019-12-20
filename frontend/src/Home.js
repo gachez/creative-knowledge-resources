@@ -7,6 +7,10 @@ import PageTitle from './components/universal-icons/PageTitle'
 import SideBarIcons from './components/universal-icons/SideBarIcons'
 import ellipse from './images/ellipse.svg'
 import ellipse_trans from './images/ellips_trans.svg'
+import icon_facebook from './images/icons_facebook_white.png'
+import icon_twitter from './images/icons_twitter_white.png'
+import icon_instagram from './images/icons_instagram_white.png'
+import icon_linkedin from './images/icons_linkedin_white.png'
 import $ from 'jquery'
 import down from './images/component.png'
 import './styles/home.css'
@@ -83,9 +87,13 @@ class Home extends Component{
   {/* page title and search text box */}
   <div className="page-title-and-class-container">
 
-        <p className="page-title">Contemporary African Art: images</p>
+        <p className="title" style={{
+            position: 'relative',
+            top: '30px',
+            left: '7.5%'
+        }}>Contemporary African Art: Images</p>
         <input id="searchbox" placeholder="Search"/>    
-
+ 
   </div>
 
   <p className="view-images">View images</p>
@@ -126,7 +134,17 @@ class Home extends Component{
        </div>
        
       </div>
-    
+    {/* the footer */}
+    <div id="footer" style={{
+        position: 'absolute',
+        top: '162.5%'
+    }}>
+
+    <img src={icon_facebook} id="fb"/>
+    <img src={icon_twitter} id="twitter"/>
+    <img id="instagram" src={icon_instagram}/>
+    <img src={icon_linkedin} id="linkedin"/>
+    </div>
     
         </div>
       )

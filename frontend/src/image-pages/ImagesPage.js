@@ -12,6 +12,7 @@ import '../styles/ImagesPage.css'
 import soly from '../images/soly-cise.jpg'
 import soly2 from '../images/soly-cise-2.jpg'
 import soly3 from '../images/soly-cisse.jpg'
+import ImagesContainer from '../components/Images-components/ImagesContainer'
 
 
 
@@ -44,8 +45,6 @@ class ImagesPage extends Component{
             })
         })
         .catch(err => console.log(err))
-
-
     }
 
       callFunc = (func) =>{
@@ -53,11 +52,10 @@ class ImagesPage extends Component{
       }
      
     render(){
-        
-        
-     
+        if(this.state.isLoaded){
+       
 
-      
+            console.log(this.state.pageMediaImages)
             return(
                 <div id="body">
                     <Menu page="fixed" />
@@ -67,41 +65,33 @@ class ImagesPage extends Component{
                         <Link to="/">
                         <img src={backbtn} className="back-img" />
                         </Link>
-                        <p className="title">Art title goes here</p>
+                        <p className="title" dangerouslySetInnerHTML={{ __html: this.state.images.title.rendered}}></p>
                     </div>
                     {/* container for the images description */}
-                    <div className="images-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
+                    <div className="images-description" dangerouslySetInnerHTML={{ __html: this.state.images.content.rendered}}>
+                     </div>
                     <br />
-                    <div className="images-container">
-                        {imageurls.map(image =>{
-                            return(
-                                <img src={image} className="images"/>
-                            )
-                        })
-                        }
-                    </div>
+                   
                     <br />
 
                     {/* comment container */}
-                    <div className="comment-container">
+                    <section className="comment-container-box">
 
                         <input className="comment-textbox" placeholder="What are your thoughts on this work?"/>    
                         <button>POST</button>
-                    </div>    
+                    </section>    
                     <br />
-                    <footer>
+                    <div className="footer-container">
                         <img id="fb" src={icon_facebook}/>
                         <img id="insta" src={icon_instagram}/>
                         <img id="linkedin" src={icon_linkedin}/>
                         <img id="twitter" src={icon_twitter}/>
-                    </footer>
+                    </div>
                     </div>
                 
             
-            )
+            )}
+            return null;
             
     
         
