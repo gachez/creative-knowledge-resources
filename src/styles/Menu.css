@@ -16,68 +16,53 @@
   top: 40px;
 }
 
-.menu-items{
-  height: 40px;
-  width: 40%;
-  display: flex;
+.menu-btn-container{
   position: absolute;
-  flex-direction: row;
-  right: -8.75%;
-  display: none;
-
+  left: 70%;
+  height: 45px;
+  display: flex;
 }
 
-.menu-items p {
-  margin: 20px;
+.menu-btn-container p{
+  height: 21px;
+  font-family: Ubuntu;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  color: #373a3c;
+  margin-left: 30px;
 }
 
-#menu{
-  border: 1px solid orangered;
+#menu-btn{
+  cursor: pointer;
+  margin-left: 30px;
+  margin-top: 8px;
   width: 100px;
   height: 40px;
-  position: absolute;
-  right: 50px;
-  margin-top: 10px;
-  cursor: pointer;
+  border: solid 1px #ff321a;
+  background-color: #ffffff;
 }
 
-#menu-text{
-  position: absolute;
-  top: 15px;
-  left: 15px;
+#menu-btn-text{
+  position: relative;
+  left: -12px;
+  height: 17px;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.14px;
+  color: #ff321a;
 }
-#bars{
- position: absolute;
- top: 8px;
- left: 60px;
-}
-
-#exit-text{
-  display: none;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
-#close{
-  display: none;
-  position: absolute;
-  top: 8px;
-  left: 60px;
-}
-
-.menu-items p{
-  font-family: 'Ubuntu';
-  color: #373a3c;
-  font-size: 18px;
-  text-decoration: none;
-  list-style: none;
-}
-
-.menu-items{
-    
-  animation-name: slide;
-  animation-duration: 1.25s;
-  animation-fill-mode: forwards;
+#menu-btn img{
+  position: relative;
+  top: -35px;
+  left: 65px;
 }
 /* Standard syntax */
 @keyframes slide {

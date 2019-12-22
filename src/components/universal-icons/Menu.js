@@ -45,54 +45,29 @@ class Menu extends Component{
 
          </Link>
          
-           {/* sidebar slide on for the menu items */}
-           <div className="menu-items"   >
-               <Link to={"/"} style={{textDecoration: 'none', listStyle: 'none'}}><p>Home</p></Link>
-               <Link to={"/upload-pin"} style={{textDecoration: 'none', listStyle: 'none'}}><p >Upload</p></Link>
-               <Link to={"/donate"} style={{textDecoration: 'none', listStyle: 'none'}}><p>Donate</p></Link>
-               <Link to={"/contact-us"} style={{textDecoration: 'none', listStyle: 'none'}}>
-               <p >Contact</p>
-               </Link>
-               
-           </div>
-           {/* container for the menu button */}
-        <div id="menu"  onClick={() =>{
-                document.getElementsByClassName('menu-items')[0].style.display==="none" ? document.getElementsByClassName('menu-items')[0].style.display="flex" : document.getElementsByClassName('menu-items')[0].style.display="none" 
-                document.getElementById('bars').style.display="none"
-                document.getElementById('menu-text').style.display="none"
-                document.getElementById('exit-text').style.display="block"
-                document.getElementById('close').style.display="block"
-                console.log("show me")
-            }}> 
+         <div className="menu-btn-container">
+        <Link to={"/"} style={{textDecoration: 'none', listStyle:'none'}}>
+            <p>Home</p>
+        </Link>
+        <Link to={"/upload-pin"} style={{textDecoration: 'none', listStyle:'none'}}>
+            <p>Upload</p>
+        </Link >
+        <Link to={"/donate"} style={{textDecoration: 'none', listStyle:'none'}}>
+            <p>Donate</p>
+        </Link>
+        <Link to={"contact-us"} style={{textDecoration: 'none', listStyle:'none'}}>
+            <p>Contact</p>
+        </Link>
+       <div id="menu-btn">
 
-            <img src={menu} id="menu-text" 
-            alt="menu"
-           
-            />
-
-            
-<img src={exit} id="exit-text" alt="menu"/>
-
-
-<img src={iconClose} id="close" className="animated fowards rotateIn " alt="close" 
-            onClick={() =>{
-                document.getElementsByClassName('menu-items')[0].style.display="none"
-                document.getElementById('bars').style.display="block"
-                document.getElementById('menu-text').style.display="block"
-                document.getElementById('exit-text').style.display="none"
-                document.getElementById('close').style.display="none"
-                console.log("close")
-            }}
-            />
-
-            <img src={bars} id="bars"  alt="bars"
-         />
-        </div>
-
-
-        
+       <p id="menu-btn-text">Menu</p>
+       <img src={bars}/>
+       </div>
+       </div>       
         </div>
 {/* menu ends here */}
+
+       
        
             </React.Fragment>
         )

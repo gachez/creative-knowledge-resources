@@ -25,7 +25,7 @@ class FilterSection extends Component{
                         </ul>
                     
                 </div>
-
+ 
                 {/* years div */}
                 <div className="year" onClick={
                     ()=>{
