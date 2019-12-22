@@ -12,7 +12,9 @@ import iconClose from '../../images/icons_close.png'
 class Menu extends Component{
     state={
         position: '',
-        attribute: ''
+        attribute: '',
+        menuText: 'MENU',
+        menuImg: bars
     }
     componentDidMount(){
         if(this.props.page === 'images'){
@@ -66,12 +68,17 @@ class Menu extends Component{
 
         <div id="menu-btn" onClick={
            () =>{
+
+
+            
                document.getElementById("menu-items").style.display==="none" ? document.getElementById("menu-items").style.display = "flex" : document.getElementById("menu-items").style.display="none"
-           }
+           
+              
+            }
        }>
 
-       <p id="menu-btn-text">Menu</p>
-       <img src={bars}/>
+    <p id="menu-btn-text">{this.state.menuText}</p>
+       <img src={this.state.menuImg}/>
        </div> 
         </div>
 {/* menu ends here */}
