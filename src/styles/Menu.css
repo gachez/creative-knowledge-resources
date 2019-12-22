@@ -23,6 +23,8 @@
   display: flex;
 }
 
+
+
 #menu-items{
   display: none;
   animation-name: slide;
@@ -56,6 +58,11 @@
  
 }
 
+@media screen and (max-height: 800px ){
+  .menu-btn-container{
+    left: 60%;
+  }
+}
 #menu-btn-text{
   position: relative;
   left: 10px;

@@ -77,6 +77,8 @@ class Home extends Component{
         console.log(this.state.filterBlockCategory)
         console.log(this.state.filterBlockYear)
 
+
+
         return( 
         // body element    
         <div id = "body" >
@@ -135,9 +137,11 @@ class Home extends Component{
        
       </div>
     {/* the footer */}
-    <div id="footer" style={{
+    <div style={{
         position: 'absolute',
-        top: '162.5%'
+        top: '163.5%',
+        marginBottom: 0,
+        paddingBottom: 0
     }}>
 
     <img src={icon_facebook} id="fb"/>

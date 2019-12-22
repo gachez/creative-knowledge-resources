@@ -124,3 +124,9 @@ footer img{
         width: 24px;
         height: 24px;
 }
+
+@media screen and  (max-height: 800px){
+        .footer-container{
+          top: 330.5%;
+        }
+}

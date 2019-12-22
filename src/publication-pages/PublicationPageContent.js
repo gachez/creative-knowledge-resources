@@ -170,7 +170,7 @@ class PublicationPageContent extends Component{
                     </div>
 
                                     {/* the footer */}
-                        <div id="footer">
+                        <div id="footer-publication">
 
                     <img src={icon_facebook} id="fb"/>
                     <img src={icon_twitter} id="twitter"/>

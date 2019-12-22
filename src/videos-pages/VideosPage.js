@@ -23,7 +23,7 @@ class VideosPage extends Component{
    state={
        searchText: ''
    }
-
+ 
 
        //get search text 
        getSearch = (e) =>{
@@ -62,7 +62,9 @@ class VideosPage extends Component{
           {/* the footer */}
     <div id="footer" style={{
         position: 'absolute',
-        top: '120%'
+        top: '123%',
+        marginBottom: 0,
+        paddingBottom: 0
     }}>
 
     <img src={icon_facebook} id="fb"/>

@@ -70,6 +70,13 @@
          
 }
 
+@media screen and (max-height: 800px){
+    .view-images{
+        top: 66.5%;
+        right: 11%;
+    }
+}
+
 #right-section{
     position: absolute;
     right: 50px;

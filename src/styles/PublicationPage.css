@@ -24,6 +24,26 @@
      color: #ff321a;
 }
 
+#go-to-images{
+    position: absolute;
+    top: 100.5%;
+    left: 48%;
+    color: #ff321a;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    cursor: pointer;
+    text-align: center;
+}
+
+#go-to-images::after{
+    content: url(../images/component.png);
+    transform: rotate(180deg);
+    display: block;
+}
+
 #footer{
 
     position: absolute;
@@ -58,4 +78,13 @@
     position:absolute;
     top: 34.7%;
     left: 57.2%;
+}
+
+@media screen and (max-height: 800px){
+    #go-to-images{
+        top: 111%;
+    }
+    #footer{
+        top: 130% !important;
+    }
 }

@@ -87,7 +87,7 @@ class ImagesPage extends Component{
                         <img id="linkedin" src={icon_linkedin}/>
                         <img id="twitter" src={icon_twitter}/>
                     </div>
-                    </div>
+                    </div> 
                 
             
             )}

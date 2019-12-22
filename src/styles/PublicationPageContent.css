@@ -120,7 +120,7 @@ letter-spacing: -0.1px;
 color: #ffffff;
 }
 
-#footer{
+#footer-publication{
 
 position: absolute;
 top: 198%;
@@ -128,6 +128,7 @@ top: 198%;
   height: 75px;
   background-color: #373a3c;
 }
+
 
 #fb{
 position:absolute;
@@ -154,4 +155,10 @@ left: 51.8%;
 position:absolute;
 top: 34.7%;
 left: 57.2%;
+}
+
+@media screen and (max-height: 800px){
+    #footer-publication{
+        top: 258%;
+    }
 }

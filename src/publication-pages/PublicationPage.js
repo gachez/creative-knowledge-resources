@@ -58,31 +58,12 @@ class PublicationPage extends Component{
         <SideBarIcons value = {posValue}  iconColor={ellipse_trans} transell1={ellipse_trans} transell2={ellipse} />
        <PublicationThumbnail searchtext={this.state.searchText} value = {posValue}/>
 
-       <p onClick={()=>{
+       <p id="go-to-images" onClick={()=>{
             window.location.href="/"
-        }} style={{
-            position: 'absolute',
-            top: '100.5%',
-            left: '48%',
-            color: '#ff321a',
-            fontFamily: 'Ubuntu',
-            fontSize: '18px',
-            fontWeight: 500,
-            fontStyle: 'normal',
-            fontStretch: 'normal',
-            cursor: 'pointer'
         }}> Go to Images</p>
-        <img onClick={()=>{
-            window.location.href="/"
-        }} src={down} style = {{
-            position: 'absolute',
-            top: '104%',
-            left: '50%',
-            cursor: 'pointer',
-            transform: 'rotate(180deg)'
-        }}/>
-
        
+
+        
 {/* the footer */}
     <div id="footer" style={{
         position: 'absolute',
