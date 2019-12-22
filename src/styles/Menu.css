@@ -23,6 +23,13 @@
   display: flex;
 }
 
+#menu-items{
+  display: none;
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
 .menu-btn-container p{
   height: 21px;
   font-family: Ubuntu;
@@ -44,11 +51,14 @@
   height: 40px;
   border: solid 1px #ff321a;
   background-color: #ffffff;
+  position: absolute;
+  right: 50px;
+ 
 }
 
 #menu-btn-text{
   position: relative;
-  left: -12px;
+  left: 10px;
   height: 17px;
   font-family: Ubuntu;
   font-size: 14px;

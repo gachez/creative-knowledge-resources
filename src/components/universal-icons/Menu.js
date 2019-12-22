@@ -45,7 +45,8 @@ class Menu extends Component{
 
          </Link>
          
-         <div className="menu-btn-container">
+         <div className="menu-btn-container" >
+        <div id="menu-items">
         <Link to={"/"} style={{textDecoration: 'none', listStyle:'none'}}>
             <p>Home</p>
         </Link>
@@ -57,13 +58,21 @@ class Menu extends Component{
         </Link>
         <Link to={"contact-us"} style={{textDecoration: 'none', listStyle:'none'}}>
             <p>Contact</p>
-        </Link>
-       <div id="menu-btn">
+        </Link>     
+            </div>     
+       
+      
+       </div>      
+
+        <div id="menu-btn" onClick={
+           () =>{
+               document.getElementById("menu-items").style.display==="none" ? document.getElementById("menu-items").style.display = "flex" : document.getElementById("menu-items").style.display="none"
+           }
+       }>
 
        <p id="menu-btn-text">Menu</p>
        <img src={bars}/>
-       </div>
-       </div>       
+       </div> 
         </div>
 {/* menu ends here */}
 
