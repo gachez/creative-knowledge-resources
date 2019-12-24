@@ -73,14 +73,17 @@ class Images extends Component{
                     this.state.imagesArr.map(image =>{
                         return(
                             
-                           <React.Fragment   >
+                           <div key={image.id}  >
                            <img onClick={
                                () =>{
                                    window.location.href="/images-page"
                                    localStorage.setItem('id', image.id)
                                }
                            } key = {image.id} alt="thumbnail" id="thumbnail" src={image._embedded['wp:featuredmedia']['0'].source_url}  />
-                           </React.Fragment>    
+
+                            <p id="thumb-title" dangerouslySetInnerHTML={{__html: image.title.rendered}}></p>
+                
+                           </div>    
                             
                         
                         )
@@ -89,14 +92,15 @@ class Images extends Component{
                      filteredImages.map(image =>{
                         return(
                             
-                           <React.Fragment>
+                           <div key={image.id}>
                            <img onClick={
                                () =>{
                                    window.location.href="/images-page"
                                    localStorage.setItem('id', image.id)
                                }
                            } key = {image.id} alt="thumbnail" id="thumb"  src={image._embedded['wp:featuredmedia']['0'].source_url}  />
-                           </React.Fragment>    
+                               <p id="thumb-title" dangerouslySetInnerHTML={{__html: image.title.rendered}}></p>
+                           </div>    
                             
                         
                         )

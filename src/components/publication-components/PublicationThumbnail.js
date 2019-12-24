@@ -64,6 +64,7 @@ class PublicationThumbnail extends Component{
                         width:'300px',
                         height: '150px'
                     }}/>
+                    <p style={{position: 'absolute', fontFamily: 'Ubuntu', color: 'black'}} dangerouslySetInnerHTML={{__html: publication.title.rendered}}></p>
                     </Link>)}) : 
                 filteredPublications.map(publication => {
                     return(
@@ -76,6 +77,7 @@ class PublicationThumbnail extends Component{
                         width:'300px',
                         height: '150px'
                     }}/>
+                    <p style={{position: 'absolute', fontFamily: 'Ubuntu', color: 'black'}} dangerouslySetInnerHTML={{__html: publication.title.rendered}}></p>
                     </Link>)})
     }
                 </div>

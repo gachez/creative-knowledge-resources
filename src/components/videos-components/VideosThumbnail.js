@@ -67,6 +67,7 @@ class VideosThumbnail extends Component{
                     }>
                     <div style={{
                         display: 'flex',
+                        display: '-ms-flexbox',
                         width:'300px',
                         height: '150px',
                         backgroundImage: `url(${video._embedded['wp:featuredmedia']['0'].source_url})`,
@@ -78,6 +79,7 @@ class VideosThumbnail extends Component{
                             margin: 'auto'
                         }}/>
                     </div>
+                    <p style={{position: 'absolute', fontFamily: 'Ubuntu', color: 'black'}} dangerouslySetInnerHTML={{__html: video.title.rendered}}></p>
                     </Link>)}) : filteredVideos.map(video => {
                     return(
                     <Link key={video.id} to={"/videos-page-content"} onClick ={
@@ -93,6 +95,7 @@ class VideosThumbnail extends Component{
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center'
                     }}></div>
+                    <p style={{position:'absolute', fontFamily: 'Ubuntu', color: 'black'}} dangerouslySetInnerHTML={{__html: video.title.rendered}}></p>
                     </Link>)})
     }
             

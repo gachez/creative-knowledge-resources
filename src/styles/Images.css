@@ -24,3 +24,8 @@
         object-fit: cover;
         cursor: pointer;
 }
+
+#thumb-title{
+        position: absolute;
+        font-family: Ubuntu;
+}
