@@ -9,6 +9,10 @@ import homeIcon from '../images/icon_home.svg'
 import youtube from '../images/youtube.png'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import fb from '../images/icons_facebook_white.png'
+import insta from '../images/icons_instagram_white.png'
+import twitter from '../images/icons_twitter_white.png'
+import Menu from '../components/universal-icons/Menu'
 import {Nav, 
     NavDropdown,
      Form,
@@ -88,16 +92,7 @@ class VideosPage extends Component{
         <div className="videosPage" >
     
             {/* NAVBAR SECTION STARTS HERE */}
-            <Navbar sticky="top" className="menuNav"  style={{height: '95px'}}>
-                    <Navbar.Brand href="#home"><img src={mark} style={{marginLeft: '50px', cursor: 'pointer'}}/></Navbar.Brand>
-                    <div className="menu-items" style={{display: 'flex', position: 'absolute', right: '200px'}}>
-                        <p>Home</p>
-                        <p>Upload</p>
-                        <p>Donate</p>
-                        <p>Contact</p>
-                    </div>
-                    <img id="menuBtn" src={menuBars}/>
-                </Navbar>
+            <Menu />
                 {/* NAVBAR SECTION ENDS HERE */}
     
                 <br />
@@ -232,7 +227,9 @@ class VideosPage extends Component{
     
                     <br /><br /><br /><br />
                     <footer>
-                        
+                    <img style={{position: 'relative', left: '41%', top: '26px'}} src={fb} />
+                            <img style={{position: 'relative', left: '46.4%', top: '26px'}} src={insta} />
+                            <img style={{position: 'relative', left: '51.8%', top: '26px'}} src={twitter} />
                         </footer>        
     
          

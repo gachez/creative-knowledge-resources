@@ -1,9 +1,5 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-import icon_facebook from '../images/icons_facebook_white.png'
-import icon_twitter from '../images/icons_twitter_white.png'
-import icon_instagram from '../images/icons_instagram_white.png'
-import icon_linkedin from '../images/icons_linkedin_white.png'
 import Menu from '../components/universal-icons/Menu'
 import backbtn from '../images/buttons_back.svg'
 import youtube from '../images/youtube.png'
@@ -77,7 +73,6 @@ class VideosPageContent extends Component{
                     <br /><br /><br />
                     {/* footer section */}
                     <footer>
-                            
                             </footer>   
 
                     </div>

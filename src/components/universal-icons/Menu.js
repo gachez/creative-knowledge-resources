@@ -21,21 +21,27 @@ import '../../styles/Menu.css';
 
 
 class Menu extends Component{
+    state={
+        menuDisplay: 'none'
+    }
 
 
     render(){
         return(
             <React.Fragment>
-                     {/* NAVBAR SECTION STARTS HERE */}
-                     <Navbar sticky="top" className="menuNav" style={{height: '95px'}}>
+                      <Navbar sticky="top" className="menuNav" style={{height: '95px'}}>
+                        <Link to={"/"}>
                         <Navbar.Brand href="#home"><img src={mark} style={{marginLeft: '50px', cursor: 'pointer'}}/></Navbar.Brand>
-                        <div className="menu-items" style={{display: 'flex', position: 'absolute', right: '200px'}}>
-                            <p>Home</p>
-                            <p>Upload</p>
-                            <p>Donate</p>
-                            <p>Contact</p>
+                        </Link>
+                        <div className="menu-items" style={{ position: 'absolute', right: '200px', display: this.state.menuDisplay}}>
+                           <Link style={{textDecoration: 'none', color: 'black'}} to={"/"}><p>Home</p></Link> 
+                            <Link style={{textDecoration: 'none', color: 'black'}} to={"/upload-pin"}><p>Upload</p></Link>
+                            <Link style={{textDecoration: 'none', color: 'black'}} to={"/donate"}><p>Donate</p></Link>
+                            <Link style={{textDecoration: 'none', color: 'black'}} to={"/contact-us"}><p>Contact</p></Link>
                         </div>
-                        <img id="menuBtn" src={menuBars}/>
+                        <img style={{cursor: 'pointer'}} id="menuBtn" src={menuBars} onClick={ () => {
+                            this.state.menuDisplay == "none" ? this.setState({menuDisplay: 'flex'}) : this.setState({menuDisplay: 'none'})
+                        }}/>
                     </Navbar>
                     {/* NAVBAR SECTION ENDS HERE */}
       

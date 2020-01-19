@@ -79,7 +79,7 @@ class PublicationPageContent extends Component{
                     <br />
                     {/* image description */}
                     <div className="image-desc">
-                        <strong>Synopsis</strong><br />
+                        <strong style={{fontSize: '16px'}}>Synopsis</strong><br /><br />
                     <p style={{fontSize: '14px'}} dangerouslySetInnerHTML={{ __html: this.state.publication.excerpt.rendered}}></p>
                     <div id="credentials">
                     <p dangerouslySetInnerHTML={{__html: this.state.publication.acf.author + '('}} style={{fontSize: '11px'}}></p>
