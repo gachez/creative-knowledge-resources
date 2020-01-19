@@ -26,6 +26,7 @@
   position: absolute;
   top: 100%;
   display: none;
+  overflow-y: scroll;
 }
 
 #discussion::before{

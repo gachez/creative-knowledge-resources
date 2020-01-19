@@ -191,7 +191,26 @@
     height: 236px;
     background-color: #373a3c;
     position: absolute;
-    top: 40%;
+    top: 50%;
+    overflow-y: scroll;
+    display: grid;
+    grid-gap: 10px;
+}
+
+.dropdown-items{
+    height: 17px;
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    margin: 20px;
+}
+.dropdown-items::after{
+    content: none;
 }
 
 .dropdowns-year{
@@ -201,6 +220,7 @@
     background-color: #373a3c;
     position: absolute;
     top: 104%;
+    overflow-y: scroll;
 }
 
 #downer{

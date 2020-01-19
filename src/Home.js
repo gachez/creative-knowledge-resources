@@ -170,11 +170,32 @@ class Home extends Component{
                                         <div className="filterSection">
                                             <div className="filterBox" id="category" onClick={() => {this.toggleDropdown('category')}}>
                                                 <p style={{ position: 'relative', right: '95px', top: '5px', width: '180px'}}>Select category</p>
-                                                <div className="dropdowns-category" style={{display: this.state.filterCategory}}></div>
+                                                <div className="dropdowns-category" style={{display: this.state.filterCategory}}>
+
+                                                    <h5 className="dropdown-items">African games</h5>
+                                                    <h5 className="dropdown-items">Animations</h5>
+                                                    <h5 className="dropdown-items">Paintings</h5>
+                                                    <h5 className="dropdown-items">Architecture</h5>
+                                                    <h5 className="dropdown-items">Dance</h5>
+                                                    <h5 className="dropdown-items">Decorative arts</h5>
+                                                    <h5 className="dropdown-items">African games</h5>
+                                                </div>
                                             </div>
                                             <div  className="filterBox" id="year" style={{position: 'relative', top: '50px'}} onClick={() => {this.toggleDropdown('year')}}>
                                                 <p style={{width: '180px', position:'relative', right: '95px', top: '5px'}}>Select a year</p>
-                                                <div className="dropdowns-year" style={{display: this.state.filterYear}}></div>
+                                                <div className="dropdowns-year" style={{display: this.state.filterYear}}>
+                                                    <h5 className="dropdown-items">2020</h5>
+                                                    <h5 className="dropdown-items">2019</h5>
+                                                    <h5 className="dropdown-items">2018</h5>
+                                                    <h5 className="dropdown-items">2017</h5>
+                                                    <h5 className="dropdown-items">2016</h5>
+                                                    <h5 className="dropdown-items">2015</h5>
+                                                    <h5 className="dropdown-items">2014</h5>
+                                                    <h5 className="dropdown-items">2013</h5>
+                                                    <h5 className="dropdown-items">2012</h5>
+                                                    <h5 className="dropdown-items">2011</h5>
+
+                                                </div>
                                             </div>
                                             <Button className="filterBox" id="reset" style={{position: 'relative', top: '70px'}}>RESET</Button>
                                         </div>
