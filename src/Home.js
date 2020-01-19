@@ -141,7 +141,7 @@ class Home extends Component{
                                                 return(
                                                     
                                                 <Col sm={3} key={image.id}  >
-                                                  <Card onClick={
+                                                  <Card style={{cursor: 'pointer'}} onClick={
                                                     () =>{
                                                         window.location.href="/images-page"
                                                         localStorage.setItem('id', image.id)

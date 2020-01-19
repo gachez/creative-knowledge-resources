@@ -29,9 +29,6 @@
 }
 .video-description{
     width: 73.25%;
-    position: absolute;
-    top: 25%;
-    left: 15%;
     font-family: Ubuntu;
     font-size: 18px;
     font-weight: 300;
@@ -45,19 +42,17 @@
 .video-frame{
     width: 73.25%;
     height: 550px;
-    position: absolute;
-    top: 40%;
-    left: 15%;
+    position: relative;
+    left: 13.4%;
 }
 
 
-.comment-container{
+.comment-container-box{
     width: 73.25%;
     height: 650px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
-    position: absolute;
-    top: 110%;
-    left: 15%;
+    position: relative;
+    left: 13.4%;
 }
 
 .comment-container button{
@@ -70,34 +65,8 @@
     color: white;
 }
 
-.footer-section{
+footer{
     width: 100%;
-    height: 80px;
+    height: 75px;
     background-color: #373a3c;
-    display: flex;
-    display: -ms-flexbox;
-    position: absolute;
-    top: 200%;
-   
-    
-}
-
-#insta{
-    position: absolute;
-    left: 51.5%;
-    top: 34%;
-}
-
-@media screen and (max-height: 800px){
-    .video-frame{
-        top: 53.5%;
-    }
-
-    .comment-container{
-        top: 155.5% !important;
-    }
-
-    .footer-section{
-        top: 262.5%;
-    }
 }

@@ -39,13 +39,24 @@ class VideosPageContent extends Component{
             <div>
                 <Menu page="fixed"/>
                 {/* body container */}
-                    <div className="back-title-container">
-                       <Link to="/videos"><img src={backbtn} className="back"/></Link> 
-                        <p dangerouslySetInnerHTML={{ __html: this.state.videos.title.rendered}}></p>
-                    </div>
+                <br />
+                    <br />
+                    <br />
+        
+                    {/* TITLE LIST GROUP STARTS HERE */}
+                    <section className="title-list-group" >
+                       
+                    <Link to="/">
+                        <img src={backbtn} className="back-img" />
+                        </Link>
+
+                        <p className="title-name" style={{position: 'absolute', left: '13.4%'}} dangerouslySetInnerHTML={{ __html: this.state.videos.title.rendered}}></p>                                                                                             
+                    </section>
+                    {/* TITLE LIST GROUP ENDS HERE */}
+                    <br />
                     <br />
                     {/* video description */}
-                    <div className="video-description" dangerouslySetInnerHTML={{ __html: this.state.videos.excerpt.rendered}}>
+                    <div className="video-description" style={{position: 'relative', left: '13.4%'}} dangerouslySetInnerHTML={{ __html: this.state.videos.excerpt.rendered}}>
                     </div>
                     <br />
                     {/* video frame */}
@@ -55,20 +66,19 @@ class VideosPageContent extends Component{
                     frameBorder="0" 
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                      allowFullScreen></iframe>
-                    <br />
+                     <br />
+                     <br />
+                     <br />
                     {/* comment container */}
-                    <div className="comment-container">
+                    <div className="comment-container-box">
                         <input className="comment-textbox" placeholder="What are your thoughts on this work?"/>
                         <button>POST</button>
                     </div>
-                    <br />
+                    <br /><br /><br />
                     {/* footer section */}
-                    <section className="footer-section">
-                        <img id="fb" src={icon_facebook}/>
-                        <img id="insta" src={icon_instagram}/>
-                        <img id="linkedin" src={icon_linkedin}/>
-                        <img id="twitter" src={icon_twitter}/>
-                    </section>
+                    <footer>
+                            
+                            </footer>   
 
                     </div>
                 

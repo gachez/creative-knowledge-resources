@@ -59,33 +59,41 @@ class ImagesPage extends Component{
             return(
                 <div id="body">
                     <Menu page="fixed" />
-
-                    {/* back button and title */}
-                    <div className="back-and-title">
-                        <Link to="/">
+                    <br />
+                    <br />
+                    <br />
+        
+                    {/* TITLE LIST GROUP STARTS HERE */}
+                    <section className="title-list-group" >
+                       
+                    <Link to="/">
                         <img src={backbtn} className="back-img" />
                         </Link>
-                        <p className="title" dangerouslySetInnerHTML={{ __html: this.state.images.title.rendered}}></p>
-                    </div>
+
+                        <p className="title-name" style={{position: 'absolute', left: '13.4%'}} dangerouslySetInnerHTML={{ __html: this.state.images.title.rendered}}></p>
+                        
+                        
+                      
+                       
+                    </section>
+                    {/* TITLE LIST GROUP ENDS HERE */}
                     {/* container for the images description */}
-                    <div className="images-description" dangerouslySetInnerHTML={{ __html: this.state.images.content.rendered}}>
-                     </div>
+                    <section className="images-description" style={{width: '73.2%', position: 'relative', left: '13.4%', top: '30px'}} dangerouslySetInnerHTML={{ __html: this.state.images.content.rendered}}>
+                     </section>
+                    {/* images container ends here */}
+
                     <br />
-                   
                     <br />
 
                     {/* comment container */}
-                    <section className="comment-container-box">
+                    <section style={{position: 'relative', left: '13.4%'}} className="comment-container-box">
 
                         <input className="comment-textbox" placeholder="What are your thoughts on this work?"/>    
                         <button>POST</button>
                     </section>    
                     <br />
+                    <br />
                     <div className="footer-container">
-                        <img id="fb" src={icon_facebook}/>
-                        <img id="insta" src={icon_instagram}/>
-                        <img id="linkedin" src={icon_linkedin}/>
-                        <img id="twitter" src={icon_twitter}/>
                     </div>
                     </div> 
                 

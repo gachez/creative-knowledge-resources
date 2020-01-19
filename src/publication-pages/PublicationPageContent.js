@@ -9,6 +9,7 @@ import backbtn from '../images/buttons_back.svg'
 import axios from 'axios'
 import { Document, Page,pdfjs } from 'react-pdf';
 import '../styles/PublicationPageContent.css'
+import {Button} from 'react-bootstrap'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -61,21 +62,21 @@ class PublicationPageContent extends Component{
                 <Menu page="fixed"/>
               <div id="body" >
                   
-                <div className="back-title" >
+              <br />
+                    <br />
+                    <br />
+        
+                    {/* TITLE LIST GROUP STARTS HERE */}
+                    <section className="title-list-group" >
+                       
+                    <Link to="/">
+                        <img src={backbtn} className="back-img" />
+                        </Link>
 
-                    {/* back icon */}
-                    <Link to={"/publications"}>
-                    <img src={backbtn} className="back"/>
-
-                    </Link>
-
-                    {/* page title */}
-                    <p className="page-title" dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}>
-                    </p>
-
-
-                    </div> 
-
+                        <p className="title-name" style={{position: 'absolute', left: '13.4%'}} dangerouslySetInnerHTML={{ __html: this.state.publication.title.rendered}}></p>                                                                                             
+                    </section>
+                    {/* TITLE LIST GROUP ENDS HERE */}
+                    <br />
                     {/* image description */}
                     <div className="image-desc">
                         <strong>Synopsis</strong><br />
@@ -91,9 +92,6 @@ class PublicationPageContent extends Component{
                     </div>
 
                     {/* the book */}
-
-
-
                     <div className="books" >
                     
                     <iframe src="https://arthistory.rutgers.edu/images/Documents/Spring2017_syllabi/240-Brett-Smith.pdf" 
@@ -159,24 +157,20 @@ class PublicationPageContent extends Component{
                             
                         
                     </div>
-
+                    <br /><br /><br />
 
                     {/* container for the comment box */}
                     <div className="comment-container" >
 
                     <input id="comment" type="textbox" placeholder="What are your thoughts on this work?" />
-
-                    <button id="post-btn">POST</button>
+                    <Button id="post-btn">POST</Button>
                     </div>
 
-                                    {/* the footer */}
-                        <div id="footer-publication">
-
-                    <img src={icon_facebook} id="fb"/>
-                    <img src={icon_twitter} id="twitter"/>
-                    <img id="instagram" src={icon_instagram}/>
-                    <img src={icon_linkedin} id="linkedin"/>
-                    </div>
+                    <br /><br />
+                    {/* footer section */}
+                    <footer>
+                            
+                            </footer>   
                   </div>  
                             </div>
                         

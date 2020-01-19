@@ -36,9 +36,8 @@
 }
 
 .image-desc{
-    position:absolute;
-    top: 27%;
-    left: 15%;
+    position: relative;
+    left: 13.4%;
     width: 72%;
     font-family: Ubuntu;
     font-size: 12px;
@@ -66,17 +65,15 @@
 }
 
 .books{
-    position: absolute;
-    top:50%;
-    left: 15%;
+    position: relative;
+    left: 13.4%;
     width: 72%;
     height: 600px;
 }
 
 .comment-container{
-    position: absolute;
-    left: 15%;
-    top: 125%;
+    position: relative;
+    left: 13.4%;
     width: 72%;
     height: 650px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
@@ -84,9 +81,9 @@
 }
 
 #comment{
-    position: absolute;
-    top: 7.1%;
-    left: 7.5%;
+    position: relative;
+    left: 75px;
+    top: 50px;
     width: 85%;
     height: 25%;
     border: solid 1px #373a3c;
@@ -102,63 +99,21 @@
     color: #8d8d8d;
 }
 #post-btn{
-    position: absolute;
-    top: 38.5%;
     border: none;
-    left: 85.5%;
     width: 100px;
     height: 40px;
     background-color: #ff8d80;
-
     font-family: Ubuntu;
-font-size: 14px;
-font-weight: 500;
-font-style: normal;
-font-stretch: normal;
-line-height: normal;
-letter-spacing: -0.1px;
-color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.1px;
+    color: #ffffff;
 }
-
-#footer-publication{
-
-position: absolute;
-top: 198%;
-  width: 100%;
-  height: 75px;
-  background-color: #373a3c;
-}
-
-
-#fb{
-position:absolute;
-top: 34.7%;
-left: 41%;
-}
-
-#twitter{
-
-position:absolute;
-top: 34.7%;
-left: 46.4%;
-}
-
-#instagram{
-
-position:absolute;
-top: 34.7%;
-left: 51.8%;
-}
-
-#linkedin{
-
-position:absolute;
-top: 34.7%;
-left: 57.2%;
-}
-
-@media screen and (max-height: 800px){
-    #footer-publication{
-        top: 258%;
-    }
+footer{
+    width: 100%;
+    height: 75px;
+    background-color: #373a3c;
 }
