@@ -1,96 +1,56 @@
-.page-title-and-search{
-    width: 100%;
-    height: 52px;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    position: absolute;
-    top: 28%;
-   
+.menuNav{
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+#menuBtn{
+  position: absolute;
+  right: 50px;
 }
 
-.page-title-and-search p{
-  
-    height: 35px;
-    font-family: Ubuntu;
-    font-size: 30px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #373a3c;
-    position: absolute;
-    left: 5.5%;
-    top: -10px;
-}
 
-.searchbox{
-  border-bottom: 1px solid #373a3c;
+.dropdowns-category{
+  z-index: 1;
   width: 200px;
-  height: 17px;
+  height: 236px;
+  background-color: #373a3c;
+  position: absolute;
+  top: 28%;
+  display: none;
+}
+
+.dropdowns-discussion{
+  z-index: 1;
+  width: 200px;
+  height: 236px;
+  background-color: #373a3c;
+  position: absolute;
+  top: 100%;
+  display: none;
+}
+
+#discussion::before{
+  content: 'By discussion';
+  width: 200px;
+  text-align: left;
+  display: block;
+  position: relative;
+  bottom: 25px;
   font-family: Ubuntu;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: normal;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #373a3c;
-  position: absolute;
-  right: 6%;
-  bottom: 0;
+  
 }
 
-@media screen and (max-height: 800px){
-  .searchbox{
-    right: 2.25%;
-  }
-}
-.view-text{
-    position: absolute;
-    top: 38%;
-    right: 11.5%;
-    height: 21px;
-  font-family: Ubuntu;
-  font-size: 18px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.17;
-  letter-spacing: normal;
-  color: #ff321a;
-}
 
-@media screen and (max-height: 800px){
-  .view-text{
-    right: 10%;
-  }
-}
-
-.next-page-footer{
-    position: absolute;
-    bottom: -15%;
-    font-family: Ubuntu;
-    font-size: 18px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: normal;
-    color: #ff321a;
-    left: 40%;
-    text-align: center;
-}
-
-.next-page-footer::after{
-  content: url(../images/component.png);
-  display: block;
-  margin-top: 10px;
-}
-
-@media screen and (max-height: 800px){
-  .next-page-footer{
-    bottom: -25%;
-  }
+#discussion p::after{
+  content: url(../images/downiconorange.png);
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  position: relative;
+  left: 30px;
 }

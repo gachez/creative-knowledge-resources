@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
 import Home from './Home';
 import VideosPage from './videos-pages/VideosPage'
 import PublicationPage from './publication-pages/PublicationPage'
