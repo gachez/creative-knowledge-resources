@@ -134,7 +134,7 @@ class Home extends Component{
                                             this.state.images.map(image =>{
                                                 return(
                                                     
-                                                <Col sm={3} key={image.id}  >
+                                                <Col  key={image.id}  >
                                                   <Card style={{cursor: 'pointer'}} onClick={
                                                     () =>{
                                                         window.location.href="/images-page"

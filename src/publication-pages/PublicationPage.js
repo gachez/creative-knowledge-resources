@@ -128,7 +128,7 @@ class PublicationPage extends Component{
                                                 this.state.publications.map(publication =>{
                                                     return(
                                                         
-                                                    <Col sm={4} key={publication.id}  >
+                                                    <Col key={publication.id}  >
                                                       <Card onClick={
                                                         () =>{
                                                             window.location.href="/publication-page-content"

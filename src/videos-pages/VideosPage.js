@@ -140,7 +140,7 @@ class VideosPage extends Component{
                                                 this.state.videos.map(video =>{
                                                     return(
                                                         
-                                                    <Col sm={4} key={video.id}  >
+                                                    <Col key={video.id}  >
                                                       <Card onClick={
                                                         () =>{
                                                             window.location.href="/videos-page-content"
