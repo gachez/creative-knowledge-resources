@@ -7,7 +7,7 @@ import '../../styles/Images.css'
 
 
 
-class Images extends Component{
+class Images extends Component{ 
     state={
         imagesArr: [],
         isLoaded: false
@@ -79,7 +79,7 @@ class Images extends Component{
                                    window.location.href="/images-page"
                                    localStorage.setItem('id', image.id)
                                }
-                           } key = {image.id} alt="thumbnail" id="thumbnail" src={image._embedded['wp:featuredmedia']['0'].source_url}  />
+                           } key = {image.id} alt="thumbnail" id="thumbnail" width="200px" height="170px" src={image._embedded['wp:featuredmedia']['0'].source_url}  />
 
                             <p id="thumb-title" dangerouslySetInnerHTML={{__html: image.title.rendered}}></p>
                 

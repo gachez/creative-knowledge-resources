@@ -85,8 +85,7 @@
 
 .view-images-title{
     position: absolute;
-    bottom: 105%;
-    left: 35%;
+    top: -60px;
     width: 106px;
   height: 21px;
   font-family: Ubuntu;
