@@ -12,13 +12,10 @@ import './styles/home.css'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import Menu from './components/universal-icons/Menu'
-import {Nav, 
-    NavDropdown,
+import {
      Form,
      FormControl,
-      Button, 
-      Navbar,
-      ListGroup, 
+      Button,  
       Container,
       Col,
       Row,
@@ -32,6 +29,7 @@ class Home extends Component{
        filteredImages: [],
        filteredCategory: [],
        filteredYear: [],
+       filterBoxConfirmation: false,
        filterCategory: 'none',
        filterYear: 'none',
        menuDisplay: 'none',
@@ -121,18 +119,16 @@ class Home extends Component{
  
 
         //function to filter array according to filters chosen
-        onFilterSelect = (selector, index) =>{
-            let value = document.getElementsByClassName(selector)[index].textContent;
+        // onFilterSelect = (selector, index) =>{
+        //     let value = document.getElementsByClassName(selector)[index].textContent;
 
-            this.setState({
-                filteredCategory: this.state.images.filter(image => image.acf['category'].toLowerCase() === value.toLowerCase())
-            });
-
-            console.log(this.state.filteredCategory);
-        }
+        //     this.setState({
+        //         filteredCategory: this.state.images.filter(image => image.acf['category'].toLowerCase() === value.toLowerCase()),
+        //         filterBoxConfirmation: true
+        //     });
+        // }
        
-        
-        
+       
 
     render(){  
 
@@ -191,6 +187,28 @@ class Home extends Component{
 
                                          {
                                              //check if search box works
+                                             this.state.filteredImages.length > 0 ?
+
+                                             this.state.filteredImages.map(image =>{
+                                                return(
+                                                    
+                                                <Col  key={image.id}  >
+                                                  <Card style={{cursor: 'pointer', maxWidth: '250px', minWidth: '200px', marginTop: '30px'}} onClick={
+                                                    () =>{
+                                                        window.location.href="/images-page"
+                                                        localStorage.setItem('id', image.id)
+                                                    }
+                                                }>
+                                                        <Card.Img variant="top" style={{height: '200px'}} src={image._embedded['wp:featuredmedia']['0'].source_url} />
+                                                        <Card.Footer><h4 style={{fontFamily: 'Ubuntu', fontSize: '16px'}} dangerouslySetInnerHTML={{__html: image.title.rendered}}></h4></Card.Footer>
+                                                  </Card>   
+                                                </Col>    
+                                                    
+                                                
+                                                )
+                                            })
+                                             :
+
                                                 // maps each featuredmedia to an image
                                             this.state.images.map(image =>{
                                                 return(
@@ -227,9 +245,11 @@ class Home extends Component{
                                             <div className="filterBox" id="category" onClick={() => {this.toggleDropdown('category')}}>
                                         <p style={{ position: 'relative', right: '95px', top: '5px', width: '180px'}} id="placeholder-category">{this.state.selectedCategory}</p>
                                                 <div className="dropdowns-category" style={{display: this.state.filterCategory, top: '40%'}}>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 0, 'placeholder-category')
-                                                this.onFilterSelect('dropdown-items', 0)
-                                                }}>African games</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {
+                                                        this.onSelect('dropdown-items', 0, 'placeholder-category');
+                                                        
+                                                                                    }}
+                                                >African games</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 1, 'placeholder-category')}}>Animations</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 2, 'placeholder-category')}}>Paintings</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 3, 'placeholder-category')}}>Architecture</h5>
