@@ -37,7 +37,8 @@ class Home extends Component{
        isLoaded: false,
        textBox: '',
        selectedCategory: 'Select category',
-       selectedYear: 'Select a year'
+       selectedYear: 'Select a year',
+       defaultImages: []
     }
 
     componentDidMount(){
@@ -45,7 +46,8 @@ class Home extends Component{
         .then(res =>{
             this.setState({
                 images: res.data,
-                isLoaded: true
+                isLoaded: true,
+                defaultImages: res.data
             })
         })
         .catch(err => console.log(err))
@@ -81,17 +83,25 @@ class Home extends Component{
            }
        }
 
-          // function that grabs value of an option and highlights it
+        // function that grabs value of an option and highlights it then changes state according to filter and filters the grid of images
         onSelect = (classname, index, placeholder) =>{
             let selectedVal = document.getElementsByClassName(classname)[index].textContent;
+            let filterCategoryArr = this.state.images.filter( image => image.acf['category'].toLowerCase() === selectedVal.toLowerCase());
 
+            let filterYearArr =  this.state.images.filter( image => image.acf['year'] === selectedVal );   
+        
             if(placeholder === 'placeholder-category'){
+                
                 this.setState({
-                    selectedCategory: selectedVal
+                    selectedCategory: selectedVal,
+                    images: filterCategoryArr
                 });
 
                 document.getElementById(placeholder).style.color = '#ff321a';
                 document.getElementById('category').style.borderColor = '#ff321a';
+
+               
+
                
             }
 
@@ -102,6 +112,8 @@ class Home extends Component{
 
                 document.getElementById(placeholder).style.color = '#ff321a';
                 document.getElementById('year').style.borderColor = '#ff321a';
+
+                console.log(filterYearArr)
             }
 
           
@@ -278,12 +290,15 @@ class Home extends Component{
                                                 () =>{
                                                     this.setState({
                                                         selectedCategory: 'Select category',
-                                                        selectedYear: 'Select a year'
+                                                        selectedYear: 'Select a year',
+                                                        images: this.state.defaultImages
                                                     });
                                                     document.getElementById('placeholder-year').style.color = '#000';
                                                     document.getElementById('placeholder-category').style.color = '#000';
                                                     document.getElementById('category').style.borderColor = '#000';
                                                     document.getElementById('year').style.borderColor = '#000';
+
+                                                    
 
                                                 }
                                             }>RESET</Button>
