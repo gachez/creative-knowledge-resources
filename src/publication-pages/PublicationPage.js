@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import '../styles/PublicationPage.css'
-import mark from '../images/logo.svg'
 import '../styles/videos-page.css'
-import menuBars from '../images/buttons_open_menu.png'
 import search from '../images/icons_search.png'
 import darktrans from '../images/ellipse.svg'
 import trans from '../images/ellips_trans.svg'
@@ -12,18 +10,15 @@ import fb from '../images/icons_facebook_white.png'
 import insta from '../images/icons_instagram_white.png'
 import twitter from '../images/icons_twitter_white.png'
 import Menu from '../components/universal-icons/Menu'
-import {Nav, 
-    NavDropdown,
-     Form,
-     FormControl,
-      Button, 
-      Navbar,
-      ListGroup,
-      Container,
-      Col,
-      Row,
-      CardDeck,
-      Card
+import {
+    Form,
+    FormControl,
+    Button, 
+    Container,
+    Col,
+    Row,
+    CardDeck,
+    Card
     } from 'react-bootstrap'
 import {Link} from 'react-router-dom'    
 
@@ -31,11 +26,18 @@ import {Link} from 'react-router-dom'
 
 
 class PublicationPage extends Component{
-    state={
+    state = {
+        publications: [],
+        filteredPublications: [],
+        filteredCategory: [],
+        filteredYear: [],
         filterCategory: 'none',
         filterYear: 'none',
         isLoaded: false,
-        publications: []
+        textBox: '',
+        selectedCategory: 'Select category',
+        selectedYear: 'Select a year',
+        defaultPublications: []
     }
 
     componentDidMount(){
@@ -53,8 +55,6 @@ class PublicationPage extends Component{
            window.localStorage.clear()
        }
 
-
-
     //    function that toggles dropdowns in filter section
        toggleDropdown = (val) =>{
         switch(val){
@@ -69,6 +69,14 @@ class PublicationPage extends Component{
              default: 
                  console.log('default//:case')    
         }
+    }
+    
+
+    //function that filters array according to searchbox text
+    onSearch = () =>{
+        this.setState({
+        filteredPublications: this.state.publications.filter(publication => publication.title.rendered.toLowerCase().indexOf(this.state.textBox.toLowerCase()) >= 0)
+        });
     }
     
     render(){  
@@ -91,12 +99,12 @@ class PublicationPage extends Component{
                 {/* TITLE LIST GROUP STARTS HERE */}
                 <section className="title-list-group" >
                    
-                      <p>Contemporary African Art: Publications</p>
+                      <p>Contemporary African Art: PUBLICATIONS</p>
                     
                     
                   
                     <Form inline style={{position: 'absolute', right: '50px'}}>
-                        <FormControl id="searchform" type="text" placeholder="Search" className="mr-sm-2" />
+                        <FormControl id="searchform" type="text" placeholder="Search by title" onChange={this.onSearch} className="mr-sm-2" />
                         <img id="searchbtn" src={search} />
                     </Form>
                 </section>
@@ -124,25 +132,46 @@ class PublicationPage extends Component{
                                     <CardDeck>
 
                                     {
+                                        this.state.filteredPublications.length < 1 ?
                                                     // maps each featuredmedia to an image
                                                 this.state.publications.map(publication =>{
                                                     return(
                                                         
                                                     <Col key={publication.id} sm={4} >
-                                                      <Card onClick={
+                                                      <Card style={{cursor: 'pointer', maxWidth: '350px', minWidth: '300px', marginTop: '30px'}} onClick={
                                                         () =>{
                                                             window.location.href="/publication-page-content"
                                                             localStorage.setItem('id', publication.id)
                                                         }
                                                     }>
-                                                            <Card.Img variant="top" src={publication._embedded['wp:featuredmedia']['0'].source_url} />
-                                                            <Card.Footer><h4 style={{fontFamily: 'Ubuntu'}} dangerouslySetInnerHTML={{__html: publication.title.rendered}}></h4></Card.Footer>
+                                                            <Card.Img  style={{height: '250px'}} variant="top" src={publication._embedded['wp:featuredmedia']['0'].source_url} />
+                                                            <Card.Footer><h4 style={{fontFamily: 'Ubuntu', fontSize: '16px'}} dangerouslySetInnerHTML={{__html: publication.title.rendered}}></h4></Card.Footer>
                                                       </Card>   
                                                     </Col>    
                                                         
                                                     
                                                     )
                                                 })
+                                                :
+                                                this.state.filteredPublications.map(publication =>{
+                                                    return(
+                                                        
+                                                    <Col key={publication.id} sm={4} >
+                                                      <Card style={{cursor: 'pointer', maxWidth: '350px', minWidth: '300px', marginTop: '30px'}} onClick={
+                                                        () =>{
+                                                            window.location.href="/publication-page-content"
+                                                            localStorage.setItem('id', publication.id)
+                                                        }
+                                                    }>
+                                                            <Card.Img  style={{height: '250px'}} variant="top" src={publication._embedded['wp:featuredmedia']['0'].source_url} />
+                                                            <Card.Footer><h4 style={{fontFamily: 'Ubuntu',fontSize: '16px'}} dangerouslySetInnerHTML={{__html: publication.title.rendered}}></h4></Card.Footer>
+                                                      </Card>   
+                                                    </Col>    
+                                                        
+                                                    
+                                                    )
+                                                })
+
                                     }   
                                     </CardDeck>
                                   
@@ -153,10 +182,11 @@ class PublicationPage extends Component{
     
                                 {/* FILTER CONTAINER BELOW */}
                                 <Col style={{  position: 'relative', top: '40px'}} sm = {3}>
-                                    <p className="view-images-title" style={{marginBottom: '20px'}}>View Publications</p>
+                                    
                                     <div className="filterSection">
+                                    <p className="view-images-title" style={{marginBottom: '50px', width: '300px'}}>View PUBLICATIONS</p>
                                         <div className="filterBox" id="category" onClick={() =>{this.toggleDropdown('category')}}>
-                                            <p style={{ position: 'relative', right: '95px', top: '5px', width: '180px'}}>Select category</p>
+                                <p style={{ position: 'relative', right: '78px', top: '5px', width: '270px'}}>{this.state.selectedCategory}</p>
                                             <div className="dropdowns-category" style={{display: this.state.filterCategory, position: 'absolute', top: '40%'}}>
                                                    <h5 className="dropdown-items">African games</h5>
                                                     <h5 className="dropdown-items">Animations</h5>
@@ -169,7 +199,7 @@ class PublicationPage extends Component{
                                         </div>
                                         
                                         <div  className="filterBox" id="year" style={{position: 'relative', top: '50px'}} onClick={() => {this.toggleDropdown('year')}}>
-                                            <p style={{width: '180px', position:'relative', right: '95px', top: '5px'}}>Select a year</p>
+                                <p style={{width: '180px', position:'relative', right: '95px', top: '5px'}}>{this.state.selectedYear}</p>
                                             <div className="dropdowns-year" style={{display: this.state.filterYear}}>
                                             <h5 className="dropdown-items">2020</h5>
                                                     <h5 className="dropdown-items">2019</h5>

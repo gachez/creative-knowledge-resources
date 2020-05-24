@@ -210,7 +210,7 @@ class VideosPage extends Component{
                 {/* TITLE LIST GROUP STARTS HERE */}
                 <section className="title-list-group" >
                    
-                      <p>Contemporary African Art: Videos</p>
+                      <p>Contemporary African Art: VIDEOS</p>
                     
                     
                   
@@ -307,9 +307,9 @@ class VideosPage extends Component{
                                 <Col style={{  position: 'relative', top: '40px'}} sm = {3}>
                                  
                                     <div className="filterSection">
-                                    <p className="view-images-title">View Videos</p>
+                                    <p className="view-images-title" style={{width: '300px'}}>View VIDEOS</p>
                                         <div className="filterBox" id="category" onClick={() => {this.toggleDropdown('category')}}>
-                                        <p style={{ position: 'relative', right: '95px', top: '5px', width: '180px'}} id="placeholder-category">{this.state.selectedCategory}</p>
+                                        <p style={{ position: 'relative', right: '78px', top: '5px', width: '270px'}} id="placeholder-category">{this.state.selectedCategory}</p>
                                             <div className="dropdowns-category" style={{display: this.state.filterCategory}}>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 0, 'placeholder-category')}}>African games</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 1, 'placeholder-category')}}>Animations</h5>
@@ -322,7 +322,7 @@ class VideosPage extends Component{
                                         </div>
                                         
                                         <div  className="filterBox" id="discussion" style={{position: 'relative', top: '50px'}} onClick={() =>{this.toggleDropdown('discussion')}}>
-                                        <p style={{width: '180px', position:'relative', right: '95px', top: '5px'}} id="placeholder-discussion">{this.state.selectedDiscussion}</p>
+                                        <p style={{width: '270px', position:'relative', right: '78px', top: '5px'}} id="placeholder-discussion">{this.state.selectedDiscussion}</p>
                                             <div className="dropdowns-discussion" style={{display: this.state.filterDiscussion}}>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 7, 'placeholder-discussion')}}>African games</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 8, 'placeholder-discussion')}}>Animations</h5>
@@ -348,7 +348,25 @@ class VideosPage extends Component{
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 23, 'placeholder-year')}}>2011</h5>
                                             </div>
                                         </div>
-                                        <Button className="filterBox" id="reset" style={{position: 'relative', top: '115px'}}>RESET</Button>
+                                        <Button className="filterBox" id="reset" style={{position: 'relative', top: '115px'}} onClick={
+                                                () =>{
+                                                    this.setState({
+                                                        selectedCategory: 'Select category',
+                                                        selectedYear: 'Select a year',
+                                                        selectedDiscussion: 'Select discussion',
+                                                        videos: this.state.defaultVideos
+                                                    });
+                                                    document.getElementById('placeholder-year').style.color = '#000';
+                                                    document.getElementById('placeholder-category').style.color = '#000';
+                                                    document.getElementById('placeholder-discussion').style.color = '#000';
+                                                    document.getElementById('category').style.borderColor = '#000';
+                                                    document.getElementById('discussion').style.borderColor = '#000';
+                                                    document.getElementById('year').style.borderColor = '#000';
+
+                                                    
+
+                                                }
+                                            }>RESET</Button>
                                     </div>
                                 </Col>
                                 {/* FILTER CONTAINER ENDS HERE */}

@@ -52,6 +52,6 @@
   width: 16px;
   height: 16px;
   object-fit: cover;
-  position: relative;
-  left: 30px;
+  position: absolute;
+  left: 125%;
 }

@@ -84,63 +84,7 @@ class Home extends Component{
        }
 
     // function that grabs value of an option and highlights it then changes state according to filter and filters the grid of images
-        onSelect = (classname, index, placeholder) =>{
-            let selectedVal = document.getElementsByClassName(classname)[index].textContent;
-            let filterCategoryArr = this.state.images.filter( image => image.acf['category'].toLowerCase() === selectedVal.toLowerCase());
-            let filterYearArr =  this.state.selectedCategory !== 'Select category' ? filterCategoryArr.filter( image => image.acf['year'] === selectedVal) : this.state.defaultImages.filter( image => image.acf['year'] === selectedVal);   
-        
-            if(placeholder === 'placeholder-category'){
-                //set the necessary states
-                this.setState({
-                    selectedCategory: selectedVal,
-                    images: filterCategoryArr
-                });
-
-                // set the filter colors
-                document.getElementById(placeholder).style.color = '#ff321a';
-                document.getElementById('category').style.borderColor = '#ff321a';
-
-                //check if any data found and give feedback
-                if(filterCategoryArr.length < 1) {
-                    alert('No Images found in the ' + selectedVal + ' category');
-                    this.setState({
-                        images : this.state.defaultImages,
-                        selectedCategory: 'Select a category'
-                    });
-                    document.getElementById('placeholder-category').style.color = '#000';
-                    document.getElementById('category').style.borderColor = '#000';
-                }
-                console.log('Success images found under the category')
-               
-            }
-
-            if(placeholder === 'placeholder-year'){
-                this.setState({
-                    selectedYear: selectedVal
-                });
-
-                document.getElementById(placeholder).style.color = '#ff321a';
-                document.getElementById('year').style.borderColor = '#ff321a';
-
-                //check if any data found and give feedback
-                if(filterYearArr.length < 1) {
-                  alert('No Images found in the year: ' + selectedVal  );
-                  this.setState({
-                      images : this.state.defaultImages,
-                      selectedYear: 'Select a year',
-                      selectedCategory: 'Select category'
-                   });
-                   document.getElementById('placeholder-category').style.color = '#000';
-                   document.getElementById('placeholder-year').style.color = '#000';
-                   document.getElementById('year').style.borderColor = '#000';
-                   document.getElementById('category').style.borderColor = '#000';
-                }
-                console.log('Success images found under the category')
-                console.log(filterYearArr)
-            }
-
-          
-        }
+ 
 
 
         //function that filters array according to searchbox text
@@ -183,7 +127,7 @@ class Home extends Component{
                     {/* TITLE LIST GROUP STARTS HERE */}
                     <section className="title-list-group" >
                        
-                          <p>Contemporary African Art: Images</p>
+                          <p>Contemporary African Art: IMAGES</p>
                         
                         
                       
@@ -276,32 +220,32 @@ class Home extends Component{
                                     <Col style={{  position: 'relative', top: '40px'}} sm = {3}>
                                         
                                         <div className="filterSection">
-                                        <p className="view-images-title">View Images</p>
+                                        <p className="view-images-title" style={{width: '300px'}}>View IMAGES</p>
                                             <div className="filterBox" id="category" onClick={() => {this.toggleDropdown('category')}}>
-                                        <p style={{ position: 'relative', right: '95px', top: '5px', width: '180px'}} id="placeholder-category">{this.state.selectedCategory}</p>
+                                        <p style={{ position: 'relative', right: '78px', top: '5px', width: '230px'}} id="placeholder-category">{this.state.selectedCategory}</p>
                                                 <div className="dropdowns-category" style={{display: this.state.filterCategory, top: '40%'}}>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 0, 'placeholder-category');}}>African games</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 1, 'placeholder-category')}}>Animations</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 2, 'placeholder-category')}}>Paintings</h5>
                                                     <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 3, 'placeholder-category')}}>Architecture</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 4, 'placeholder-category')}}>Dance</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 5, 'placeholder-category')}}>Decorative arts</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 6, 'placeholder-category')}}>African games</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {}}>Dance</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {}}>Decorative arts</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {}}>African games</h5>
                                                 </div>
                                             </div>
                                             <div  className="filterBox" id="year" style={{position: 'relative', top: '50px'}} onClick={() => {this.toggleDropdown('year')}}>
                                         <p style={{width: '180px', position:'relative', right: '95px', top: '5px'}} id="placeholder-year">{this.state.selectedYear}</p>
                                                 <div className="dropdowns-year" style={{display: this.state.filterYear}}>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 7, 'placeholder-year')}} >2020</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 8, 'placeholder-year')}}>2019</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 9, 'placeholder-year')}}>2018</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 10, 'placeholder-year')}}>2017</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 11, 'placeholder-year')}}>2016</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 12, 'placeholder-year')}}>2015</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 13, 'placeholder-year')}}>2014</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 14, 'placeholder-year')}}>2013</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 15, 'placeholder-year')}}>2012</h5>
-                                                    <h5 className="dropdown-items" onClick={() => {this.onSelect('dropdown-items', 16, 'placeholder-year')}}>2011</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}} >2020</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2019</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2018</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2017</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2016</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2015</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2014</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2013</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2012</h5>
+                                                    <h5 className="dropdown-items" onClick={() => {console.log('changing')}}>2011</h5>
 
                                                 </div>
                                             </div>
